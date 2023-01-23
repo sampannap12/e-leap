@@ -1,8 +1,14 @@
 package com.nfclab.e_leap_project;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,5 +16,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText()
+    }
+
+
+
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut(); //log out user
+        startActivity(new Intent(getApplicationContext(),Login.class));
+        finish();
     }
 }

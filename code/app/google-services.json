@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "40781735577",
+    "project_id": "eleap-2f115",
+    "storage_bucket": "eleap-2f115.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40781735577:android:86611975a1643fa8a27a08",
+        "android_client_info": {
+          "package_name": "com.nfclab.e_leap_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40781735577-c0k80s9iv0hhfte993tol1hle23smh7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbtbbGLowdMNmqOR5sJSxEqk_zfCry0Fk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40781735577-c0k80s9iv0hhfte993tol1hle23smh7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
