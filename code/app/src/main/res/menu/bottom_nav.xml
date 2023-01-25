@@ -6,15 +6,15 @@
         android:icon="@drawable/dashboard"/>
     <item
         android:id="@+id/profile"
-        android:title="Home"
+        android:title="Profile"
         android:icon="@drawable/profile"/>
 
     <item
         android:id="@+id/topup"
-        android:title="About"
+        android:title="TopUp"
         android:icon="@drawable/topup"/>
     <item
         android:id="@+id/routes"
-        android:title="About"
+        android:title="Routes"
         android:icon="@drawable/routes"/>
 </menu>

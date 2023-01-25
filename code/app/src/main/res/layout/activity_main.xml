@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D9FDDA"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/constrain_layout">
 
     <TextView
         android:id="@+id/user_name"
@@ -37,25 +38,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
+
+    <!-- A CardView that contains a TextView -->
+
+
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="#0FED18"
-        android:textSize="24sp"
+        android:textFontWeight="30"
+        android:textSize="35sp"
         android:textStyle="bold|italic"
         app:barrierMargin="@dimen/cardview_default_elevation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintHorizontal_bias="0.359"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logout"
-        app:layout_constraintVertical_bias="0.14" />
-
-
-    <!-- A CardView that contains a TextView -->
-
+        app:layout_constraintVertical_bias="0.19" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
@@ -149,7 +151,18 @@
         app:layout_constraintTop_toBottomOf="@+id/card_view"
         app:layout_constraintVertical_bias="0.189" />
 
-   
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="415dp"
+        android:layout_height="83dp"
+        android:background="#C7F6C9"
+        android:id="@+id/bottom_nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottom_nav"
+        app:itemIconSize="40dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
