@@ -26,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Register extends AppCompatActivity {
     public static final String TAG = "TAG";
@@ -36,6 +37,7 @@ public class Register extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fstore;
     String userID;
+
 
 
     @Override
@@ -49,6 +51,8 @@ public class Register extends AppCompatActivity {
         mAccountype = (CheckBox) findViewById(R.id.checkBox);
         mRegisterBtn =findViewById(R.id.registerButton);
         mLoginBtn =findViewById(R.id.loginButton);
+
+
 
         fAuth = FirebaseAuth.getInstance();
         fstore =FirebaseFirestore.getInstance();
@@ -104,12 +108,17 @@ public class Register extends AppCompatActivity {
                     if (task.isSuccessful()){
                         Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
                         userID = fAuth.getCurrentUser().getUid();
+
+                        double Cardnumber =  Math.floor(Math.random() * 9000000000000L) + 1000000000000L;
+
+
                         DocumentReference documentReference = fstore.collection("users").document(userID);
                         Map<String, Object> user = new HashMap<>();
                         user.put("Full_Name",fullname );
                         user.put("Email", email);
-                        user.put("Account Type", AccountType);
+                        user.put("Account_Type", AccountType);
                         user.put("Balance", balance);
+                        user.put("Card_Number", Cardnumber);
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
