@@ -69,7 +69,7 @@ public class Register extends AppCompatActivity {
             String password = mPassword.getText().toString().trim();
             String fullname = mFullName.getText().toString().trim();
             boolean mAccountypeChecked = mAccountype.isChecked();
-            float balance = 0;
+            double balance = 0;
             String AccountType;
             if (mAccountypeChecked == true)
             {
@@ -109,7 +109,7 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
                         userID = fAuth.getCurrentUser().getUid();
 
-                        double Cardnumber =  Math.floor(Math.random() * 9000000000000L) + 1000000000000L;
+
 
 
                         DocumentReference documentReference = fstore.collection("users").document(userID);
@@ -118,7 +118,7 @@ public class Register extends AppCompatActivity {
                         user.put("Email", email);
                         user.put("Account_Type", AccountType);
                         user.put("Balance", balance);
-                        user.put("Card_Number", Cardnumber);
+
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {

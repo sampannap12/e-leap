@@ -1,70 +1,88 @@
 package com.nfclab.e_leap_project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Dashboard_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Dashboard_Fragment extends Fragment  {
+import java.util.Objects;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class Dashboard_Fragment extends Fragment   {
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    TextView user_name,balance,account_type;
 
-    public Dashboard_Fragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Dashboard_Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Dashboard_Fragment newInstance(String param1, String param2) {
-        Dashboard_Fragment fragment = new Dashboard_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_dashbord, container, false);
+
+        return view;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        user_name = getActivity().findViewById(R.id.name);
+        account_type = getActivity().findViewById(R.id.account_type);
+        balance = getActivity().findViewById(R.id.Balance);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashbord, container, false);
-    }
+    public void onStart() {
+        super.onStart();
+        // Add the logout method here
+        getActivity().findViewById(R.id.logout).setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getContext(), Login.class));
+            requireActivity().finish();
+        });
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String userID = user.getUid();
+        DocumentReference reference;
+        FirebaseFirestore fstore = FirebaseFirestore.getInstance();
 
+        reference = fstore.collection("users").document(userID);
+        reference.get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+                        if(task.getResult().exists()){
+
+                            String nameResult= task.getResult().getString("Full_Name");
+                            String AccountResult= task.getResult().getString("Account_Type");
+                            Double balanceResult = task.getResult().getDouble("Balance");
+                            String balanc = Double.toString(balanceResult);
+
+
+                            user_name.setText(nameResult);
+                            account_type.setText(AccountResult);
+                            balance.setText(balanc);
+
+                        }
+
+                    }
+                });
+    }
 
 
 }

@@ -13,8 +13,10 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -22,12 +24,8 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener
+public class MainActivity extends AppCompatActivity
 {
-    TextView user_name,balance,card_num,account_type;
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
-    String userID;
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -36,46 +34,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setOnItemSelectedListener(this);
+        bottomNavigationView.setOnItemSelectedListener(onNav);
 
         loadFragment(new Dashboard_Fragment());
-
-        user_name = findViewById(R.id.name);
-        balance = findViewById(R.id.Balance);
-        card_num = findViewById(R.id.card_num);
-        account_type = findViewById(R.id.account_type);
-
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
-
-        userID = fAuth.getCurrentUser().getUid();
-
-        DocumentReference documentReference = fStore.collection("users").document(userID);
-
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                user_name.setText(documentSnapshot.getString("Full_Name"));
-                account_type.setText(documentSnapshot.getString("Account_Type"));
-                long card_numb = documentSnapshot.getLong("Card_Number");
-                String card_number = Long.toString(card_numb);
-                card_num.setText(card_number);
-
-                double balan = documentSnapshot.getDouble("Balance");
-                String balanc = Double.toString(balan);
-                balance.setText(balanc);
-            }
-
-        });
     }
 
+    private NavigationBarView.OnItemSelectedListener onNav = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-
-    public void logout(View view) {
-        FirebaseAuth.getInstance().signOut(); //log out user
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
-    }
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment = null;
@@ -83,13 +48,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 case R.id.dashboard:
                     fragment = new Dashboard_Fragment();
                     break;
-                case R.id.profile:
+                case R.id.Profile:
                     fragment = new Profile();
                     break;
-                case R.id.topup:
+                case R.id.Topup:
                     fragment = new Topup();
                     break;
-                case R.id.routes:
+                case R.id.Routes:
                     fragment = new Routes();
                     break;
 
@@ -99,9 +64,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             }
             return true;
         }
+    };
 
     void loadFragment(Fragment fragment) {
         //to attach fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.constrain_layout, fragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+
     }
 }

@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/dashboard"
-        android:title="Dashboard"
+        android:title=""
         android:icon="@drawable/dashboard"/>
     <item
-        android:id="@+id/profile"
-        android:title="Profile"
+        android:id="@+id/Profile"
+        android:title=""
         android:icon="@drawable/profile"/>
 
     <item
-        android:id="@+id/topup"
-        android:title="TopUp"
+        android:id="@+id/Topup"
+        android:title=""
         android:icon="@drawable/topup"/>
     <item
-        android:id="@+id/routes"
-        android:title="Routes"
+        android:id="@+id/Routes"
+        android:title=""
         android:icon="@drawable/routes"/>
 </menu>
