@@ -7,14 +7,15 @@
     android:background="#D9FDDA"
     tools:context=".Profile">
 
+
     <EditText
         android:id="@+id/edit_full_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="57dp"
-        android:layout_marginTop="113dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="118dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:fontFamily="monospace"
         android:inputType="textPersonName"
@@ -23,22 +24,26 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/edit_email"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51" />
 
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="57dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="118dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:fontFamily="monospace"
         android:inputType="textEmailAddress"
         android:text="email"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_full_name" />
@@ -47,18 +52,45 @@
         android:id="@+id/save"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginEnd="216dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="#0FED18"
         android:text="Save Profile"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_email"
-        app:layout_constraintVertical_bias="0.476" />
+        app:layout_constraintTop_toBottomOf="@+id/pass" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pass"
+        android:layout_width="235dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#D9FDDA"
+            android:hint="Password"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
