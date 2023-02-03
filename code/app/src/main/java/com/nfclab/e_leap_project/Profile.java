@@ -4,6 +4,7 @@ import static android.os.SystemClock.sleep;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,7 +37,8 @@ public class Profile extends Fragment {
     Button button;
     FirebaseFirestore fstore = FirebaseFirestore.getInstance();
     DocumentReference documentReference;
-    EditText password;
+    Button password_reset;
+    FirebaseAuth fAuth;
 
     private Context mContext;
 
@@ -64,15 +66,18 @@ public class Profile extends Fragment {
         View view = (View) inflater.inflate(R.layout.fragment_profile, container, false);
         etname = (EditText) view.findViewById(R.id.edit_full_name);
         etemail = (EditText) view.findViewById(R.id.edit_email);
-        password = (EditText) view.findViewById(R.id.edit_email);
+        password_reset = (Button) view.findViewById(R.id.pass_reset);
 
         button = view.findViewById(R.id.save);
         button.setOnClickListener(v -> {
             updateProfile();
         });
+
+        password_reset.setOnClickListener(v -> {
+            passwordReset();
+        });
         return view;
     }
-
 
     public void onStart() {
         super.onStart();
@@ -91,7 +96,6 @@ public class Profile extends Fragment {
                             Double balanceResult = task.getResult().getDouble("Balance");
                             String balanc = Double.toString(balanceResult);
                             String emailResult = task.getResult().getString("Email");
-
                             etname.setText(nameResult);
                             etemail.setText(emailResult);
 
@@ -101,11 +105,49 @@ public class Profile extends Fragment {
                 });
     }
 
+    private void passwordReset() {
+
+
+        FirebaseUser users = fAuth.getCurrentUser();
+
+        String email = users.getEmail();
+
+        assert users != null;
+        if(users.isEmailVerified()) {
+            fAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(mContext, "Password Reset Email Sent", Toast.LENGTH_SHORT).show();
+                    }
+                else{
+                        Toast.makeText(mContext, "Error Sending password reset", Toast.LENGTH_SHORT).show();
+                }
+                }
+            });
+        }
+        else{
+            Toast.makeText(mContext, "Please Verify Your Email Address First", Toast.LENGTH_SHORT).show();
+            users.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Toast.makeText(mContext, "Email Verification Sent.", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(mContext, "Failed to send email.", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+    }
+
     private void updateProfile() {
 
         String name = etname.getText().toString();
         String email = etemail.getText().toString();
-        String pass = password.getText().toString();
+
         FirebaseFirestore fstore = FirebaseFirestore.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String currentID = user.getUid();
@@ -135,10 +177,6 @@ public class Profile extends Fragment {
 
                     }
                 });
-
-
-        // Get auth credentials from the user for re-authentication
-        AuthCredential credential = EmailAuthProvider.getCredential(email, pass);
 
         assert user != null;
         user.updateEmail(email).addOnCompleteListener(task1 -> {
