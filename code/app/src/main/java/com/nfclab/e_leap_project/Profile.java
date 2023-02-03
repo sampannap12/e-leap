@@ -105,43 +105,7 @@ public class Profile extends Fragment {
                 });
     }
 
-    private void passwordReset() {
 
-
-        FirebaseUser users = fAuth.getCurrentUser();
-
-        String email = users.getEmail();
-
-        assert users != null;
-        if(users.isEmailVerified()) {
-            fAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(mContext, "Password Reset Email Sent", Toast.LENGTH_SHORT).show();
-                    }
-                else{
-                        Toast.makeText(mContext, "Error Sending password reset", Toast.LENGTH_SHORT).show();
-                }
-                }
-            });
-        }
-        else{
-            Toast.makeText(mContext, "Please Verify Your Email Address First", Toast.LENGTH_SHORT).show();
-            users.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void unused) {
-                    Toast.makeText(mContext, "Email Verification Sent.", Toast.LENGTH_SHORT).show();
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(mContext, "Failed to send email.", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-
-    }
 
     private void updateProfile() {
 
@@ -183,12 +147,58 @@ public class Profile extends Fragment {
             if (task1.isSuccessful()) {
                 sleep(150);
                 Toast.makeText(mContext, "Email  updated ", Toast.LENGTH_SHORT).show();
+                user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(mContext, "Email Verification Sent.", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(mContext, "Failed to send email.", Toast.LENGTH_SHORT).show();
+                    }
+                });
             } else {
                 sleep(160);
                 Toast.makeText(mContext, "Error updating profile info (email) ", Toast.LENGTH_SHORT).show();
             }
         });
 
+
+    }
+
+    private void passwordReset() {
+
+        FirebaseUser users = FirebaseAuth.getInstance().getCurrentUser();
+        String email = users.getEmail();
+
+        if(users.isEmailVerified()) {
+            FirebaseAuth.getInstance().sendPasswordResetEmail(users.getEmail()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(mContext, "Password Reset Email Sent", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(mContext, "Error Sending password reset", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+        else{
+            Toast.makeText(mContext, "Please Verify Your Email Address First", Toast.LENGTH_SHORT).show();
+            users.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Toast.makeText(mContext, "Email Verification Sent.", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(mContext, "Failed to send email.", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
     }
 }
