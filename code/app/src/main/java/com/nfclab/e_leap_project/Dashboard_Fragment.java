@@ -71,12 +71,12 @@ public class Dashboard_Fragment extends Fragment   {
                             String nameResult= task.getResult().getString("Full_Name");
                             String AccountResult= task.getResult().getString("Account_Type");
                             Double balanceResult = task.getResult().getDouble("Balance");
-                            String balanc = Double.toString(balanceResult);
+
 
 
                             user_name.setText(nameResult);
                             account_type.setText(AccountResult);
-                            balance.setText(balanc);
+                            balance.setText(String.valueOf(balanceResult));
 
                         }
 

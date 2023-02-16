@@ -71,7 +71,7 @@ public class Register extends AppCompatActivity {
             String password = mPassword.getText().toString().trim();
             String fullname = mFullName.getText().toString().trim();
             boolean mAccountypeChecked = mAccountype.isChecked();
-            double balance = 0;
+            Double balance = 0.0;
             String AccountType;
             if (mAccountypeChecked == true)
             {
