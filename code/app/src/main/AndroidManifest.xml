@@ -45,8 +45,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.Tech_DISCOVERED" />
+            </intent-filter>
+
+
 
             <meta-data
+
+
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>

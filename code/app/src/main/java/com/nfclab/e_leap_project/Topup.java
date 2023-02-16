@@ -60,6 +60,7 @@ public class Topup extends Fragment {
     String amount;
     Double new_balance;
     private Context mContext;
+    boolean flag = false;
 
     @Override
     public void onAttach(Context context) {
@@ -86,9 +87,11 @@ public class Topup extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
                 if (parent.getItemAtPosition(position).equals("Select Top Up Amount")) {
-                    //do nothing.
+                    flag = false;
                 } else {
+                    flag = true;
                     item = parent.getItemAtPosition(position).toString();
                     amount = item;
                     request = new StringRequest(Request.Method.POST, "https://api.stripe.com/v1/customers",
@@ -137,7 +140,14 @@ public class Topup extends Fragment {
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               paymentFlow();
+                if ( flag == true){
+                    paymentFlow();
+                }
+                else
+                {
+                    Toast.makeText(mContext,"Please select a top up amount",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
