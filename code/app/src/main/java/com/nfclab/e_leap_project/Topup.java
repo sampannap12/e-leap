@@ -147,7 +147,7 @@ public class Topup extends Fragment {
 
 
 
-    public void getEphericalKey() {
+    private void getEphericalKey() {
         StringRequest request = new StringRequest(Request.Method.POST, "https://api.stripe.com/v1/ephemeral_keys",
                 new Response.Listener<String>() {
                     @Override
@@ -193,7 +193,7 @@ public class Topup extends Fragment {
 
     }
 
-    public void getClientSecret(String clientId, String ephericalKey) {
+    private void getClientSecret(String clientId, String ephericalKey) {
 
         StringRequest request = new StringRequest(Request.Method.POST, "https://api.stripe.com/v1/payment_intents",
                 new Response.Listener<String>() {
