@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (text.trim().equals("DublinBus101")) {
             Toast.makeText(context, "Valid Dublin Bus NFC tag detected", Toast.LENGTH_LONG).show();
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String userID = user.getUid();
             reference = fstore.collection("users").document(userID);
             reference.get()
@@ -217,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
 
                             double balanceResult = task.getResult().getDouble("Balance");
                             double old_balance = Double.parseDouble(String.valueOf(balanceResult));
-                            if (old_balance>0) {
+                            if (old_balance>2) {
                                 Toast.makeText(context, "Old Balance" + balanceResult, Toast.LENGTH_SHORT).show();
                                 new_balance = old_balance - v;
 
@@ -236,8 +237,6 @@ public class MainActivity extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(Void aVoid) {
 
-
-                                                Toast.makeText(context, "balance " + new_balance, Toast.LENGTH_SHORT).show();
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
@@ -259,8 +258,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
 
     @Override
     protected void onResume() {

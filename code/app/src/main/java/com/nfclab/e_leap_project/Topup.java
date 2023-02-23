@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -49,6 +50,7 @@ public class Topup extends Fragment {
 
 
     private Button payButton;
+    ProgressBar progressBar;
     String PublishableKey ;
     String SecreteKey ;
     String CustomerId;
@@ -73,7 +75,7 @@ public class Topup extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_topup, container, false);
         payButton = view.findViewById(R.id.top);
-        View loading = view.findViewById(R.id.loading);
+        progressBar = view.findViewById(R.id.progress_bar);
         PublishableKey =BuildConfig.API_KEY;
         SecreteKey = BuildConfig.API_KEY_2;
 
@@ -98,7 +100,8 @@ public class Topup extends Fragment {
                     flag = false;
                 } else {
                     
-                    payButton.setVisibility (View.INVISIBLE); //to show
+                    payButton.setVisibility (View.INVISIBLE);
+                    progressBar.setVisibility (View.VISIBLE);
                     flag = true;
                     item = parent.getItemAtPosition(position).toString();
                     amount = item;
@@ -112,6 +115,7 @@ public class Topup extends Fragment {
                                         Toast.makeText(mContext,"Client id"+ CustomerId,Toast.LENGTH_SHORT).show();
                                         getEphericalKey();
                                         payButton.setVisibility (View.VISIBLE);
+                                        progressBar.setVisibility (View.INVISIBLE);
 
 
                                     } catch (JSONException e) {
