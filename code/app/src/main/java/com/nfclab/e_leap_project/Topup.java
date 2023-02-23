@@ -1,7 +1,6 @@
 package com.nfclab.e_leap_project;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,11 +44,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+
 public class Topup extends Fragment {
 
+
     private Button payButton;
-    String PublishableKey= "pk_test_51M9TmXEmmGrai2qsgxqPP0ynZIK8kNDxl7mJSFF98Jq8kNgB6it7oHCuwWJnMccEFAGMX99CZK4kwvMtjWbN8akh00VBqp3etQ";
-    String SecreteKey = "sk_test_51M9TmXEmmGrai2qsSDlAxm8nYk8gFtglwmLF7IntK1MB7Ndn5Xx43tdf9hkIWhnJlyqCptUqKM1pQhpPRDQ4MDM800rticnD7V";
+    String PublishableKey ;
+    String SecreteKey ;
     String CustomerId;
     String EphericalKey;
     String ClientSecret;
@@ -72,6 +73,9 @@ public class Topup extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_topup, container, false);
         payButton = view.findViewById(R.id.top);
+        View loading = view.findViewById(R.id.loading);
+        PublishableKey =BuildConfig.API_KEY;
+        SecreteKey = BuildConfig.API_KEY_2;
 
         PaymentConfiguration.init(mContext,PublishableKey);
         paymentSheet = new PaymentSheet(this, this::onPaymentSheetResult);
@@ -85,12 +89,16 @@ public class Topup extends Fragment {
 
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if (parent.getItemAtPosition(position).equals("Select Top Up Amount")) {
                     flag = false;
                 } else {
+                    
+                    payButton.setVisibility (View.INVISIBLE); //to show
                     flag = true;
                     item = parent.getItemAtPosition(position).toString();
                     amount = item;
@@ -103,6 +111,7 @@ public class Topup extends Fragment {
                                         CustomerId = object.getString("id");
                                         Toast.makeText(mContext,"Client id"+ CustomerId,Toast.LENGTH_SHORT).show();
                                         getEphericalKey();
+                                        payButton.setVisibility (View.VISIBLE);
 
 
                                     } catch (JSONException e) {
@@ -141,7 +150,9 @@ public class Topup extends Fragment {
             @Override
             public void onClick(View v) {
                 if ( flag == true){
+
                     paymentFlow();
+
                 }
                 else
                 {
