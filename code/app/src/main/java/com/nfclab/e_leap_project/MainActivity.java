@@ -46,7 +46,6 @@ import java.io.UnsupportedEncodingException;
 
 public class MainActivity extends AppCompatActivity {
     public static final String Error_detected = "NFC tag not detected";
-    TextView nfc_contents;
     NfcAdapter nfcAdapter;
     PendingIntent pendingIntent;
     IntentFilter[] readTagFilters;
@@ -55,8 +54,10 @@ public class MainActivity extends AppCompatActivity {
     private DocumentReference reference;
     private FirebaseFirestore fstore ;
     private double new_balance;
+    private double Student_fare = 1.0;
     private double Dublin_Bus_fare = 2.0;
     private double Bus_Eireann_fare = 1.55;
+    private String AccountResult;
 
 
     BottomNavigationView bottomNavigationView;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        fstore = FirebaseFirestore.getInstance();
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnItemSelectedListener(onNav);
 
@@ -141,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
     private void buildTagViews(NdefMessage[] msg) {
         if (msg == null || msg.length == 0) return;
         String text = "";
+
         byte[] payload = msg[0].getRecords()[0].getPayload();
         //getting the text encoding
         String textEncoding = ((payload[0] & 128) == 0) ? "UTF-8" : "UTF-16";
@@ -153,12 +155,45 @@ public class MainActivity extends AppCompatActivity {
         }
         if (text.trim().equals("DublinBus101")) {
             Toast.makeText(context, "Valid Dublin Bus NFC tag detected", Toast.LENGTH_LONG).show();
-            Busfare(Dublin_Bus_fare);
+            String userID = user.getUid();
+            reference = fstore.collection("users").document(userID);
+            reference.get()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
 
+                            if (task.getResult().exists()) {
+                                 AccountResult = task.getResult().getString("Account_Type");
+                                if (AccountResult.equals("Student")){
+                                    Busfare(Student_fare);
+
+                                }
+                                else if (AccountResult.equals("Adult")) {
+                                    Busfare(Dublin_Bus_fare);
+                                }
+                                else {
+                                    Toast.makeText(context, "Account Error", Toast.LENGTH_LONG).show();
+                                }
+                            }
+
+                        }
+
+                    });
         }
         else if(text.trim().equals("BusErien102")) {
-            Busfare(Bus_Eireann_fare);
             Toast.makeText(context, "Valid bus eiren NFC tag detected", Toast.LENGTH_LONG).show();
+            if (AccountResult.equals("Student")){
+                Busfare(Student_fare);
+
+            }
+            else if (AccountResult.equals("Adult")) {
+                Busfare(Bus_Eireann_fare);
+            }
+            else {
+                Toast.makeText(context, "Account Error", Toast.LENGTH_LONG).show();
+            }
+
+
         }
         else {
 
@@ -169,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
     private void Busfare(double v) {
         user = FirebaseAuth.getInstance().getCurrentUser();
         String userID = user.getUid();
-        fstore = FirebaseFirestore.getInstance();
+
 
         reference = fstore.collection("users").document(userID);
         reference.get()
