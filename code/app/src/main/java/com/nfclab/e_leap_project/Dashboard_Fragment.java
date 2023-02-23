@@ -1,11 +1,17 @@
 package com.nfclab.e_leap_project;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.nfc.NfcAdapter;
+import android.nfc.Tag;
+import android.nfc.tech.NfcA;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,10 +30,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.Objects;
-
-public class Dashboard_Fragment extends Fragment   {
+public class Dashboard_Fragment extends Fragment{
 
     TextView user_name,balance,account_type;
+
 
 
     @Nullable
@@ -36,6 +42,12 @@ public class Dashboard_Fragment extends Fragment   {
         View view = inflater.inflate(R.layout.fragment_dashbord, container, false);
 
         return view;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -72,17 +84,30 @@ public class Dashboard_Fragment extends Fragment   {
                             String AccountResult= task.getResult().getString("Account_Type");
                             Double balanceResult = task.getResult().getDouble("Balance");
 
-
-
                             user_name.setText(nameResult);
                             account_type.setText(AccountResult);
                             balance.setText(String.valueOf(balanceResult));
-
                         }
 
                     }
                 });
+        reference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot, @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    // Handle error
+                    return;
+                }
+
+                if (snapshot != null && snapshot.exists()) {
+                    // Get updated balance from snapshot
+                   double balanceResult = snapshot.getDouble("Balance");
+                    balance.setText(String.valueOf(balanceResult));
+                }
+            }
+        });
+
     }
 
 
-}
+    }

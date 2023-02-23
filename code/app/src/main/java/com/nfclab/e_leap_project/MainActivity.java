@@ -5,27 +5,60 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.Tag;
+import android.nfc.tech.Ndef;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Transaction;
 
-public class MainActivity extends AppCompatActivity
-{
+import java.io.UnsupportedEncodingException;
+
+public class MainActivity extends AppCompatActivity {
+    public static final String Error_detected = "NFC tag not detected";
+    TextView nfc_contents;
+    NfcAdapter nfcAdapter;
+    PendingIntent pendingIntent;
+    IntentFilter[] readTagFilters;
+    Context context;
+    private FirebaseUser user ;
+    private DocumentReference reference;
+    private FirebaseFirestore fstore ;
+    private double new_balance;
+    private double Dublin_Bus_fare = 2.0;
+    private double Bus_Eireann_fare = 1.55;
+
+
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -37,10 +70,23 @@ public class MainActivity extends AppCompatActivity
         bottomNavigationView.setOnItemSelectedListener(onNav);
 
         loadFragment(new Dashboard_Fragment());
+
+
+        context = this;
+
+        nfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        if (nfcAdapter == null) {
+            Toast.makeText(context, "NFC is not supported", Toast.LENGTH_LONG).show();
+            finish();
+        }
+        readIntent(getIntent());
+        pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+        IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
+        tagDetected.addCategory(Intent.CATEGORY_DEFAULT);
+        readTagFilters = new IntentFilter[]{tagDetected};
     }
 
     private NavigationBarView.OnItemSelectedListener onNav = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment = null;
@@ -57,7 +103,6 @@ public class MainActivity extends AppCompatActivity
                 case R.id.Routes:
                     fragment = new Routes();
                     break;
-
             }
             if (fragment != null) {
                 loadFragment(fragment);
@@ -67,8 +112,151 @@ public class MainActivity extends AppCompatActivity
     };
 
     void loadFragment(Fragment fragment) {
-        //to attach fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+    }
 
+    private void readIntent(Intent intent) {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.frame_layout);
+        if (currentFragment instanceof Dashboard_Fragment) {
+            String action = intent.getAction();
+            if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)
+                    || NfcAdapter.ACTION_TECH_DISCOVERED.equals(action)
+                    || NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
+                Parcelable[] Message = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+                NdefMessage[] msg = null;
+                if (Message != null) {
+                    msg = new NdefMessage[Message.length];
+                    for (int i = 0; i < Message.length; i++) {
+                        msg[i] = (NdefMessage) Message[i];
+                    }
+                    buildTagViews(msg);
+                } else {
+                    Toast.makeText(context, Error_detected, Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+    }
+
+
+    private void buildTagViews(NdefMessage[] msg) {
+        if (msg == null || msg.length == 0) return;
+        String text = "";
+        byte[] payload = msg[0].getRecords()[0].getPayload();
+        //getting the text encoding
+        String textEncoding = ((payload[0] & 128) == 0) ? "UTF-8" : "UTF-16";
+        //get Language code
+        int languagecodelen = payload[0] & 0063; //0063 is "en"
+        try {
+            text = new String(payload, languagecodelen + 1, payload.length - languagecodelen - 1, textEncoding);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        if (text.trim().equals("DublinBus101")) {
+            Toast.makeText(context, "Valid Dublin Bus NFC tag detected", Toast.LENGTH_LONG).show();
+            Busfare(Dublin_Bus_fare);
+
+        }
+        else if(text.trim().equals("BusErien102")) {
+            Busfare(Bus_Eireann_fare);
+            Toast.makeText(context, "Valid bus eiren NFC tag detected", Toast.LENGTH_LONG).show();
+        }
+        else {
+
+            Toast.makeText(context, "Invalid NFC tag detected", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void Busfare(double v) {
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        String userID = user.getUid();
+        fstore = FirebaseFirestore.getInstance();
+
+        reference = fstore.collection("users").document(userID);
+        reference.get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+                        if(task.getResult().exists()){
+
+
+                            double balanceResult = task.getResult().getDouble("Balance");
+                            double old_balance = Double.parseDouble(String.valueOf(balanceResult));
+                            if (old_balance>0) {
+                                Toast.makeText(context, "Old Balance" + balanceResult, Toast.LENGTH_SHORT).show();
+                                new_balance = old_balance - v;
+
+
+                                final DocumentReference sDoc = fstore.collection("users").document(userID);
+                                fstore.runTransaction(new Transaction.Function<Void>() {
+                                            @Override
+                                            public Void apply(Transaction transaction) throws FirebaseFirestoreException {
+
+                                                transaction.update(sDoc, "Balance", new_balance);
+
+                                                // Success
+                                                return null;
+                                            }
+                                        }).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+
+
+                                                Toast.makeText(context, "balance " + new_balance, Toast.LENGTH_SHORT).show();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(context, "Error Updating" +e, Toast.LENGTH_SHORT).show();
+
+                                            }
+                                        });
+                            }
+                            else {
+                                Toast.makeText(context, "Please Top Up. Your Balance is  " + balanceResult, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                    }
+                });
+
+
+
+    }
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        enableForegroundDispatchSystem();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        disableForegroundDispatchSystem();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        readIntent(intent);
+    }
+
+    private void enableForegroundDispatchSystem() {
+        Intent intent = new Intent(this, MainActivity.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        IntentFilter[] intentFilter = new IntentFilter[]{};
+
+        nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+    }
+
+    private void disableForegroundDispatchSystem() {
+        nfcAdapter.disableForegroundDispatch(this);
     }
 }
