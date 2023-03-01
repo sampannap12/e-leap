@@ -236,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
                                         }).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
+                                                Toast.makeText(context, "Balance Updated Successfully" , Toast.LENGTH_SHORT).show();
 
                                             }
                                         })
@@ -243,7 +244,6 @@ public class MainActivity extends AppCompatActivity {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
                                                 Toast.makeText(context, "Error Updating" +e, Toast.LENGTH_SHORT).show();
-
                                             }
                                         });
                             }
@@ -254,9 +254,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-
     }
 
     @Override

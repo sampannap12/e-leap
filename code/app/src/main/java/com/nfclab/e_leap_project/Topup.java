@@ -76,6 +76,7 @@ public class Topup extends Fragment {
         View view = inflater.inflate(R.layout.fragment_topup, container, false);
         payButton = view.findViewById(R.id.top);
         progressBar = view.findViewById(R.id.progress_bar);
+
         PublishableKey =BuildConfig.API_KEY;
         SecreteKey = BuildConfig.API_KEY_2;
 
@@ -180,7 +181,6 @@ public class Topup extends Fragment {
                         try {
                             JSONObject object = new JSONObject(response);
                             EphericalKey = object.getString("id");
-                            Toast.makeText(mContext,"Ephericalkey"+ EphericalKey,Toast.LENGTH_SHORT).show();
                             getClientSecret(ClientSecret,EphericalKey);
 
 
@@ -227,7 +227,6 @@ public class Topup extends Fragment {
                         try {
                             JSONObject object = new JSONObject(response);
                             ClientSecret = object.getString("client_secret");
-                            Toast.makeText(mContext,"ClientSecret "+ ClientSecret,Toast.LENGTH_SHORT).show();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -275,7 +274,6 @@ public class Topup extends Fragment {
         )));
 
     }
-
     public void onPaymentSheetResult(PaymentSheetResult paymentSheetResult) {
 
         if (paymentSheetResult instanceof PaymentSheetResult.Canceled) {
@@ -325,7 +323,6 @@ public class Topup extends Fragment {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
                                             Toast.makeText(mContext, "Error Updating" +e, Toast.LENGTH_SHORT).show();
-
                                         }
                                     });
                         }
