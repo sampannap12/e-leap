@@ -77,85 +77,103 @@ public class Topup extends Fragment {
         payButton = view.findViewById(R.id.top);
         progressBar = view.findViewById(R.id.progress_bar);
 
-        PublishableKey =BuildConfig.API_KEY;
-        SecreteKey = BuildConfig.API_KEY_2;
+        request = new StringRequest(Request.Method.GET, "http://sampannapathak.pythonanywhere.com/",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject object = new JSONObject(response);
+                            PublishableKey = object.getString("publishableKey");
+                            SecreteKey = object.getString("secret_api_key");
+                            Toast.makeText(mContext, "Public " + PublishableKey , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "Private " + SecreteKey , Toast.LENGTH_SHORT).show();
+                            PaymentConfiguration.init(mContext,PublishableKey);
+                            Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
+                            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(mContext,
+                                    R.array.Top_Up_Amount, android.R.layout.simple_spinner_item);
+                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            spinner.setAdapter(adapter);
 
-        PaymentConfiguration.init(mContext,PublishableKey);
-        paymentSheet = new PaymentSheet(this, this::onPaymentSheetResult);
+
+                            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 
-        Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(mContext,
-                R.array.Top_Up_Amount, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if (parent.getItemAtPosition(position).equals("Select Top Up Amount")) {
-                    flag = false;
-                } else {
-                    
-                    payButton.setVisibility (View.INVISIBLE);
-                    progressBar.setVisibility (View.VISIBLE);
-                    flag = true;
-                    item = parent.getItemAtPosition(position).toString();
-                    amount = item;
-                    request = new StringRequest(Request.Method.POST, "https://api.stripe.com/v1/customers",
-                            new Response.Listener<String>() {
                                 @Override
-                                public void onResponse(String response) {
-                                    try {
-                                        JSONObject object = new JSONObject(response);
-                                        CustomerId = object.getString("id");
-                                        Toast.makeText(mContext,"Client id"+ CustomerId,Toast.LENGTH_SHORT).show();
-                                        getEphericalKey();
-                                        payButton.setVisibility (View.VISIBLE);
-                                        progressBar.setVisibility (View.INVISIBLE);
+                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                                    if (parent.getItemAtPosition(position).equals("Select Top Up Amount")) {
+                                        flag = false;
+                                    } else {
+
+                                        payButton.setVisibility (View.INVISIBLE);
+                                        progressBar.setVisibility (View.VISIBLE);
+                                        flag = true;
+                                        item = parent.getItemAtPosition(position).toString();
+                                        amount = item;
+                                        request = new StringRequest(Request.Method.POST, "https://api.stripe.com/v1/customers",
+                                                new Response.Listener<String>() {
+                                                    @Override
+                                                    public void onResponse(String response) {
+                                                        try {
+                                                            JSONObject object = new JSONObject(response);
+                                                            CustomerId = object.getString("id");
+                                                            Toast.makeText(mContext,"Client id"+ CustomerId,Toast.LENGTH_SHORT).show();
+                                                            getEphericalKey();
+                                                            payButton.setVisibility (View.VISIBLE);
+                                                            progressBar.setVisibility (View.INVISIBLE);
 
 
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
+                                                        } catch (JSONException e) {
+                                                            e.printStackTrace();
+
+                                                        }
+                                                    }
+                                                }, new Response.ErrorListener() {
+                                            @Override
+                                            public void onErrorResponse(VolleyError error) {
+                                                Toast.makeText(mContext, error.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                                            }
+                                        }) {
+                                            @Override
+                                            public Map<String, String> getHeaders() throws AuthFailureError {
+                                                Map<String, String> header = new HashMap<>();
+                                                header.put("Authorization", "Bearer " + SecreteKey);
+                                                return header;
+
+                                            }
+                                        };
+                                        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+                                        requestQueue.add(request);
 
                                     }
                                 }
-                            }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(mContext, error.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }) {
-                        @Override
-                        public Map<String, String> getHeaders() throws AuthFailureError {
-                            Map<String, String> header = new HashMap<>();
-                            header.put("Authorization", "Bearer " + SecreteKey);
-                            return header;
+                                @Override
+                                public void onNothingSelected(AdapterView<?> parent) {
+                                }
 
-                        }
-                    };
-                    RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-                    requestQueue.add(request);
 
-                }
-            }
+                            });
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(mContext, error.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
-
-
         });
 
+        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+        requestQueue.add(request);
+        paymentSheet = new PaymentSheet(this, this::onPaymentSheetResult);
 
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if ( flag == true){
-
                     paymentFlow();
 
                 }

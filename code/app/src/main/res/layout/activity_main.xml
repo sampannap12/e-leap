@@ -7,17 +7,23 @@
     android:background="#D9FDDA"
     tools:context=".MainActivity"
     android:id="@+id/constrain_layout">
+    <ProgressBar
+        android:id="@+id/progresBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
 
     <FrameLayout
+
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/frame_layout"
-        android:layout_above="@+id/bottom_nav"
+        android:layout_above="@+id/bottom_nav">
 
-        />
 
-    
-
+    </FrameLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
