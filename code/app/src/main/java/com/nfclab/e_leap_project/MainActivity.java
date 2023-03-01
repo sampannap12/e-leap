@@ -20,6 +20,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
     PendingIntent pendingIntent;
     IntentFilter[] readTagFilters;
     Context context;
+    ProgressBar progressBar;
+    FrameLayout frame;
+
     private FirebaseUser user ;
     private DocumentReference reference;
     private FirebaseFirestore fstore ;
@@ -66,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        progressBar = findViewById(R.id.progresBar);
+        frame = findViewById(R.id.frame_layout);
         fstore = FirebaseFirestore.getInstance();
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnItemSelectedListener(onNav);
@@ -203,6 +210,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Busfare(double v) {
+        progressBar.setVisibility (View.VISIBLE);
+        frame.setVisibility(View.INVISIBLE);
         user = FirebaseAuth.getInstance().getCurrentUser();
         String userID = user.getUid();
 
@@ -237,7 +246,8 @@ public class MainActivity extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(Void aVoid) {
                                                 Toast.makeText(context, "Balance Updated Successfully" , Toast.LENGTH_SHORT).show();
-
+                                                progressBar.setVisibility (View.INVISIBLE);
+                                                frame.setVisibility(View.VISIBLE);
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
