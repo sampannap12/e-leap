@@ -77,7 +77,7 @@ public class Topup extends Fragment {
         payButton = view.findViewById(R.id.top);
         progressBar = view.findViewById(R.id.progress_bar);
 
-        request = new StringRequest(Request.Method.GET, "http://sampannapathak.pythonanywhere.com/",
+        request = new StringRequest(Request.Method.GET, "http://www.sampannapathak.com/",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -85,8 +85,7 @@ public class Topup extends Fragment {
                             JSONObject object = new JSONObject(response);
                             PublishableKey = object.getString("publishableKey");
                             SecreteKey = object.getString("secret_api_key");
-                            Toast.makeText(mContext, "Public " + PublishableKey , Toast.LENGTH_SHORT).show();
-                            Toast.makeText(mContext, "Private " + SecreteKey , Toast.LENGTH_SHORT).show();
+
                             PaymentConfiguration.init(mContext,PublishableKey);
                             Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
                             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(mContext,
@@ -121,8 +120,6 @@ public class Topup extends Fragment {
                                                             getEphericalKey();
                                                             payButton.setVisibility (View.VISIBLE);
                                                             progressBar.setVisibility (View.INVISIBLE);
-
-
                                                         } catch (JSONException e) {
                                                             e.printStackTrace();
 
@@ -139,7 +136,6 @@ public class Topup extends Fragment {
                                                 Map<String, String> header = new HashMap<>();
                                                 header.put("Authorization", "Bearer " + SecreteKey);
                                                 return header;
-
                                             }
                                         };
                                         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
@@ -150,11 +146,7 @@ public class Topup extends Fragment {
                                 @Override
                                 public void onNothingSelected(AdapterView<?> parent) {
                                 }
-
-
                             });
-
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -199,7 +191,7 @@ public class Topup extends Fragment {
                         try {
                             JSONObject object = new JSONObject(response);
                             EphericalKey = object.getString("id");
-                            getClientSecret(ClientSecret,EphericalKey);
+                            getClientSecret();
 
 
                         } catch (JSONException e) {
@@ -236,7 +228,7 @@ public class Topup extends Fragment {
 
     }
 
-    private void getClientSecret(String clientId, String ephericalKey) {
+    private void getClientSecret() {
 
         StringRequest request = new StringRequest(Request.Method.POST, "https://api.stripe.com/v1/payment_intents",
                 new Response.Listener<String>() {
