@@ -1,13 +1,17 @@
 package com.nfclab.e_leap_project;
 
+import static com.nfclab.e_leap_project.Register.TAG;
+
 import android.content.Context;
 import android.net.Uri;
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.method.TextKeyListener;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +28,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
@@ -31,7 +40,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Routes extends Fragment {
 
@@ -41,6 +52,7 @@ public class Routes extends Fragment {
 
     private TextView Results;
     private Button routes_button;
+    int flag =0;
     LatLng latLng;
     Context mContext;
     String Origin;
@@ -65,62 +77,77 @@ public class Routes extends Fragment {
         Original_View = view.findViewById(R.id.origin);
         Destination_View = view.findViewById(R.id.destination);
         routes_button = view.findViewById(R.id.route_button);
-        Results = view.findViewById(R.id.resultssss);
+
+
 
         routes_button.setOnClickListener(v -> {
-
             Origin = Original_View.getText().toString();
             Destination = Destination_View.getText().toString();
-            getLongLat(Origin);
-            getLongLat(Destination);
-            });
+
+            if (Origin.equals(""))
+            {
+                Toast.makeText(mContext, "Please Enter Starting Location", Toast.LENGTH_SHORT).show();
+            }
+            else if (Destination.equals(""))
+            {
+                Toast.makeText(mContext, "Please Enter Your Destination", Toast.LENGTH_SHORT).show();
+            }
+            else {
+
+                geoList.clear();
+                flag = 0;
+                getLongLat(Origin);
+                getLongLat(Destination);
+
+            }
+        });
 
         return view;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        SendHereApiRequest();
-    }
 
     private void SendHereApiRequest() {
-        String origin = null;
+        String origin= null ;
         String destination = null;
         for ( int i= 0 ; i< geoList.size(); i++){
-
             if( i == 0 )
             {
                 origin = geoList.get(i);
+                origin = origin.replaceAll("\\s", "");
             }
             else if (i == 1) {
                 destination = geoList.get(i);
+                destination = destination.replaceAll("\\s", "");
             }
         }
 
-        Toast.makeText(mContext, "origin " + origin, Toast.LENGTH_LONG).show();
-        Toast.makeText(mContext, "Destination " + destination, Toast.LENGTH_LONG).show();
+       String url = "http://www.sampannapathak.com/routes?";
+       String fullUrl = url + "origin="+origin+ "&" +"destination="+destination;
 
-
-       String url = "http://www.sampannapathak.com/routes";
-       // String fullUrl = url + origin + "/" + destination;
+        Toast.makeText(mContext, "Origin" + origin, Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, "Destination" + destination, Toast.LENGTH_SHORT).show();
         RequestQueue queue = Volley.newRequestQueue(mContext);
 
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, fullUrl, null,
                 response -> {
                     try {
                         // Parse the JSON response
                         resultList = new ArrayList<>();
-                        for (int i = 0; i < response.length(); i++) {
-                            JSONObject jsonObject = response.getJSONObject(i);
-                            String result = jsonObject.getString("polyline");
-                            resultList.add(result);
-                            Toast.makeText(mContext, "data " + resultList, Toast.LENGTH_LONG).show();
-                            Results.setText(resultList.toString());
+                        JsonNode responseNode = new ObjectMapper().readTree(String.valueOf(response));
+                        if (responseNode.isArray()) {
+                            ArrayNode arrayNode = (ArrayNode) responseNode;
+                            for (int i = 0; i < arrayNode.size(); i++) {
+                                JsonNode node = arrayNode.get(i);
+                                String polyline = node.get("polyline").asText();
+                                resultList.add(polyline);
+                                Log.d(TAG, polyline);
+                            }
                         }
 
-                        // Use resultList as needed
-                    } catch (JSONException e) {
+                        sendresults(resultList);
+                    } catch (JsonMappingException e) {
+                        e.printStackTrace();
+                    } catch (JsonProcessingException e) {
                         e.printStackTrace();
                     }
                 },
@@ -135,6 +162,7 @@ public class Routes extends Fragment {
 
 
         Toast.makeText(mContext, "data" + resultList, Toast.LENGTH_LONG).show();
+        Log.d(TAG, String.valueOf(resultList));
 
     }
 
@@ -151,18 +179,19 @@ public class Routes extends Fragment {
                     // Get JSON Array called "results" and then get the 0th
                     // complete object as JSON
                     location = response.getJSONArray("results").getJSONObject(0).getJSONObject("geometry").getJSONObject("location");
-                    // Get the value of the attribute whose name is
-                    // "formatted_string"
 
                     if (location.getDouble("lat") != 0 && location.getDouble("lng") != 0) {
                         latLng = new LatLng(location.getDouble("lat"), location.getDouble("lng"));
                         geo = latLng.latitude +","+latLng.longitude;
-                        geoList.add(geo); // Add value of geo to the list
-                        if (geoList.size() == 2) {
+                        geoList.add(geo);
+                        flag = flag + 1;
+                        if (flag== 2) {
                             SendHereApiRequest();
                         }
 
-
+                    }
+                    else {
+                        Toast.makeText(mContext, "Could not fetch the location. Please try again.", Toast.LENGTH_LONG).show();
                     }
 
                 } catch (JSONException e1) {
@@ -179,9 +208,6 @@ public class Routes extends Fragment {
         });
         // add it to the queue
         queue.add(stateReq);
-
-
-
 
     }
 }
