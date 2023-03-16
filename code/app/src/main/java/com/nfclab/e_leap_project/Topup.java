@@ -118,8 +118,7 @@ public class Topup extends Fragment {
                                                             CustomerId = object.getString("id");
                                                             Toast.makeText(mContext,"Client id"+ CustomerId,Toast.LENGTH_SHORT).show();
                                                             getEphericalKey();
-                                                            payButton.setVisibility (View.VISIBLE);
-                                                            progressBar.setVisibility (View.INVISIBLE);
+
                                                         } catch (JSONException e) {
                                                             e.printStackTrace();
 
@@ -161,6 +160,8 @@ public class Topup extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(request);
         paymentSheet = new PaymentSheet(this, this::onPaymentSheetResult);
+
+
 
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -237,6 +238,8 @@ public class Topup extends Fragment {
                         try {
                             JSONObject object = new JSONObject(response);
                             ClientSecret = object.getString("client_secret");
+                            payButton.setVisibility (View.VISIBLE);
+                            progressBar.setVisibility (View.INVISIBLE);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

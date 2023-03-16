@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
     private DocumentReference reference;
     private FirebaseFirestore fstore ;
     private double new_balance;
-    private double Student_fare = 1.0;
-    private double Dublin_Bus_fare = 2.0;
-    private double Bus_Eireann_fare = 1.55;
-    private String AccountResult;
+    private final double Student_fare = 1.0;
+    private final double Dublin_Bus_fare = 2.0;
+    private final double bus_Eireann_fare = 1.55;
+    String AccountResult;
 
 
     BottomNavigationView bottomNavigationView;
@@ -160,10 +160,14 @@ public class MainActivity extends AppCompatActivity {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        if (text.trim().equals("DublinBus101")) {
+
+
+
+        if (text.trim().equals("DublinBus_101")) {
             Toast.makeText(context, "Valid Dublin Bus NFC tag detected", Toast.LENGTH_LONG).show();
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            String userID = user.getUid();
+            user = FirebaseAuth.getInstance().getCurrentUser();
+            String userID;
+            userID = user.getUid();
             reference = fstore.collection("users").document(userID);
             reference.get()
                     .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -171,15 +175,14 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<DocumentSnapshot> task) {
 
                             if (task.getResult().exists()) {
-                                 AccountResult = task.getResult().getString("Account_Type");
-                                if (AccountResult.equals("Student")){
+                                AccountResult = task.getResult().getString("Account_Type");
+                                assert AccountResult != null;
+                                if (AccountResult.equals("Student")) {
                                     Busfare(Student_fare);
 
-                                }
-                                else if (AccountResult.equals("Adult")) {
+                                } else if (AccountResult.equals("Adult")) {
                                     Busfare(Dublin_Bus_fare);
-                                }
-                                else {
+                                } else {
                                     Toast.makeText(context, "Account Error", Toast.LENGTH_LONG).show();
                                 }
                             }
@@ -187,23 +190,34 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                     });
-        }
-        else if(text.trim().equals("BusErien102")) {
-            Toast.makeText(context, "Valid bus eiren NFC tag detected", Toast.LENGTH_LONG).show();
-            if (AccountResult.equals("Student")){
-                Busfare(Student_fare);
+        } else if (text.trim().equals("BusErien102")) {
+            Toast.makeText(context, "Valid  BusErien NFC tag detected", Toast.LENGTH_LONG).show();
+            user = FirebaseAuth.getInstance().getCurrentUser();
+            String userID;
+            userID = user.getUid();
+            reference = fstore.collection("users").document(userID);
+            reference.get()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
 
-            }
-            else if (AccountResult.equals("Adult")) {
-                Busfare(Bus_Eireann_fare);
-            }
-            else {
-                Toast.makeText(context, "Account Error", Toast.LENGTH_LONG).show();
-            }
+                            if (task.getResult().exists()) {
+                                AccountResult = task.getResult().getString("Account_Type");
+                                assert AccountResult != null;
+                                if (AccountResult.equals("Student")) {
+                                    Busfare(Student_fare);
 
+                                } else if (AccountResult.equals("Adult")) {
+                                    Busfare(bus_Eireann_fare);
+                                } else {
+                                    Toast.makeText(context, "Account Error", Toast.LENGTH_LONG).show();
+                                }
+                            }
 
-        }
-        else {
+                        }
+
+                    });
+        } else {
 
             Toast.makeText(context, "Invalid NFC tag detected", Toast.LENGTH_LONG).show();
         }
