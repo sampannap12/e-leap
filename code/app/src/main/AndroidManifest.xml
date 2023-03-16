@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="true" />
@@ -61,18 +64,24 @@
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter"/>
         </activity>
-        <!-- Disable the Auto-InitProvider of the HERE SDK until the InitProvider is removed with release 4.15.0. -->
-        <provider
-            android:name="com.here.sdk.engine.InitProvider"
-            android:authorities="com.here.sdk.engine.InitProvider"
-            android:exported="false"
-            tools:node="remove" />
+        <service
+            android:name="com.here.android.mpa.service.MapService"
+            android:label="@string/app_name"
+            android:process="global.Here.Map.Service.v2"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="com.here.android.mpa.service.MapService" >
+                </action>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.here.sdk.access_key_id" android:value="irT5QiVdDygJwNf_ENt2lg" />
+        <meta-data android:name="com.here.sdk.access_key_secret" android:value="wojiJHNJmqGG4Ic7Lczu9jHKylAxXikds8xkrQh_HobYXqPjprEOCjPcCizcOMuJfOJgtEcMx75K2SOGkYNb6w" />
 
         <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAvJo_gRhEEHdD6guDdjKWK6Q8wmMwt5Ew"/>
-       
 
     </application>
 

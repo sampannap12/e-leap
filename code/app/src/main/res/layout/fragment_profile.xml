@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     android:background="#D9FDDA"
     tools:context=".Profile">
-
+    <com.here.sdk.mapviewlite.MapViewLite
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <Button
         android:id="@+id/pass_reset"
