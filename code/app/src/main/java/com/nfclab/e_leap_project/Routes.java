@@ -4,14 +4,10 @@ import static com.nfclab.e_leap_project.Register.TAG;
 
 import android.content.Context;
 import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.text.method.TextKeyListener;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,14 +31,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.google.android.gms.maps.model.LatLng;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class Routes extends Fragment {
 
@@ -132,19 +125,14 @@ public class Routes extends Fragment {
                 response -> {
                     try {
                         // Parse the JSON response
-                        resultList = new ArrayList<>();
                         JsonNode responseNode = new ObjectMapper().readTree(String.valueOf(response));
                         if (responseNode.isArray()) {
                             ArrayNode arrayNode = (ArrayNode) responseNode;
-                            for (int i = 0; i < arrayNode.size(); i++) {
-                                JsonNode node = arrayNode.get(i);
-                                String polyline = node.get("polyline").asText();
-                                resultList.add(polyline);
-                                Log.d(TAG, polyline);
-                            }
+
+                            sendresults(arrayNode);
                         }
 
-                        sendresults(resultList);
+
                     } catch (JsonMappingException e) {
                         e.printStackTrace();
                     } catch (JsonProcessingException e) {
@@ -158,10 +146,10 @@ public class Routes extends Fragment {
 
         }
 
-    private void sendresults(List<String> resultList) {
+    private void sendresults(ArrayNode resultList) {
 
 
-        Toast.makeText(mContext, "data" + resultList, Toast.LENGTH_LONG).show();
+
         Log.d(TAG, String.valueOf(resultList));
 
     }

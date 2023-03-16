@@ -61,8 +61,14 @@
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter"/>
         </activity>
+        <!-- Disable the Auto-InitProvider of the HERE SDK until the InitProvider is removed with release 4.15.0. -->
+        <provider
+            android:name="com.here.sdk.engine.InitProvider"
+            android:authorities="com.here.sdk.engine.InitProvider"
+            android:exported="false"
+            tools:node="remove" />
 
-            <meta-data
+        <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAvJo_gRhEEHdD6guDdjKWK6Q8wmMwt5Ew"/>
