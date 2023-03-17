@@ -66,29 +66,31 @@ public class Routes extends Fragment {
     private EditText Original_View;
     private EditText Destination_View;
     private List<String> geoList = new ArrayList<>();
-    List<GeoCoordinates> coordinates = new ArrayList<GeoCoordinates>();
-    List<String> polylineList = new ArrayList<>();
-    //List<MapObject> mapObjectList = new ArrayList<MapObject>();
-    List<MapPolyline> mapPolylineList = new ArrayList<MapPolyline>();
-    //List<MapMarker> mapLabeledMarker =
+
     private ArrayList<LatLng> points;
 
     List<MapMarker> mapMarkerList = new ArrayList<MapMarker>();
-    private MapPolyline mapPolyline;
-    private Button routes_button;
-    private MapViewLite mapView;
+
     int flag = 0;
     LatLng latLng;
     Context mContext;
     String Origin;
     String Destination;
     String geo;
-    List<String> resultList;
+
     private LatLng positions;
 
     private MapView mMapView;
     private GoogleMap googleMap;
-    private PolylineOptions polylineOptions=new PolylineOptions();
+
+
+    PolylineOptions polylineOptions1=new PolylineOptions();
+    PolylineOptions polylineOptions2=new PolylineOptions();
+    ArrayList<Polyline> lines = new ArrayList<>();
+    private int counter;
+
+/*    PolylineOptions polylineOptions_final1;
+    PolylineOptions polylineOptions_final2;*/
     public FlexiblePolylineEncoderDecoder m_flexiblePolylineEncoderDecoder = new FlexiblePolylineEncoderDecoder();
 
     public Routes() {
@@ -114,12 +116,13 @@ public class Routes extends Fragment {
         View view = inflater.inflate(R.layout.fragment_routes, container, false);
         Original_View = view.findViewById(R.id.origin);
         Destination_View = view.findViewById(R.id.destination);
-        routes_button = view.findViewById(R.id.route_button);
+        Button routes_button = view.findViewById(R.id.route_button);
         // Get a MapViewLite instance from the layout.
         //mapView = view.findViewById(R.id.map_container);
         //mapView.onCreate(savedInstanceState);
         //loadMapScene();
         //initializeHERESDK();
+
 
         mMapView = (MapView) view.findViewById(R.id.map_container);
 
@@ -142,7 +145,10 @@ public class Routes extends Fragment {
         });
 
 
+
+
         routes_button.setOnClickListener(v -> {
+
             googleMap.clear();
             Origin = Original_View.getText().toString();
             Destination = Destination_View.getText().toString();
@@ -156,11 +162,15 @@ public class Routes extends Fragment {
 
                 geoList.clear();
                 flag = 0;
+
                getLongLat(Origin);
                getLongLat(Destination);
 
+
             }
         });
+
+
 
         return view;
     }
@@ -230,38 +240,56 @@ public class Routes extends Fragment {
                 JSONObject transport = section.getJSONObject("transport");
                 //Toast.makeText(mContext, "transport " + transport, Toast.LENGTH_LONG).show();
                 String flexiblePolyline = section.getString("polyline");
-                polylineList.add(flexiblePolyline);
+
+                LatLng firstpositions = null;
                 List<FlexiblePolylineEncoderDecoder.LatLngZ> flexibleCoordinates = m_flexiblePolylineEncoderDecoder.decode((flexiblePolyline));
                 for (int ii = 0; ii < flexibleCoordinates.size(); ii++) {
                     points = new ArrayList<>();
                     double lat = Double.parseDouble(String.valueOf(flexibleCoordinates.get(ii).lat));
                     double lng = Double.parseDouble(String.valueOf(flexibleCoordinates.get(ii).lng));
                     LatLng positions = new LatLng(lat, lng);
-
                     points.add(positions);
-                    googleMap.addMarker(new MarkerOptions().position(points.get(0)));
+
+                    if (ii == 0) {
+                        firstpositions = new LatLng(lat, lng);
+                    }
+
                     String arrival_place = section.getString("arrival");
                     String depature_place = section.getString("departure");
-                    if (transport.getString("mode").toUpperCase().equals("BUS")) {
-                        polylineOptions.addAll(points);
-                        polylineOptions
-                                .width(5)
-                                .color(R.color.Red);
+                    String transit = section.getString("type");
+
+
+                    if (transport.getString("mode").equalsIgnoreCase("PEDESTRIAN")) {
+
+
+                        polylineOptions2.add(positions);
+                        polylineOptions2
+                                .width(10)
+                                .color(-16711936)
+                                .geodesic(true);
+                      //  Toast.makeText(mContext, "walk ", Toast.LENGTH_LONG).show();
+
+                    } else if (transport.getString("mode").equalsIgnoreCase("Bus")) {
+
+                       polylineOptions1.add(positions);
+                        polylineOptions1
+                                .width(15)
+                                .color(-65536)
+                                .geodesic(true);
+                       // Toast.makeText(mContext, "bus ", Toast.LENGTH_LONG).show();
 
 
                     }
-                    else if (transport.getString("mode").toUpperCase().equals("PEDESTRIAN")) {
-                        polylineOptions.addAll(points);
-                        polylineOptions
-                                .width(5)
-                                .color(R.color.white);
-
-                    }
-
-
 
                 }
-                googleMap.addPolyline(polylineOptions);
+                lines.add(googleMap.addPolyline(polylineOptions2));
+                lines.add(googleMap.addPolyline(polylineOptions1));
+                polylineOptions2 = new PolylineOptions();
+                polylineOptions1 = new PolylineOptions();
+                lines.clear();
+                assert firstpositions != null;
+                googleMap.addMarker(new MarkerOptions().position(firstpositions));
+                googleMap.addMarker(new MarkerOptions().position(points.get(points.size()-1)));
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(points.get(0)).zoom(12).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
