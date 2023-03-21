@@ -87,10 +87,9 @@ public class Routes extends Fragment {
     PolylineOptions polylineOptions1=new PolylineOptions();
     PolylineOptions polylineOptions2=new PolylineOptions();
     ArrayList<Polyline> lines = new ArrayList<>();
-    private int counter;
+    MarkerOptions options = new MarkerOptions();
 
-/*    PolylineOptions polylineOptions_final1;
-    PolylineOptions polylineOptions_final2;*/
+
     public FlexiblePolylineEncoderDecoder m_flexiblePolylineEncoderDecoder = new FlexiblePolylineEncoderDecoder();
 
     public Routes() {
@@ -117,14 +116,11 @@ public class Routes extends Fragment {
         Original_View = view.findViewById(R.id.origin);
         Destination_View = view.findViewById(R.id.destination);
         Button routes_button = view.findViewById(R.id.route_button);
-        // Get a MapViewLite instance from the layout.
-        //mapView = view.findViewById(R.id.map_container);
-        //mapView.onCreate(savedInstanceState);
-        //loadMapScene();
-        //initializeHERESDK();
+
 
 
         mMapView = (MapView) view.findViewById(R.id.map_container);
+
 
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
@@ -138,7 +134,7 @@ public class Routes extends Fragment {
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
                 LatLng dub = new LatLng(53.350140, -6.266155);
-                                // For zooming functionality
+                // For zooming functionality
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(dub).zoom(12).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
@@ -148,7 +144,10 @@ public class Routes extends Fragment {
 
 
         routes_button.setOnClickListener(v -> {
+            polylineOptions1 = new PolylineOptions();
+            polylineOptions2 = new PolylineOptions();
 
+            options = new MarkerOptions();
             googleMap.clear();
             Origin = Original_View.getText().toString();
             Destination = Destination_View.getText().toString();
@@ -163,8 +162,8 @@ public class Routes extends Fragment {
                 geoList.clear();
                 flag = 0;
 
-               getLongLat(Origin);
-               getLongLat(Destination);
+                getLongLat(Origin);
+                getLongLat(Destination);
 
 
             }
@@ -223,7 +222,7 @@ public class Routes extends Fragment {
         JSONArray routes = resultList.getJSONArray("routes");
         Log.d(TAG, String.valueOf(routes));
 
-        for (int j = 0; j < resultList.length(); j++) {
+        for (int j = 0; j <= resultList.length(); j++) {
             JSONObject route = routes.getJSONObject(j);
 
             JSONArray sections = route.getJSONArray("sections");
@@ -237,6 +236,8 @@ public class Routes extends Fragment {
 
                 String id = section.getString("id");
                 // Toast.makeText(mContext, "id " + id, Toast.LENGTH_LONG).show();
+                JSONObject arrival_place = sections.getJSONObject(i).getJSONObject("arrival");
+                JSONObject depature_place = section.getJSONObject("departure");
                 JSONObject transport = section.getJSONObject("transport");
                 //Toast.makeText(mContext, "transport " + transport, Toast.LENGTH_LONG).show();
                 String flexiblePolyline = section.getString("polyline");
@@ -249,49 +250,109 @@ public class Routes extends Fragment {
                     double lng = Double.parseDouble(String.valueOf(flexibleCoordinates.get(ii).lng));
                     LatLng positions = new LatLng(lat, lng);
                     points.add(positions);
-
                     if (ii == 0) {
                         firstpositions = new LatLng(lat, lng);
                     }
 
-                    String arrival_place = section.getString("arrival");
-                    String depature_place = section.getString("departure");
-                    String transit = section.getString("type");
+
+                    if (transport.getString("mode").equalsIgnoreCase("Bus")) {
+
+                        polylineOptions1.add(positions);
+                        polylineOptions1
+                                .width(15)
+                                .color(-65536)
+                                .geodesic(true);
+                        // Toast.makeText(mContext, "bus ", Toast.LENGTH_LONG).show();
+                        try {
+                            options = new MarkerOptions()
+                                    .title(arrival_place.getJSONObject("place").getString("name"))
+                                    .position(positions)
+                                    .snippet("Bus Station");
+
+                        }catch (JSONException e)
+                        {
+                            options = new MarkerOptions()
+                                    .title(depature_place.getJSONObject("place").getString("name"))
+                                    .position(positions)
+                                    .snippet("Bus Station");
+                        }
 
 
-                    if (transport.getString("mode").equalsIgnoreCase("PEDESTRIAN")) {
 
-
+                    }
+                    else if (transport.getString("mode").equalsIgnoreCase("PEDESTRIAN")) {
+                        //String intermediateStop_Name = arrival_place.getJSONObject(i).getJSONObject("place").getString("name");
+                        // Toast.makeText(mContext, "walk "+intermediateStop_Name, Toast.LENGTH_LONG).show();
+                        //mapObjectList.add(mapMarker);
                         polylineOptions2.add(positions);
                         polylineOptions2
                                 .width(10)
                                 .color(-16711936)
                                 .geodesic(true);
-                      //  Toast.makeText(mContext, "walk ", Toast.LENGTH_LONG).show();
+                        try {
+                                options = new MarkerOptions()
+                                        .title(arrival_place.getJSONObject("place").getString("name"))
+                                        .position(positions)
+                                        .snippet("Bus Station. Take the Bus");
 
-                    } else if (transport.getString("mode").equalsIgnoreCase("Bus")) {
 
-                       polylineOptions1.add(positions);
-                        polylineOptions1
-                                .width(15)
-                                .color(-65536)
-                                .geodesic(true);
-                       // Toast.makeText(mContext, "bus ", Toast.LENGTH_LONG).show();
+                        }catch (JSONException e)
+                        {
+                            if ( ii == flexibleCoordinates.size()-1 )
+                            {
+                                options = new MarkerOptions()
+                                        .title("Ending Position")
+                                        .position(positions)
+                                        .snippet("");
+
+                            }
+
+                            else {
+                                options = new MarkerOptions()
+                                        .title(depature_place.getJSONObject("place").getString("name"))
+                                        .position(positions)
+                                        .snippet("Bus Station");
+                            }
+                        }
+
+
 
 
                     }
+                    else{
+                        try {
+                            options = new MarkerOptions()
+                                    .title(arrival_place.getJSONObject("place").getString("name"))
+                                    .position(positions)
+                                    .snippet("");
 
+                        }catch (JSONException e)
+                        {
+                            options = new MarkerOptions()
+                                    .title("End Position")
+                                    .position(positions)
+                                    .snippet("");
+                        }
+                    }
                 }
-                lines.add(googleMap.addPolyline(polylineOptions2));
                 lines.add(googleMap.addPolyline(polylineOptions1));
-                polylineOptions2 = new PolylineOptions();
-                polylineOptions1 = new PolylineOptions();
-                lines.clear();
+                lines.add(googleMap.addPolyline(polylineOptions2));
+
+
+
                 assert firstpositions != null;
+
+                googleMap.addMarker(options);
                 googleMap.addMarker(new MarkerOptions().position(firstpositions));
                 googleMap.addMarker(new MarkerOptions().position(points.get(points.size()-1)));
+
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(points.get(0)).zoom(12).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                polylineOptions2 = new PolylineOptions();
+                polylineOptions1 = new PolylineOptions();
+                options = new MarkerOptions();
+                lines.clear();
+
 
             /*    if (transport.getString("mode").toUpperCase().equals("BUS")) {
                     //YELLOW
@@ -355,7 +416,7 @@ public class Routes extends Fragment {
 
 
                *//*
-*/
+                 */
 /* if (transport.getString("mode").toUpperCase().equals("BUS")) {
                     //YELLOW
                     mapPolylineStyle.setColor(0xFF0000A0, PixelFormat.RGBA_8888);
@@ -369,15 +430,15 @@ public class Routes extends Fragment {
                         //mapObjectList.add(mapMarker);
                         mapLabeledMarker = new MapMarker(new GeoCoordinates(Double.parseDouble(intermediateStop_Lat), Double.parseDouble(intermediateStop_Lng)));
                        *//*
-*/
-/**//*
-*/
+                 */
+                /**//*
+                 */
 /* mapLabeledMarker.setCoordinate(new GeoCoordinates(Double.parseDouble(intermediateStop_Lat), Double.parseDouble(intermediateStop_Lng)));
                         mapLabeledMarker.setIcon(IconCategory.BUS_STATION);
                         mapLabeledMarker.setTag(intermediateStops.getJSONObject(iii));*//*
-*/
-/**//*
-*/
+                 */
+                /**//*
+                 */
 /*
 //                                        mapLabeledMarker.setLabelText(intermediateStop_Name, intermediateStop_Name);
 
@@ -468,6 +529,7 @@ public class Routes extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         mMapView.onDestroy();
+
     }
     @Override
     public void onLowMemory() {
@@ -475,4 +537,5 @@ public class Routes extends Fragment {
         mMapView.onLowMemory();
     }
 }
+
 
