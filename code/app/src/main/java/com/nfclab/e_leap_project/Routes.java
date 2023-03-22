@@ -3,55 +3,41 @@ package com.nfclab.e_leap_project;
 import static com.nfclab.e_leap_project.Register.TAG;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.google.type.Color;
-import com.here.sdk.core.GeoCoordinates;
-import com.here.sdk.core.GeoPolyline;
-import com.here.sdk.core.errors.InstantiationErrorException;
-import com.here.sdk.mapviewlite.MapImage;
-import com.here.sdk.mapviewlite.MapImageFactory;
-import com.here.sdk.mapviewlite.MapMarker;
-import com.here.sdk.mapviewlite.MapPolyline;
-import com.here.sdk.mapviewlite.MapPolylineStyle;
-import com.here.sdk.mapviewlite.MapScene;
-import com.here.sdk.mapviewlite.MapStyle;
-import com.here.sdk.mapviewlite.MapViewLite;
-import com.here.sdk.mapviewlite.PixelFormat;
+import com.stripe.android.PaymentConfiguration;
 
 
 import org.json.JSONArray;
@@ -59,38 +45,31 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Routes extends Fragment {
 
-    private EditText Original_View;
-    private EditText Destination_View;
-    private List<String> geoList = new ArrayList<>();
-
-    private ArrayList<LatLng> points;
-
-    List<MapMarker> mapMarkerList = new ArrayList<MapMarker>();
-
+    public FlexiblePolylineEncoderDecoder m_flexiblePolylineEncoderDecoder = new FlexiblePolylineEncoderDecoder();
     int flag = 0;
     LatLng latLng;
     Context mContext;
     String Origin;
     String Destination;
     String geo;
-
-    private LatLng positions;
-
-    private MapView mMapView;
-    private GoogleMap googleMap;
-
-
     PolylineOptions polylineOptions1=new PolylineOptions();
     PolylineOptions polylineOptions2=new PolylineOptions();
     ArrayList<Polyline> lines = new ArrayList<>();
     MarkerOptions options = new MarkerOptions();
+    private EditText Original_View;
+    private EditText Destination_View;
+    private List<String> geoList = new ArrayList<>();
+    private ArrayList<LatLng> points;
 
-
-    public FlexiblePolylineEncoderDecoder m_flexiblePolylineEncoderDecoder = new FlexiblePolylineEncoderDecoder();
+    private MapView mMapView;
+    private GoogleMap googleMap;
+    StringRequest request;
 
     public Routes() {
         // Empty constructor required
@@ -116,12 +95,7 @@ public class Routes extends Fragment {
         Original_View = view.findViewById(R.id.origin);
         Destination_View = view.findViewById(R.id.destination);
         Button routes_button = view.findViewById(R.id.route_button);
-
-
-
-        mMapView = (MapView) view.findViewById(R.id.map_container);
-
-
+        mMapView = view.findViewById(R.id.map_container);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
         try {
@@ -139,10 +113,6 @@ public class Routes extends Fragment {
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
         });
-
-
-
-
         routes_button.setOnClickListener(v -> {
             polylineOptions1 = new PolylineOptions();
             polylineOptions2 = new PolylineOptions();
@@ -169,14 +139,8 @@ public class Routes extends Fragment {
             }
         });
 
-
-
         return view;
     }
-
-
-
-
     private void SendHereApiRequest() {
         String origin = null;
         String destination = null;
@@ -203,26 +167,21 @@ public class Routes extends Fragment {
 
                     try {
                         sendresults(response);
-                    } catch (JSONException | InstantiationErrorException e) {
+                    } catch (JSONException  e) {
                         e.printStackTrace();
                     }
 
                 },
                 error -> Log.e("Volley Error", error.toString()));
-
         queue.add(request);
-
 
     }
 
-
-    private void sendresults(JSONObject resultList) throws JSONException, InstantiationErrorException {
-
-
+    private void sendresults(JSONObject resultList) throws JSONException{
         JSONArray routes = resultList.getJSONArray("routes");
         Log.d(TAG, String.valueOf(routes));
 
-        for (int j = 0; j <= resultList.length(); j++) {
+        for (int j = 0; j <resultList.length(); j++) {
             JSONObject route = routes.getJSONObject(j);
 
             JSONArray sections = route.getJSONArray("sections");
@@ -233,15 +192,11 @@ public class Routes extends Fragment {
             for (int i = 0; i < sections.length(); i++) {
 
                 JSONObject section = sections.getJSONObject(i);
-
-                String id = section.getString("id");
-                // Toast.makeText(mContext, "id " + id, Toast.LENGTH_LONG).show();
                 JSONObject arrival_place = sections.getJSONObject(i).getJSONObject("arrival");
                 JSONObject depature_place = section.getJSONObject("departure");
                 JSONObject transport = section.getJSONObject("transport");
-                //Toast.makeText(mContext, "transport " + transport, Toast.LENGTH_LONG).show();
-                String flexiblePolyline = section.getString("polyline");
 
+                String flexiblePolyline = section.getString("polyline");
                 LatLng firstpositions = null;
                 List<FlexiblePolylineEncoderDecoder.LatLngZ> flexibleCoordinates = m_flexiblePolylineEncoderDecoder.decode((flexiblePolyline));
                 for (int ii = 0; ii < flexibleCoordinates.size(); ii++) {
@@ -269,6 +224,7 @@ public class Routes extends Fragment {
                                     .position(positions)
                                     .snippet("Bus Station");
 
+
                         }catch (JSONException e)
                         {
                             options = new MarkerOptions()
@@ -281,196 +237,111 @@ public class Routes extends Fragment {
 
                     }
                     else if (transport.getString("mode").equalsIgnoreCase("PEDESTRIAN")) {
-                        //String intermediateStop_Name = arrival_place.getJSONObject(i).getJSONObject("place").getString("name");
-                        // Toast.makeText(mContext, "walk "+intermediateStop_Name, Toast.LENGTH_LONG).show();
-                        //mapObjectList.add(mapMarker);
+
                         polylineOptions2.add(positions);
                         polylineOptions2
                                 .width(10)
                                 .color(-16711936)
                                 .geodesic(true);
                         try {
-                                options = new MarkerOptions()
-                                        .title(arrival_place.getJSONObject("place").getString("name"))
-                                        .position(positions)
-                                        .snippet("Bus Station. Take the Bus");
+                            options = new MarkerOptions()
+                                    .position(positions)
+                                    .snippet(" Walk towards"+depature_place.getJSONObject("place").getString("name")+ "Bus Station");
 
 
                         }catch (JSONException e)
                         {
-                            if ( ii == flexibleCoordinates.size()-1 )
-                            {
-                                options = new MarkerOptions()
-                                        .title("Ending Position")
-                                        .position(positions)
-                                        .snippet("");
 
-                            }
-
-                            else {
-                                options = new MarkerOptions()
-                                        .title(depature_place.getJSONObject("place").getString("name"))
-                                        .position(positions)
-                                        .snippet("Bus Station");
-                            }
-                        }
-
-
-
-
-                    }
-                    else{
-                        try {
                             options = new MarkerOptions()
                                     .title(arrival_place.getJSONObject("place").getString("name"))
                                     .position(positions)
-                                    .snippet("");
+                                    .snippet("Bus Station Take the Bus");
 
-                        }catch (JSONException e)
-                        {
-                            options = new MarkerOptions()
-                                    .title("End Position")
-                                    .position(positions)
-                                    .snippet("");
                         }
+
                     }
+
                 }
-                lines.add(googleMap.addPolyline(polylineOptions1));
                 lines.add(googleMap.addPolyline(polylineOptions2));
-
-
-
+                lines.add(googleMap.addPolyline(polylineOptions1));
                 assert firstpositions != null;
 
-                googleMap.addMarker(options);
                 googleMap.addMarker(new MarkerOptions().position(firstpositions));
                 googleMap.addMarker(new MarkerOptions().position(points.get(points.size()-1)));
+                googleMap.addMarker(options);
+
 
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(points.get(0)).zoom(12).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 polylineOptions2 = new PolylineOptions();
                 polylineOptions1 = new PolylineOptions();
-                options = new MarkerOptions();
+
                 lines.clear();
-
-
-            /*    if (transport.getString("mode").toUpperCase().equals("BUS")) {
-                    //YELLOW
-                    mapPolylineStyle.setColor(0xFF0000A0, PixelFormat.RGBA_8888);
-
-
-                    JSONArray intermediateStops = section.getJSONArray("intermediateStops");
-                    for (int iii = 0; iii < intermediateStops.length(); iii++) {
-                        String intermediateStop_Lat = intermediateStops.getJSONObject(iii).getJSONObject("departure").getJSONObject("place").getJSONObject("location").getString("lat");
-                        String intermediateStop_Lng = intermediateStops.getJSONObject(iii).getJSONObject("departure").getJSONObject("place").getJSONObject("location").getString("lng");
-                        String intermediateStop_Name = intermediateStops.getJSONObject(iii).getJSONObject("departure").getJSONObject("place").getString("name");
-                        //mapObjectList.add(mapMarker);
-                        mapLabeledMarker = new MapMarker(new GeoCoordinates(Double.parseDouble(intermediateStop_Lat), Double.parseDouble(intermediateStop_Lng)));
-                        mapLabeledMarker.setCoordinate(new GeoCoordinates(Double.parseDouble(intermediateStop_Lat), Double.parseDouble(intermediateStop_Lng)));
-                        mapLabeledMarker.setIcon(IconCategory.BUS_STATION);
-                        mapLabeledMarker.setTag(intermediateStops.getJSONObject(iii));
-                        mapLabeledMarker.setLabelText(intermediateStop_Name, intermediateStop_Name);
-                        mapLabeledMarkerList.add(mapLabeledMarker);
-                    }
-                } else if (transport.getString("mode").toUpperCase().equals("PEDESTRIAN")) {
-                    //BLUE
-                    mapPolylineStyle.setColor(0xFF0000A0, PixelFormat.RGBA_8888);
-                    mapPolylineStyle.setWidthInPixels(5);
-                    mapPolylineList.add(mapPolyline);
-                }
-
-                mapView.getMapScene().addMapPolyline(mapPolyline);
-
-                mapView.getMapScene().addMapMarker(mapLabeledMarker);
-            }
-*/              //googleMap.addPolyline(polylineOptions);
-
-
-
-
-
-
-
-/* PolylineOptions polylineOptions = new PolylineOptions();
-
-// Create polyline options with existing LatLng ArrayList
-                polylineOptions.addAll(coordList);
-                polylineOptions
-                        .width(5)
-                        .color(Color.RED);
-
-// Adding multiple points in map using polyline and arraylist
-                gMap.addPolyline(polylineOptions);
-
-
-
-                GeoPolyline geoPolyline;
-
-                geoPolyline = new GeoPolyline(coordinates);
-
-                MapPolylineStyle mapPolylineStyle = new MapPolylineStyle();
-                mapPolylineStyle.setWidthInPixels(5);
-                mapPolylineStyle.setColor(0xFF0000A0, PixelFormat.RGBA_8888);
-                mapPolyline = new MapPolyline(geoPolyline, mapPolylineStyle);
-
-
-
-               *//*
-                 */
-/* if (transport.getString("mode").toUpperCase().equals("BUS")) {
-                    //YELLOW
-                    mapPolylineStyle.setColor(0xFF0000A0, PixelFormat.RGBA_8888);
-
-
-                    JSONArray intermediateStops = section.getJSONArray("intermediateStops");
-                    for (int iii = 0; iii < intermediateStops.length(); iii++) {
-                        String intermediateStop_Lat = intermediateStops.getJSONObject(iii).getJSONObject("departure").getJSONObject("place").getJSONObject("location").getString("lat");
-                        String intermediateStop_Lng = intermediateStops.getJSONObject(iii).getJSONObject("departure").getJSONObject("place").getJSONObject("location").getString("lng");
-                        String intermediateStop_Name = intermediateStops.getJSONObject(iii).getJSONObject("departure").getJSONObject("place").getString("name");
-                        //mapObjectList.add(mapMarker);
-                        mapLabeledMarker = new MapMarker(new GeoCoordinates(Double.parseDouble(intermediateStop_Lat), Double.parseDouble(intermediateStop_Lng)));
-                       *//*
-                 */
-                /**//*
-                 */
-/* mapLabeledMarker.setCoordinate(new GeoCoordinates(Double.parseDouble(intermediateStop_Lat), Double.parseDouble(intermediateStop_Lng)));
-                        mapLabeledMarker.setIcon(IconCategory.BUS_STATION);
-                        mapLabeledMarker.setTag(intermediateStops.getJSONObject(iii));*//*
-                 */
-                /**//*
-                 */
-/*
-//                                        mapLabeledMarker.setLabelText(intermediateStop_Name, intermediateStop_Name);
-
-                        //mapLabeledMarkerList.add(mapLabeledMarker);
-                    }
-                } else if (transport.getString("mode").toUpperCase().equals("PEDESTRIAN")) {
-                    //BLUE
-                    mapPolylineStyle.setColor(0xFF0000A0, PixelFormat.RGBA_8888);
-                    mapPolylineStyle.setWidthInPixels(5);
-
-                    mapPolylineList.add(mapPolyline);
-                }
-
-//                            m_map.addMapObjects(mapObjectList);
-                mapView.getMapScene().addMapPolyline(mapPolyline);
-
-                mapView.getMapScene().addMapMarker(mapLabeledMarker);
-*/
-
-
+                options=null;
 
             }
-
-
         }
-
-       /*// mapView.getMapScene().addMapMarker(mapLabeledMarker);
-        mapView.getMapScene().addMapPolyline(mapPolyline);
-        Log.d("Error.Response", coordinates.toString());*/
-
     }
     private void getLongLat(String address) {
+
+        request = new StringRequest(Request.Method.GET, "http://www.sampannapathak.com/",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject object = new JSONObject(response);
+                            String SecreteKey = object.getString("google_map_accessKeySecret");
+                            String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + Uri.encode(address) + "&sensor=true&key="+SecreteKey;
+                            RequestQueue queue = Volley.newRequestQueue(mContext);
+                            JsonObjectRequest stateReq = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    JSONObject location;
+                                    try {
+                                        // Get JSON Array called "results" and then get the 0th
+                                        // complete object as JSON
+                                        location = response.getJSONArray("results").getJSONObject(0).getJSONObject("geometry").getJSONObject("location");
+
+                                        if (location.getDouble("lat") != 0 && location.getDouble("lng") != 0) {
+                                            latLng = new LatLng(location.getDouble("lat"), location.getDouble("lng"));
+                                            geo = latLng.latitude +","+latLng.longitude;
+                                            geoList.add(geo);
+                                            flag = flag + 1;
+                                            if (flag== 2) {
+                                                SendHereApiRequest();
+                                            }
+
+                                        }
+
+                                    } catch (JSONException e1) {
+                                        Toast.makeText(mContext, "Could not fetch the location. Please try again.", Toast.LENGTH_LONG).show();
+                                        e1.printStackTrace();
+                                    }
+
+                                }
+                            }, new Response.ErrorListener() {
+
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    Log.d("Error.Response", error.toString());
+                                }
+                            });
+                            // add it to the queue
+                            queue.add(stateReq);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(mContext, error.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+        requestQueue.add(request);
 
         String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + Uri.encode(address) + "&sensor=true&key=AIzaSyAvJo_gRhEEHdD6guDdjKWK6Q8wmMwt5Ew";
         RequestQueue queue = Volley.newRequestQueue(this.mContext);
@@ -491,9 +362,6 @@ public class Routes extends Fragment {
                         if (flag== 2) {
                             SendHereApiRequest();
                         }
-
-                    }
-                    else {
 
                     }
 

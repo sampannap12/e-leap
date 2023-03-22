@@ -1,5 +1,7 @@
 package com.nfclab.e_leap_project;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -411,6 +413,7 @@ public class FlexiblePolylineEncoderDecoder {
             this.z   = thirdDimension;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return "LatLngZ [lat=" + lat + ", lng=" + lng + ", z=" + z + "]";
@@ -423,9 +426,7 @@ public class FlexiblePolylineEncoderDecoder {
             }
             if (anObject instanceof LatLngZ) {
                 LatLngZ passed = (LatLngZ)anObject;
-                if(passed.lat == this.lat && passed.lng == this.lng && passed.z == this.z) {
-                    return true;
-                }
+                return passed.lat == this.lat && passed.lng == this.lng && passed.z == this.z;
             }
             return false;
         }
