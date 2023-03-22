@@ -343,44 +343,6 @@ public class Routes extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(request);
 
-        String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + Uri.encode(address) + "&sensor=true&key=AIzaSyAvJo_gRhEEHdD6guDdjKWK6Q8wmMwt5Ew";
-        RequestQueue queue = Volley.newRequestQueue(this.mContext);
-        JsonObjectRequest stateReq = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                JSONObject location;
-                try {
-                    // Get JSON Array called "results" and then get the 0th
-                    // complete object as JSON
-                    location = response.getJSONArray("results").getJSONObject(0).getJSONObject("geometry").getJSONObject("location");
-
-                    if (location.getDouble("lat") != 0 && location.getDouble("lng") != 0) {
-                        latLng = new LatLng(location.getDouble("lat"), location.getDouble("lng"));
-                        geo = latLng.latitude +","+latLng.longitude;
-                        geoList.add(geo);
-                        flag = flag + 1;
-                        if (flag== 2) {
-                            SendHereApiRequest();
-                        }
-
-                    }
-
-                } catch (JSONException e1) {
-                    Toast.makeText(mContext, "Could not fetch the location. Please try again.", Toast.LENGTH_LONG).show();
-                    e1.printStackTrace();
-                }
-
-            }
-        }, new Response.ErrorListener() {
-
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("Error.Response", error.toString());
-            }
-        });
-        // add it to the queue
-        queue.add(stateReq);
-
     }
     @Override
     public void onResume() {

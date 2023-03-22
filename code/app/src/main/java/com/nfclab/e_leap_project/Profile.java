@@ -4,7 +4,9 @@ import static android.os.SystemClock.sleep;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -34,6 +38,7 @@ public class Profile extends Fragment {
     FirebaseFirestore fstore = FirebaseFirestore.getInstance();
     DocumentReference documentReference;
     Button password_reset;
+    FirebaseAuth fAuth;
 
     private Context mContext;
 
@@ -58,10 +63,10 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        etname = view.findViewById(R.id.edit_full_name);
-        etemail = view.findViewById(R.id.edit_email);
-        password_reset = view.findViewById(R.id.pass_reset);
+        View view = (View) inflater.inflate(R.layout.fragment_profile, container, false);
+        etname = (EditText) view.findViewById(R.id.edit_full_name);
+        etemail = (EditText) view.findViewById(R.id.edit_email);
+        password_reset = (Button) view.findViewById(R.id.pass_reset);
 
         button = view.findViewById(R.id.save);
         button.setOnClickListener(v -> {
@@ -87,6 +92,7 @@ public class Profile extends Fragment {
                         if (task.getResult().exists()) {
 
                             String nameResult = task.getResult().getString("Full_Name");
+                            String AccountResult = task.getResult().getString("Account_Type");
 
                             String emailResult = task.getResult().getString("Email");
                             etname.setText(nameResult);
@@ -163,6 +169,7 @@ public class Profile extends Fragment {
     private void passwordReset() {
 
         FirebaseUser users = FirebaseAuth.getInstance().getCurrentUser();
+        String email = users.getEmail();
 
         if(users.isEmailVerified()) {
             FirebaseAuth.getInstance().sendPasswordResetEmail(users.getEmail()).addOnCompleteListener(new OnCompleteListener<Void>() {
