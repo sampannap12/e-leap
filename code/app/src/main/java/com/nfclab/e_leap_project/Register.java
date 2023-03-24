@@ -79,22 +79,22 @@ public class Register extends AppCompatActivity {
             }
 
             if(TextUtils.isEmpty(email)){
-                mEmail.setError("Email is Required");
+                mEmail.setError("Email is Required"); //checks email is added
                 return;
             }
             if(TextUtils.isEmpty(password)){
-                mEmail.setError("Password is Required");
+                mEmail.setError("Password is Required"); //checks password is added
                 return;
             }
 
 
             if(TextUtils.isEmpty(fullname)){
-                mFullName.setError("Full Name is Required");
+                mFullName.setError("Full Name is Required"); //checks password is added
                 return;
             }
             if(password.length() <6)
             {
-                mPassword.setError("Password must be more than 5 characters");
+                mPassword.setError("Password must be more than 5 characters"); //checks if password length is less than 6
                 return;
             }
             // Register the user
@@ -104,14 +104,13 @@ public class Register extends AppCompatActivity {
                     // Checking the response from the firebase
                     //if successful
                     if (task.isSuccessful()){
+
                         Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
-                        userID = fAuth.getCurrentUser().getUid();
-
-
-
-
+                        userID = fAuth.getCurrentUser().getUid(); // get the user id
+                        //get the 'users' collection where the user info is stored
                         DocumentReference documentReference = fstore.collection("users").document(userID);
                         Map<String, Object> user = new HashMap<>();
+                        //update the users information
                         user.put("Full_Name",fullname );
                         user.put("Email", email);
                         user.put("Account_Type", AccountType);
@@ -120,8 +119,9 @@ public class Register extends AppCompatActivity {
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
+                                //Successful
                                 Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
-
+                                //get the current user and sent email verification
                                 FirebaseUser user = fAuth.getCurrentUser();
                                 user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
@@ -141,12 +141,9 @@ public class Register extends AppCompatActivity {
                     else
                     {
                         Toast.makeText(Register.this, "Error." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
                     }
                 }
-            }) ;
-
-
+            });
         });
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {

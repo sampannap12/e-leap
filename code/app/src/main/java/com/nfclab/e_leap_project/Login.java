@@ -56,10 +56,11 @@ public class Login extends AppCompatActivity {
             }
 
             //authenticating the user
+            // sending the type password and email to the fAuth = FirebaseAuth.getInstance();
             fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
+                    if(task.isSuccessful()){ //when user authentication is successfully
                         FirebaseUser user = fAuth.getCurrentUser();
                         if(user.isEmailVerified()){
                         Toast.makeText(Login.this, "User Signed In.", Toast.LENGTH_SHORT).show();
