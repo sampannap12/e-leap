@@ -119,7 +119,7 @@ public class Profile extends Fragment {
         fstore.runTransaction(new Transaction.Function<Void>() {
                     @Override
                     public Void apply(Transaction transaction) throws FirebaseFirestoreException {
-
+                        //updating the information
                         transaction.update(sDoc, "Full_Name", name);
                         transaction.update(sDoc, "Email", email);
 
@@ -140,12 +140,13 @@ public class Profile extends Fragment {
 
                     }
                 });
-
+        //making sure that the user is not null
         assert user != null;
         user.updateEmail(email).addOnCompleteListener(task1 -> {
             if (task1.isSuccessful()) {
                 sleep(150);
                 Toast.makeText(mContext, "Email  updated ", Toast.LENGTH_SHORT).show();
+                //Sending verification email to the users new email addresss
                 user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
@@ -167,11 +168,11 @@ public class Profile extends Fragment {
     }
 
     private void passwordReset() {
-
         FirebaseUser users = FirebaseAuth.getInstance().getCurrentUser();
         String email = users.getEmail();
-
+        //checking if the user email is verified or not before sending the password reset email
         if(users.isEmailVerified()) {
+            //sending password reset email to the users email address.
             FirebaseAuth.getInstance().sendPasswordResetEmail(users.getEmail()).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -185,6 +186,7 @@ public class Profile extends Fragment {
             });
         }
         else{
+            //if not sending the email verification email to the users email
             Toast.makeText(mContext, "Please Verify Your Email Address First", Toast.LENGTH_SHORT).show();
             users.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override

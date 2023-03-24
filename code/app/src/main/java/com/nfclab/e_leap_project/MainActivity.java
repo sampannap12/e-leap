@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         context = this;
-
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (nfcAdapter == null) {
             Toast.makeText(context, "NFC is not supported", Toast.LENGTH_LONG).show();
@@ -235,15 +234,11 @@ public class MainActivity extends AppCompatActivity {
                             if (old_balance>2) {
                                 Toast.makeText(context, "Old Balance" + balanceResult, Toast.LENGTH_SHORT).show();
                                 new_balance = old_balance - v;
-
-
                                 final DocumentReference sDoc = fstore.collection("users").document(userID);
                                 fstore.runTransaction(new Transaction.Function<Void>() {
                                             @Override
                                             public Void apply(Transaction transaction) throws FirebaseFirestoreException {
-
                                                 transaction.update(sDoc, "Balance", new_balance);
-
                                                 // Success
                                                 return null;
                                             }
