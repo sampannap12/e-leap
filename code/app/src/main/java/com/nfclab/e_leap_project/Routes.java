@@ -166,7 +166,6 @@ public class Routes extends Fragment {
                     } catch (JSONException  e) {
                         e.printStackTrace();
                     }
-
                 },
                 error -> Log.e("Volley Error", error.toString()));
         queue.add(request);
