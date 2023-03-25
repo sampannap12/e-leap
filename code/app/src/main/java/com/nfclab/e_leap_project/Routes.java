@@ -153,14 +153,10 @@ public class Routes extends Fragment {
                 destination = destination.replaceAll("\\s", "");
             }
         }
-
+        //calling the backend server with origin and destination as parameter
         String url = "http://www.sampannapathak.com/routes?";
         String fullUrl = url + "origin=" + origin + "&" + "destination=" + destination;
-
-        Toast.makeText(mContext, "Origin" + origin, Toast.LENGTH_SHORT).show();
-        Toast.makeText(mContext, "Destination" + destination, Toast.LENGTH_SHORT).show();
         RequestQueue queue = Volley.newRequestQueue(mContext);
-
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, fullUrl, null,
                 response -> {
                     // Parse the JSON response
@@ -179,15 +175,12 @@ public class Routes extends Fragment {
 
     private void sendresults(JSONObject resultList) throws JSONException{
         JSONArray routes = resultList.getJSONArray("routes");
-        Log.d(TAG, String.valueOf(routes));
-
+        //Log.d(TAG, String.valueOf(routes));
+        //iterating through the resultlist
         for (int j = 0; j <resultList.length(); j++) {
             JSONObject route = routes.getJSONObject(j);
-
             JSONArray sections = route.getJSONArray("sections");
-
             Log.d(TAG, String.valueOf(sections));
-
 
             for (int i = 0; i < sections.length(); i++) {
 
@@ -198,6 +191,7 @@ public class Routes extends Fragment {
 
                 String flexiblePolyline = section.getString("polyline");
                 LatLng firstpositions = null;
+                //calling the flexiblePolylineEncoderDecoder class to Decode the polyline into a series of Longitude and Latitude List
                 List<FlexiblePolylineEncoderDecoder.LatLngZ> flexibleCoordinates = m_flexiblePolylineEncoderDecoder.decode((flexiblePolyline));
                 for (int ii = 0; ii < flexibleCoordinates.size(); ii++) {
                     points = new ArrayList<>();
@@ -211,7 +205,6 @@ public class Routes extends Fragment {
 
 
                     if (transport.getString("mode").equalsIgnoreCase("Bus")) {
-
                         polylineOptions1.add(positions);
                         polylineOptions1
                                 .width(15)
@@ -222,22 +215,18 @@ public class Routes extends Fragment {
                             options = new MarkerOptions()
                                     .title(arrival_place.getJSONObject("place").getString("name"))
                                     .position(positions)
-                                    .snippet("Bus Station");
-
+                                    .snippet("Bus Station " );
 
                         }catch (JSONException e)
                         {
                             options = new MarkerOptions()
                                     .title(depature_place.getJSONObject("place").getString("name"))
                                     .position(positions)
-                                    .snippet("Bus Station");
+                                    .snippet("Bus Station "+ transport.getString("shortName") );
                         }
-
-
 
                     }
                     else if (transport.getString("mode").equalsIgnoreCase("PEDESTRIAN")) {
-
                         polylineOptions2.add(positions);
                         polylineOptions2
                                 .width(10)
@@ -248,15 +237,13 @@ public class Routes extends Fragment {
                                     .position(positions)
                                     .snippet(" Walk towards"+depature_place.getJSONObject("place").getString("name")+ "Bus Station");
 
-
                         }catch (JSONException e)
                         {
 
                             options = new MarkerOptions()
                                     .title(arrival_place.getJSONObject("place").getString("name"))
                                     .position(positions)
-                                    .snippet("Bus Station Take the Bus");
-
+                                    .snippet("Bus Station Take the Bus" );
                         }
 
                     }
@@ -305,14 +292,13 @@ public class Routes extends Fragment {
                                         if (location.getDouble("lat") != 0 && location.getDouble("lng") != 0) {
                                             latLng = new LatLng(location.getDouble("lat"), location.getDouble("lng"));
                                             geo = latLng.latitude +","+latLng.longitude;
-                                            geoList.add(geo);
+                                            geoList.add(geo); // adding the longitude and litutude in a list show that in can be accessed by the other method
                                             flag = flag + 1;
                                             if (flag== 2) {
+                                                //Calls after getting th Long and Lat of both Origin and destination
                                                 SendHereApiRequest();
                                             }
-
                                         }
-
                                     } catch (JSONException e1) {
                                         Toast.makeText(mContext, "Could not fetch the location. Please try again.", Toast.LENGTH_LONG).show();
                                         e1.printStackTrace();

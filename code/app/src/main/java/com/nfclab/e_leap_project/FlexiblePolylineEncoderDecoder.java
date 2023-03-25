@@ -9,23 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 
-/**
- * The polyline encoding is a lossy compressed representation of a list of coordinate pairs or coordinate triples.
- * It achieves that by:
- * <p><ol>
- * <li>Reducing the decimal digits of each value.
- * <li>Encoding only the offset from the previous point.
- * <li>Using variable length for each coordinate delta.
- * <li>Using 64 URL-safe characters to display the result.
- * </ol><p>
- *
- * The advantage of this encoding are the following:
- * <p><ul>
- * <li> Output string is composed by only URL-safe characters
- * <li> Floating point precision is configurable
- * <li> It allows to encode a 3rd dimension with a given precision, which may be a level, altitude, elevation or some other custom value
- * </ul><p>
- */
+
 
 public class FlexiblePolylineEncoderDecoder {
 
@@ -44,31 +28,7 @@ public class FlexiblePolylineEncoderDecoder {
             22, 23, 24, 25, -1, -1, -1, -1, 63, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
             36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51
     };
-    /**
-     * Encode the list of coordinate triples.<BR><BR>
-     * The third dimension value will be eligible for encoding only when ThirdDimension is other than ABSENT.
-     * This is lossy compression based on precision accuracy.
-     *
-     * @param coordinates {@link List} of coordinate triples that to be encoded.
-     * @param precision   Floating point precision of the coordinate to be encoded.
-     * @param thirdDimension {@link ThirdDimension} which may be a level, altitude, elevation or some other custom value
-     * @param thirdDimPrecision Floating point precision for thirdDimension value
-     * @return URL-safe encoded {@link String} for the given coordinates.
-     */
-    public static String encode(List<LatLngZ> coordinates, int precision, ThirdDimension thirdDimension, int thirdDimPrecision) {
-        if (coordinates == null || coordinates.size() == 0) {
-            throw new IllegalArgumentException("Invalid coordinates!");
-        }
-        if (thirdDimension == null) {
-            throw new IllegalArgumentException("Invalid thirdDimension");
-        }
-        Encoder enc = new Encoder(precision, thirdDimension, thirdDimPrecision);
-        Iterator<LatLngZ> iter = coordinates.iterator();
-        while (iter.hasNext()) {
-            enc.add(iter.next());
-        }
-        return enc.getEncoded();
-    }
+
 
     public final List<LatLngZ> decode(String encoded) {
 
