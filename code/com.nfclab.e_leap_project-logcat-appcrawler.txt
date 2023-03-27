@@ -1,0 +1,1301 @@
+--------- beginning of system
+03-27 20:05:54.937 D/PowerKeeper.AppStandby( 6431): enable standby chain
+03-27 20:05:56.146 I/ActivityManager( 1565): Force stopping com.nfclab.e_leap_project appid=10565 user=0: from process:19367
+03-27 20:05:56.148 I/AutoStartManagerService( 1565): MIUILOG- Reject RestartService packageName :com.nfclab.e_leap_project uid : 10565
+03-27 20:05:56.156 I/ActivityManager( 1565): Force stopping com.nfclab.e_leap_project appid=10565 user=11: from process:19367
+03-27 20:05:56.157 I/AutoStartManagerService( 1565): MIUILOG- Reject RestartService packageName :com.nfclab.e_leap_project uid : 1110565
+--------- beginning of main
+03-27 20:05:56.167 D/RegisteredServicesCache( 4032): Intent action: android.intent.action.PACKAGE_RESTARTED
+03-27 20:05:56.168 D/AggregateListener(25721): notifyAction action:android.intent.action.PACKAGE_RESTARTED
+03-27 20:05:56.185 D/CarrierSvcBindHelper( 2653): No carrier app for: 0
+03-27 20:05:56.189 D/CarrierSvcBindHelper( 2653): No carrier app for: 1
+03-27 20:05:56.192 D/CarrierSvcBindHelper( 2653): No carrier app for: 0
+03-27 20:05:56.195 D/CarrierSvcBindHelper( 2653): No carrier app for: 1
+03-27 20:05:56.204 D/AggregateListener(25721): onPackageRestarted packageName:com.nfclab.e_leap_project
+03-27 20:05:56.232 D/RegisteredServicesCache( 4032): Adding service: ComponentInfo{com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService} AIDs: [F00000FE2C]
+03-27 20:05:56.232 D/RegisteredServicesCache( 4032): Adding service: ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService} AIDs: []
+03-27 20:05:56.232 D/RegisteredServicesCache( 4032): Adding service: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService} AIDs: [325041592E5359532E4444463031, A0000000041010, A0000000042203, A0000000043060, A0000000031010, A0000000980840, A0000000032010, A0000000032020, A00000000307010001, A0000003241010, A0000001523010, A0000001524010, A00000002501, A000000025011001, A000000025021001, A0000002771010, A00000038410, A00000038420, A0000004941010, A0000004942010, A0000000049101, A0000007800006, A0000006581010]
+03-27 20:05:56.232 D/RegisteredServicesCache( 4032):  Reading service state data always from file
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032): ServiceStateFileVersion=1.0
+03-27 20:05:56.242 E/RegisteredServicesCache( 4032): Next Tag=services
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032):  curr component com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032):  curr uid 10066
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032):  curr state 1
+03-27 20:05:56.242 E/RegisteredServicesCache( 4032): installedServices no uidString 
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032):  curr component com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032):  curr uid 10066
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032):  curr state 1
+03-27 20:05:56.242 E/RegisteredServicesCache( 4032): installedServices contains uidString : 10066
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032):  curr component com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032):  curr uid 1110066
+03-27 20:05:56.242 D/RegisteredServicesCache( 4032):  curr state 2
+03-27 20:05:56.242 E/RegisteredServicesCache( 4032): installedServices no uidString 
+03-27 20:05:56.259 E/RegisteredServicesCache( 4032): 1invalidateCache:WriteServiceStateToFile
+03-27 20:05:56.259 E/RegisteredServicesCache( 4032):  Writing service state Data Always
+03-27 20:05:56.263 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:56.263 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService
+03-27 20:05:56.263 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:56.269 D/CardEmulationManager( 4032): Current default: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}
+03-27 20:05:56.269 D/CardEmulationManager( 4032): Default payment service still ok.
+03-27 20:05:56.269 D/RegisteredAidCache( 4032): onServicesUpdated
+03-27 20:05:56.270 D/RegisteredAidCache( 4032): generateServiceMap component: ComponentInfo{com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService}
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): generateServiceMap component: ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService}
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): generateServiceMap component: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid 325041592E5359532E4444463031
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: routing to payment default default ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}, description: Google Pay, Static AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000041010, A0000000042203, A0000000043060, A0000000031010, A0000000980840, A0000000032010, A0000000032020, A00000000307010001, A0000003241010, A0000001523010, A0000001524010, A00000002501, A000000025011001, A000000025021001, A0000002771010, A00000038410, A00000038420, A0000004941010, A0000004942010, A0000000049101, A0000007800006, A0000006581010, , Dynamic AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000031010, 
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): AIDs: [325041592E5359532E4444463031] were resolved.
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid 4F53452E5641532E3031
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: making single handling service ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService} default.
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): AIDs: [4F53452E5641532E3031] were resolved.
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid A0000000031010
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: routing to payment default default ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}, description: Google Pay, Static AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000041010, A0000000042203, A0000000043060, A0000000031010, A0000000980840, A0000000032010, A0000000032020, A00000000307010001, A0000003241010, A0000001523010, A0000001524010, A00000002501, A000000025011001, A000000025021001, A0000002771010, A00000038410, A00000038420, A0000004941010, A0000004942010, A0000000049101, A0000007800006, A0000006581010, , Dynamic AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000031010, 
+03-27 20:05:56.271 D/RegisteredAidCache( 4032): AIDs: [A0000000031010] were resolved.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid A000000476D0000111
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: making single handling service ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService} default.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): AIDs: [A000000476D0000111] were resolved.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid F00000FE2C
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: making single handling service ComponentInfo{com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService} default.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): AIDs: [F00000FE2C] were resolved.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): Exact or Prefix AID.F00000FE2C
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): AIDs: [F00000FE2C] were resolved.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): Exact or Prefix AID.A000000476D0000111
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): AIDs: [A000000476D0000111] were resolved.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): Exact or Prefix AID.A0000000031010
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): AIDs: [A0000000031010] were resolved.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): Exact or Prefix AID.4F53452E5641532E3031
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): AIDs: [4F53452E5641532E3031] were resolved.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): Exact or Prefix AID.325041592E5359532E4444463031
+03-27 20:05:56.272 D/RegisteredAidCache( 4032): AIDs: [325041592E5359532E4444463031] were resolved.
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:56.272 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:56.272 D/BrcmNfcJni( 4032): nfcManager_getDefaultAidRoute: DEFAULT_AID_ROUTE: 2
+03-27 20:05:56.272 D/NxpExtns( 4032): find found DEFAULT_AID_PWR_STATE=(0x19)
+03-27 20:05:56.272 D/NfcService( 4032): defaultAidRoute : 537
+03-27 20:05:56.272 D/NfcService( 4032): GetDefaultRouteLoc  :2
+03-27 20:05:56.272 D/AidRoutingManager( 4032): mAidMatchingPlatform=0x1
+03-27 20:05:56.272 I/BrcmNfcNfa( 4032): nfa_ee_api_get_max_aid_config_length
+03-27 20:05:56.273 I/BrcmNfcNfa( 4032): nfa_ee_api_get_max_aid_config_length: 800
+03-27 20:05:56.273 D/AidRoutingManager( 4032): mDefaultRoute=0x2
+03-27 20:05:56.273 D/BrcmNfcJni( 4032): nfcManager_getDefaultAidRoute: DEFAULT_AID_ROUTE: 2
+03-27 20:05:56.273 D/NxpExtns( 4032): find found DEFAULT_AID_PWR_STATE=(0x19)
+03-27 20:05:56.273 D/NfcService( 4032): defaultAidRoute : 537
+03-27 20:05:56.273 D/NfcService( 4032): GetDefaultRouteLoc  :2
+03-27 20:05:56.273 D/AidRoutingManager( 4032): #######Routing AID 325041592E5359532E4444463031 to route 0 with power 17
+03-27 20:05:56.273 D/AidRoutingManager( 4032): #######Routing AID F00000FE2C to route 0 with power 17
+03-27 20:05:56.273 D/AidRoutingManager( 4032): #######Routing AID 4F53452E5641532E3031 to route 0 with power 17
+03-27 20:05:56.273 D/AidRoutingManager( 4032): #######Routing AID A0000000031010 to route 0 with power 17
+03-27 20:05:56.273 D/AidRoutingManager( 4032): #######Routing AID A000000476D0000111 to route 0 with power 17
+03-27 20:05:56.273 D/AidRoutingManager( 4032): Routing table unchanged, but commit the routing
+03-27 20:05:56.275 D/NQApduServiceInfo( 4032): updateServiceCommitStatus:Description:Nearby:InternalState:1:commitStatus:true
+03-27 20:05:56.275 D/NQApduServiceInfo( 4032): updateServiceCommitStatus:Description:Google Wallet:InternalState:1:commitStatus:true
+03-27 20:05:56.276 E/RegisteredServicesCache( 4032): 3updateStatusOfServices:WriteServiceStateToFile
+03-27 20:05:56.276 E/RegisteredServicesCache( 4032):  Writing service state Data Always
+03-27 20:05:56.278 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:56.278 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService
+03-27 20:05:56.278 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:56.271 W/health@2.0-serv(  775): type=1400 audit(0.0:61022): avc: denied { read } for name="type" dev="sysfs" ino=58539 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
+03-27 20:05:56.282 D/RegisteredServicesCache( 4032): ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService}, description: Nearby, Static AID Groups: Category: other, AIDs:F00000FE2C, , Dynamic AID Groups: 
+03-27 20:05:56.283 D/RegisteredServicesCache( 4032): ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService}, description: Google Wallet, Static AID Groups: , Dynamic AID Groups: Category: other, AIDs:4F53452E5641532E3031, A000000476D0000111, 
+03-27 20:05:56.283 D/RegisteredServicesCache( 4032): ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}, description: Google Pay, Static AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000041010, A0000000042203, A0000000043060, A0000000031010, A0000000980840, A0000000032010, A0000000032020, A00000000307010001, A0000003241010, A0000001523010, A0000001524010, A00000002501, A000000025011001, A000000025021001, A0000002771010, A00000038410, A00000038420, A0000004941010, A0000004942010, A0000000049101, A0000007800006, A0000006581010, , Dynamic AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000031010, 
+03-27 20:05:56.284 D/RegisteredNfcFServicesCache( 4032): Service unchanged, not updating
+03-27 20:05:56.284 D/RegisteredServicesCache( 4032): Intent action: android.intent.action.PACKAGE_RESTARTED
+03-27 20:05:56.285 E/NfcService( 4032): applyRouting -9
+03-27 20:05:56.285 D/NfcService( 4032): Not committing routing because discovery is disabled.
+03-27 20:05:56.286 D/NfcService( 4032): Received android.intent.action.BATTERY_CHANGED
+03-27 20:05:56.287 D/KeyguardUpdateMonitor( 2147): received broadcast android.intent.action.BATTERY_CHANGED
+03-27 20:05:56.287 I/BatteryInfoReceiver( 4567): ACTION_BATTERY_CHANGED
+03-27 20:05:56.288 D/PowerCheckerService( 6431): onBatteryChanged, mBatteryLevel = 99, status = 2, level = 99, plug = 2, scale = 100
+03-27 20:05:56.289 I/PowerNoticeUI( 4567): handleBatteryChanged oldPlugType 2 mPlugType 2 oldBatteryLevel 99 mBatteryLevel 99 temperature 300
+03-27 20:05:56.486 W/PackageManager( 1565): Not removing non-existent package androidx.test.tools.crawler
+03-27 20:05:56.487 I/PackageManagerServiceInjector( 1565): MIUILOG-onPackageDeleted: PackageEvent { mTimeStamp=2023-03-27 20:05:56 mAction=Uninstall mPackageName=androidx.test.tools.crawler mReturnCode=-1 mReturnMsg= mVersionCode=-1 mVersionName=mInstallerPkgName=
+03-27 20:05:56.583 I/ActivityManager( 1565): Force stopping com.nfclab.e_leap_project appid=10565 user=-1: deletePackageX
+03-27 20:05:56.622 E/        ( 1083): Couldn't opendir /data/user/11/com.nfclab.e_leap_project: No such file or directory
+03-27 20:05:56.622 E/installd( 1083): Failed to delete /data/user/11/com.nfclab.e_leap_project: No such file or directory
+03-27 20:05:56.622 E/        ( 1083): Couldn't opendir /data/user_de/11/com.nfclab.e_leap_project: No such file or directory
+03-27 20:05:56.622 E/installd( 1083): Failed to delete /data/user_de/11/com.nfclab.e_leap_project: No such file or directory
+03-27 20:05:56.626 W/PackageManager( 1565): com.android.server.pm.Installer$InstallerException: android.os.ServiceSpecificException: Failed to delete /data/user_de/11/com.nfclab.e_leap_project (code 2)
+03-27 20:05:56.627 D/installd( 1083): Found valid user 11
+03-27 20:05:56.629 I/PackageManager( 1565): Removing old permission tree: com.nfclab.e_leap_project.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION from package com.nfclab.e_leap_project
+03-27 20:05:56.633 I/PackageManager( 1565): Un-granting permission android.permission.MANAGE_DOCUMENTS from package com.google.android.youtube (protectionLevel=262146 flags=0x30dbbec5)
+03-27 20:05:56.640 I/PackageManager( 1565): Un-granting permission android.permission.SUBSTITUTE_SHARE_TARGET_APP_NAME_AND_ICON from package com.google.android.googlequicksearchbox (protectionLevel=18 flags=0xa8dbbec5)
+03-27 20:05:56.641 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package cn.wps.xiaomi.abroad.lite (protectionLevel=66 flags=0x38d8be44)
+03-27 20:05:56.641 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH from package com.android.providers.calendar (protectionLevel=2 flags=0x20883e45)
+03-27 20:05:56.641 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.cl from package com.android.providers.calendar (protectionLevel=2 flags=0x20883e45)
+03-27 20:05:56.642 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package org.telegram.messenger (protectionLevel=1250 flags=0x209bbe44)
+03-27 20:05:56.642 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package org.telegram.messenger (protectionLevel=66 flags=0x209bbe44)
+03-27 20:05:56.644 I/PackageManager( 1565): Un-granting permission com.google.android.gm.permission.READ_GMAIL from package com.google.android.apps.docs.editors.docs (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.644 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH from package com.google.android.apps.docs.editors.docs (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.644 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.OTHER_SERVICES from package com.google.android.apps.docs.editors.docs (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.644 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.ALL_SERVICES from package com.google.android.apps.docs.editors.docs (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.644 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.writely from package com.google.android.apps.docs.editors.docs (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.644 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.wise from package com.google.android.apps.docs.editors.docs (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.647 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.shazam.android (protectionLevel=1250 flags=0x2089be44)
+03-27 20:05:56.650 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package eu.kanade.tachiyomi (protectionLevel=66 flags=0x20d83e44)
+03-27 20:05:56.651 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package com.ecosia.android (protectionLevel=66 flags=0xa0c83e44)
+03-27 20:05:56.651 I/PackageManager( 1565): Un-granting permission com.google.android.apps.now.CURRENT_ACCOUNT_ACCESS from package com.ecosia.android (protectionLevel=2 flags=0xa0c83e44)
+03-27 20:05:56.652 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_SETTINGS from package com.viber.voip (protectionLevel=1218 flags=0x38d9bc44)
+03-27 20:05:56.654 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package com.whatsapp (protectionLevel=66 flags=0x30cbbe44)
+03-27 20:05:56.655 I/PackageManager( 1565): Un-granting permission com.google.android.gm.permission.READ_GMAIL from package com.google.android.apps.docs.editors.sheets (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.655 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH from package com.google.android.apps.docs.editors.sheets (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.655 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.OTHER_SERVICES from package com.google.android.apps.docs.editors.sheets (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.655 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.ALL_SERVICES from package com.google.android.apps.docs.editors.sheets (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.655 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.writely from package com.google.android.apps.docs.editors.sheets (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.655 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.wise from package com.google.android.apps.docs.editors.sheets (protectionLevel=2 flags=0x38dbbe44)
+03-27 20:05:56.657 I/PackageManager( 1565): Un-granting permission android.permission.INTERACT_ACROSS_USERS from package com.miui.securitycenter (protectionLevel=50 flags=0x30c9bec5)
+03-27 20:05:56.657 I/PackageManager( 1565): Un-granting permission android.permission.READ_PRIVILEGED_PHONE_STATE from package com.miui.securitycenter (protectionLevel=18 flags=0x30c9bec5)
+03-27 20:05:56.659 I/PackageManager( 1565): Un-granting permission android.permission.CHANGE_CONFIGURATION from package com.paypal.android.p2pmobile (protectionLevel=50 flags=0x20d83e44)
+03-27 20:05:56.660 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.microsoft.office.excel (protectionLevel=1250 flags=0x30d83e44)
+03-27 20:05:56.661 I/PackageManager( 1565): Un-granting permission android.permission.START_ACTIVITIES_FROM_BACKGROUND from package com.android.soundrecorder (protectionLevel=49682 flags=0x30c83e85)
+03-27 20:05:56.662 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.pl.premierleague (protectionLevel=1250 flags=0x30c83e44)
+03-27 20:05:56.662 I/PackageManager( 1565): Un-granting permission android.permission.READ_SEARCH_INDEXABLES from package com.mi.globalbrowser (protectionLevel=18 flags=0x30d9bec5)
+03-27 20:05:56.666 I/PackageManager( 1565): Un-granting permission android.permission.GET_ACCOUNTS_PRIVILEGED from package com.microsoft.skydrive (protectionLevel=18 flags=0x30d83e44)
+03-27 20:05:56.666 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_SETTINGS from package com.microsoft.skydrive (protectionLevel=1218 flags=0x30d83e44)
+03-27 20:05:56.667 I/PackageManager( 1565): Un-granting permission android.permission.CHANGE_COMPONENT_ENABLED_STATE from package com.google.android.marvin.talkback (protectionLevel=18 flags=0x20cbbec5)
+03-27 20:05:56.667 I/PackageManager( 1565): Un-granting permission android.permission.PACKAGE_USAGE_STATS from package com.reddit.frontpage (protectionLevel=114 flags=0x3098be44)
+03-27 20:05:56.669 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail from package com.android.contacts (protectionLevel=2 flags=0x38c9bec5)
+03-27 20:05:56.669 I/PackageManager( 1565): Un-granting permission com.android.launcher.permission.READ_SETTINGS from package com.android.contacts (protectionLevel=18 flags=0x38c9bec5)
+03-27 20:05:56.669 I/PackageManager( 1565): Un-granting permission com.android.launcher.permission.WRITE_SETTINGS from package com.android.contacts (protectionLevel=18 flags=0x38c9bec5)
+03-27 20:05:56.669 I/PackageManager( 1565): Un-granting permission com.android.updater.permission.RECEIVE_BROADCAST from package com.android.contacts (protectionLevel=18 flags=0x38c9bec5)
+03-27 20:05:56.669 I/PackageManager( 1565): Un-granting permission com.miui.virtualsim.permission.DIAG from package com.android.contacts (protectionLevel=18 flags=0x38c9bec5)
+03-27 20:05:56.669 I/PackageManager( 1565): Un-granting permission android.provision.permission.SEND_PROVISION_COMPLETE_BROADCAST from package com.android.contacts (protectionLevel=18 flags=0x38c9bec5)
+03-27 20:05:56.670 I/PackageManager( 1565): Un-granting permission com.xiaomi.permission.ACCESS_SECURITY_DEVICE_CREDENTIAL from package com.android.contacts (protectionLevel=18 flags=0x38c9bec5)
+03-27 20:05:56.670 I/PackageManager( 1565): Un-granting permission com.miui.permission.ACCESS_ESE from package com.android.contacts (protectionLevel=18 flags=0x38c9bec5)
+03-27 20:05:56.670 I/PackageManager( 1565): Un-granting permission com.miui.securitycenter.permission.SYSTEM_PERMISSION_DECLARE from package com.android.contacts (protectionLevel=18 flags=0x38c9bec5)
+03-27 20:05:56.672 I/PackageManager( 1565): Un-granting permission android.permission.START_ACTIVITIES_FROM_BACKGROUND from package com.android.mms (protectionLevel=49682 flags=0x38c9bee5)
+03-27 20:05:56.672 I/PackageManager( 1565): Un-granting permission com.xiaomi.simactivate.service.ACTIVATE_SIM from package com.android.mms (protectionLevel=2 flags=0x38c9bee5)
+03-27 20:05:56.673 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_APN_SETTINGS from package com.android.mms (protectionLevel=18 flags=0x38c9bee5)
+03-27 20:05:56.673 I/PackageManager( 1565): Un-granting permission miui.permission.JOYOSE from package com.android.mms (protectionLevel=2 flags=0x38c9bee5)
+03-27 20:05:56.674 I/PackageManager( 1565): Un-granting permission com.facebook.katana.provider.ACCESS from package com.instagram.android (protectionLevel=2 flags=0x34d9be64)
+03-27 20:05:56.677 I/PackageManager( 1565): Un-granting permission android.permission.STATUS_BAR from package com.google.android.apps.tachyon (protectionLevel=18 flags=0x30c9be44)
+03-27 20:05:56.677 I/PackageManager( 1565): Un-granting permission android.permission.STOP_APP_SWITCHES from package com.google.android.apps.tachyon (protectionLevel=18 flags=0x30c9be44)
+03-27 20:05:56.678 I/PackageManager( 1565): Un-granting permission android.permission.INTERACT_ACROSS_PROFILES from package com.microsoft.office.outlook (protectionLevel=18 flags=0x30c83e44)
+03-27 20:05:56.682 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_SECURE_SETTINGS from package com.android.printspooler (protectionLevel=50 flags=0x38c8be45)
+03-27 20:05:56.683 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package com.duokan.phone.remotecontroller (protectionLevel=66 flags=0x38983e44)
+03-27 20:05:56.683 I/PackageManager( 1565): Un-granting permission android.permission.GET_ACCOUNTS_PRIVILEGED from package com.duokan.phone.remotecontroller (protectionLevel=18 flags=0x38983e44)
+03-27 20:05:56.683 I/PackageManager( 1565): Un-granting permission android.permission.READ_PRIVILEGED_PHONE_STATE from package com.duokan.phone.remotecontroller (protectionLevel=18 flags=0x38983e44)
+03-27 20:05:56.683 I/PackageManager( 1565): Un-granting permission android.permission.CHANGE_CONFIGURATION from package com.duokan.phone.remotecontroller (protectionLevel=50 flags=0x38983e44)
+03-27 20:05:56.683 I/PackageManager( 1565): Un-granting permission android.permission.READ_LOGS from package com.duokan.phone.remotecontroller (protectionLevel=50 flags=0x38983e44)
+03-27 20:05:56.683 I/PackageManager( 1565): Un-granting permission android.permission.CAPTURE_AUDIO_OUTPUT from package com.duokan.phone.remotecontroller (protectionLevel=18 flags=0x38983e44)
+03-27 20:05:56.683 I/PackageManager( 1565): Un-granting permission com.xiaomi.permission.CLOUD_MANAGER from package com.duokan.phone.remotecontroller (protectionLevel=18 flags=0x38983e44)
+03-27 20:05:56.683 I/PackageManager( 1565): Un-granting permission com.android.launcher.permission.READ_SETTINGS from package com.duokan.phone.remotecontroller (protectionLevel=18 flags=0x38983e44)
+03-27 20:05:56.683 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_SETTINGS from package com.duokan.phone.remotecontroller (protectionLevel=1218 flags=0x38983e44)
+03-27 20:05:56.684 I/PackageManager( 1565): Un-granting permission android.permission.MOUNT_UNMOUNT_FILESYSTEMS from package com.duokan.phone.remotecontroller (protectionLevel=18 flags=0x38983e44)
+03-27 20:05:56.685 I/PackageManager( 1565): Un-granting permission android.permission.REAL_GET_TASKS from package com.google.android.apps.wellbeing (protectionLevel=18 flags=0x20cbbec5)
+03-27 20:05:56.685 I/PackageManager( 1565): Un-granting permission android.permission.START_TASKS_FROM_RECENTS from package com.google.android.apps.wellbeing (protectionLevel=18 flags=0x20cbbec5)
+03-27 20:05:56.685 I/PackageManager( 1565): Un-granting permission android.permission.MODIFY_DAY_NIGHT_MODE from package com.google.android.apps.wellbeing (protectionLevel=18 flags=0x20cbbec5)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.lenovo.anyshare.gps (protectionLevel=1250 flags=0x20d83e44)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_MEDIA_STORAGE from package com.lenovo.anyshare.gps (protectionLevel=18 flags=0x20d83e44)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_SETTINGS from package com.lenovo.anyshare.gps (protectionLevel=1218 flags=0x20d83e44)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package com.lenovo.anyshare.gps (protectionLevel=66 flags=0x20d83e44)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission android.permission.CLEAR_APP_CACHE from package com.lenovo.anyshare.gps (protectionLevel=18 flags=0x20d83e44)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission android.permission.PACKAGE_USAGE_STATS from package com.lenovo.anyshare.gps (protectionLevel=114 flags=0x20d83e44)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission com.android.launcher.permission.READ_SETTINGS from package com.lenovo.anyshare.gps (protectionLevel=18 flags=0x20d83e44)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission com.android.launcher.permission.WRITE_SETTINGS from package com.lenovo.anyshare.gps (protectionLevel=18 flags=0x20d83e44)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission com.google.android.launcher.permission.READ_SETTINGS from package com.lenovo.anyshare.gps (protectionLevel=18 flags=0x20d83e44)
+03-27 20:05:56.686 I/PackageManager( 1565): Un-granting permission com.google.android.launcher.permission.WRITE_SETTINGS from package com.lenovo.anyshare.gps (protectionLevel=18 flags=0x20d83e44)
+03-27 20:05:56.687 I/PackageManager( 1565): Un-granting permission android.permission.READ_PRIVILEGED_PHONE_STATE from package com.lenovo.anyshare.gps (protectionLevel=18 flags=0x20d83e44)
+03-27 20:05:56.687 I/PackageManager( 1565): Un-granting permission android.permission.CHANGE_CONFIGURATION from package com.lenovo.anyshare.gps (protectionLevel=50 flags=0x20d83e44)
+03-27 20:05:56.688 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.ubercab.eats (protectionLevel=1250 flags=0x20c83e44)
+03-27 20:05:56.688 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.microsoft.office.word (protectionLevel=1250 flags=0x30d83e44)
+03-27 20:05:56.689 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.microsoft.windowsintune.companyportal (protectionLevel=1250 flags=0x20483e44)
+03-27 20:05:56.689 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package com.microsoft.windowsintune.companyportal (protectionLevel=66 flags=0x20483e44)
+03-27 20:05:56.691 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package com.opera.gx (protectionLevel=66 flags=0x20983e44)
+03-27 20:05:56.692 I/PackageManager( 1565): Un-granting permission android.permission.MANAGE_USERS from package com.miui.mishare.connectivity (protectionLevel=18 flags=0x30c83ec5)
+03-27 20:05:56.692 I/PackageManager( 1565): Un-granting permission android.permission.INTERACT_ACROSS_USERS from package com.miui.mishare.connectivity (protectionLevel=50 flags=0x30c83ec5)
+03-27 20:05:56.692 I/PackageManager( 1565): Un-granting permission android.permission.MODIFY_DEFAULT_AUDIO_EFFECTS from package com.google.android.gms (protectionLevel=18 flags=0xa0cabec5)
+03-27 20:05:56.693 I/PackageManager( 1565): Un-granting permission android.permission.MEDIA_CONTENT_CONTROL from package com.google.android.gms (protectionLevel=18 flags=0xa0cabec5)
+03-27 20:05:56.695 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package tv.twitch.android.app (protectionLevel=1250 flags=0x20d83e44)
+03-27 20:05:56.696 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package org.torproject.torbrowser (protectionLevel=66 flags=0x30c83e44)
+03-27 20:05:56.700 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_SETTINGS from package com.google.android.apps.photos (protectionLevel=1218 flags=0x38d83e44)
+03-27 20:05:56.701 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_MEDIA_STORAGE from package com.google.android.apps.photos (protectionLevel=18 flags=0x38d83e44)
+03-27 20:05:56.702 I/PackageManager( 1565): Un-granting permission android.permission.INTERACT_ACROSS_USERS from package com.google.android.documentsui (protectionLevel=50 flags=0x30c9bec5)
+03-27 20:05:56.702 I/PackageManager( 1565): Un-granting permission android.permission.MODIFY_QUIET_MODE from package com.google.android.documentsui (protectionLevel=18 flags=0x30c9bec5)
+03-27 20:05:56.704 I/PackageManager( 1565): Un-granting permission android.permission.BATTERY_STATS from package com.facebook.katana (protectionLevel=50 flags=0x30d83e44)
+03-27 20:05:56.704 I/PackageManager( 1565): Un-granting permission android.permission.MOUNT_UNMOUNT_FILESYSTEMS from package com.thirtydegreesray.openhub (protectionLevel=18 flags=0x3088be44)
+03-27 20:05:56.704 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.gallinet.peoplehours.telme (protectionLevel=1250 flags=0x3898be44)
+03-27 20:05:56.709 I/PackageManager( 1565): Un-granting permission com.google.android.finsky.permission.GEARHEAD_SERVICE from package com.google.android.projection.gearhead (protectionLevel=18 flags=0x388bbec5)
+03-27 20:05:56.709 I/PackageManager( 1565): Un-granting permission android.permission.CHANGE_COMPONENT_ENABLED_STATE from package com.google.android.projection.gearhead (protectionLevel=18 flags=0x388bbec5)
+03-27 20:05:56.709 I/PackageManager( 1565): Un-granting permission android.permission.UPDATE_APP_OPS_STATS from package com.google.android.projection.gearhead (protectionLevel=274 flags=0x388bbec5)
+03-27 20:05:56.709 I/PackageManager( 1565): Un-granting permission android.permission.INTERACT_ACROSS_PROFILES from package com.google.android.projection.gearhead (protectionLevel=18 flags=0x388bbec5)
+03-27 20:05:56.710 I/PackageManager( 1565): Un-granting permission com.google.android.googleapps.permission.GOOGLE_AUTH.mail from package com.xiaomi.calendar (protectionLevel=2 flags=0x38c9bec5)
+03-27 20:05:56.710 I/PackageManager( 1565): Un-granting permission android.permission.WRITE_SETTINGS from package com.p1.mobile.putong (protectionLevel=1218 flags=0x38983e44)
+03-27 20:05:56.710 I/PackageManager( 1565): Un-granting permission com.android.launcher.permission.READ_SETTINGS from package com.p1.mobile.putong (protectionLevel=18 flags=0x38983e44)
+03-27 20:05:56.710 I/PackageManager( 1565): Un-granting permission com.android.launcher.permission.WRITE_SETTINGS from package com.p1.mobile.putong (protectionLevel=18 flags=0x38983e44)
+03-27 20:05:56.710 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.p1.mobile.putong (protectionLevel=1250 flags=0x38983e44)
+03-27 20:05:56.713 I/PackageManager( 1565): Un-granting permission android.permission.ACCESS_DOWNLOAD_MANAGER from package com.micredit.in (protectionLevel=18 flags=0x3848be44)
+03-27 20:05:56.713 I/PackageManager( 1565): Un-granting permission com.xiaomi.permission.CLOUD_MANAGER from package com.micredit.in (protectionLevel=18 flags=0x3848be44)
+03-27 20:05:56.713 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package com.micredit.in (protectionLevel=66 flags=0x3848be44)
+03-27 20:05:56.716 I/PackageManager( 1565): Un-granting permission com.xiaomi.permission.CLOUD_MANAGER from package com.mipay.wallet.in (protectionLevel=18 flags=0x38483e45)
+03-27 20:05:56.716 I/PackageManager( 1565): Un-granting permission android.permission.REQUEST_INSTALL_PACKAGES from package com.mipay.wallet.in (protectionLevel=66 flags=0x38483e45)
+03-27 20:05:56.716 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.apowersoft.letsview (protectionLevel=1250 flags=0x2888be44)
+03-27 20:05:56.716 I/PackageManager( 1565): Un-granting permission android.permission.CAPTURE_AUDIO_OUTPUT from package com.apowersoft.letsview (protectionLevel=18 flags=0x2888be44)
+03-27 20:05:56.717 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.justeat.app.ie (protectionLevel=1250 flags=0x20c83e44)
+03-27 20:05:56.718 I/PackageManager( 1565): Un-granting permission android.permission.SYSTEM_ALERT_WINDOW from package com.microsoft.teams (protectionLevel=1250 flags=0x20c83e44)
+03-27 20:05:56.718 I/PackageManager( 1565): Un-granting permission android.permission.BLUETOOTH_PRIVILEGED from package com.microsoft.teams (protectionLevel=18 flags=0x20c83e44)
+03-27 20:05:56.718 I/PackageManager( 1565): Un-granting permission android.permission.READ_PRIVILEGED_PHONE_STATE from package com.miui.core (protectionLevel=18 flags=0x28883e05)
+03-27 20:05:56.925 I/keystore( 1084): clear_uid 10565
+03-27 20:05:56.957 I/keystore( 1084): clear_uid 1110565
+03-27 20:05:56.967 E/PermissionMonitor( 1565): unknown permission type: -1for uid: 10565
+03-27 20:05:56.968 E/TrafficController(  650): Failed to clean up the permission for 10565: No such file or directory
+03-27 20:05:56.969 I/netd    (  650): trafficSetNetPermForUids(-1, [10565]) <0.22ms>
+03-27 20:05:56.978 E/TaskPersister( 1565): File error accessing recents directory (directory doesn't exist?).
+03-27 20:05:57.278 I/system_server( 1565): Explicit concurrent copying GC freed 345988(15MB) AllocSpace objects, 52(1524KB) LOS objects, 32% free, 50MB/74MB, paused 2.058ms total 308.243ms
+03-27 20:05:57.283 I/hwservicemanager(  536): getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device manifest.
+03-27 20:05:57.284 I/ActivityManager( 1565): Force stopping com.nfclab.e_leap_project appid=10565 user=0: pkg removed
+03-27 20:05:57.284 I/AutoStartManagerService( 1565): MIUILOG- Reject RestartService packageName :com.nfclab.e_leap_project uid : 10565
+03-27 20:05:57.286 W/BpBinder(19381): Slow Binder: BpBinder transact took 705 ms, interface=android.content.pm.IPackageManager, code=1598246212 oneway=false
+03-27 20:05:57.290 E/HistoricalRegistry( 1565): Interaction before persistence initialized
+03-27 20:05:57.318 I/RoleManagerService( 1565): Granting default permissions...
+03-27 20:05:57.319 E/Recents ( 2147): packageMonitor   onPackageModified  packageName=com.nfclab.e_leap_project   mIsRecentsWithinLauncher=true
+03-27 20:05:57.319 I/MiuiNetworkPolicy( 1565): ACTION_PACKAGE_REMOVED uid = 10565
+03-27 20:05:57.320 E/InstallApkReceiver( 2394): uninstall:package:com.nfclab.e_leap_project
+03-27 20:05:57.320 D/LockScreenMagazineController( 2147): received broadcast android.intent.action.PACKAGE_REMOVED
+03-27 20:05:57.322 I/SuperWallpaperReceiver( 2941): onReceive: android.intent.action.PACKAGE_REMOVED
+03-27 20:05:57.324 W/LocationProviderProxy( 1565): com.qualcomm.location resolves service com.android.location.service.v3.NetworkLocationProvider, but has wrong signature, ignoring
+03-27 20:05:57.324 W/LocationProviderProxy( 1565): com.qualcomm.location resolves service com.android.location.service.v3.NetworkLocationProvider, but has wrong signature, ignoring
+03-27 20:05:57.325 I/GsaVoiceInteractionSrv( 3980): (REDACTED) O received %s
+03-27 20:05:57.325 D/Avrcp_ext( 9935): AvrcpServiceBroadcastReceiver-> Action: android.intent.action.PACKAGE_REMOVED
+03-27 20:05:57.325 D/Avrcp_ext( 9935): packageName: com.nfclab.e_leap_project removed: true
+03-27 20:05:57.325 V/Avrcp_ext( 9935): isBrowseSupported for com.nfclab.e_leap_project: false
+03-27 20:05:57.325 D/Avrcp_ext( 9935): Exit handlePackageModified
+03-27 20:05:57.326 D/AppInstalledReceiver( 4567): receive broadcast
+03-27 20:05:57.326 D/BluetoothMapAppObserver( 9935): onReceive
+03-27 20:05:57.326 D/BluetoothMapAppObserver( 9935): The removed package is: com.nfclab.e_leap_project
+03-27 20:05:57.326 I/TrafficManageService( 4567): mina mPackageReceiver 0
+03-27 20:05:57.326 I/InstalledAppMonitor( 4567): com.nfclab.e_leap_projectonReceive remove pkg=com.nfclab.e_leap_project
+03-27 20:05:57.327 D/CarrierSvcBindHelper( 2653): No carrier app for: 0
+03-27 20:05:57.328 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.lbe.security.miui/com.lbe.security.service.BootReceiver
+03-27 20:05:57.329 D/AggregateListener(25721): notifyAction action:android.intent.action.PACKAGE_REMOVED
+03-27 20:05:57.329 D/AggregateListener(25721): onPackageRemoved packageName:com.nfclab.e_leap_project
+03-27 20:05:57.331 D/MiSpeedUtils( 4004): Calling service to removeAuthorizedUid: 10565 and result: 0
+03-27 20:05:57.335 D/CarrierSvcBindHelper( 2653): No carrier app for: 1
+03-27 20:05:57.337 I/abb     (16287): StartCommandInProcess(73657474696e67730067657400656e61 settings.get.ena [truncated])
+03-27 20:05:57.337 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.341 I/WakelockPolicyManager( 6431): setWakelockPolicy
+03-27 20:05:57.343 I/com.lbe.security.service.provider.WakePathDatabaseUtil(18118): onPackageRemoved
+03-27 20:05:57.346 D/IdProviderImpl(25923): getOAID
+03-27 20:05:57.352 I/com.lbe.security.service.provider.WakePathDatabaseUtil(18118): getWakePathWhiteList: whiteList.size=10
+03-27 20:05:57.363 I/WakePathChecker( 1565): MIUILOG-WAKEPATH pushWakePathWhiteList: userId=0 size=10
+03-27 20:05:57.365 I/com.lbe.security.service.provider.WakePathDatabaseUtil(18118): getWakePathRuleList: wakeType=17 wakePathRuleInfos.size=0
+03-27 20:05:57.366 I/WakePathChecker( 1565): MIUILOG-WAKEPATH pushWakePathRuleInfos: wakeType=17 userId=0 size=0
+03-27 20:05:57.367 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.367 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.367 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.367 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.371 D/NtpTrustedTime( 1565): currentTimeMillis() cache hit
+03-27 20:05:57.372 V/LocationPolicy( 1565): ACTION_UID_REMOVED for uid=10565
+03-27 20:05:57.372 V/LocationPolicy( 1565): writePolicyLocked()
+03-27 20:05:57.372 I/netd    (  650): trafficSwapActiveStatsMap() <0.67ms>
+03-27 20:05:57.374 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.375 I/netd    (  650): tetherGetStats() <0.69ms>
+03-27 20:05:57.371 W/Binder:1565_D( 1565): type=1400 audit(0.0:61023): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+03-27 20:05:57.371 I/chatty  ( 1565): uid=1000 system_server identical 1 line
+03-27 20:05:57.371 W/Binder:1565_D( 1565): type=1400 audit(0.0:61025): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+03-27 20:05:57.379 I/MiuiNetworkPolicy( 1565): updateUidState uid = 1101000, uidState = 11
+03-27 20:05:57.379 I/MiuiNetworkPolicy( 1565): updateUidState uid = 1000, uidState = 0
+03-27 20:05:57.379 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10262, uidState = 6
+03-27 20:05:57.379 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10262,old:20,new:6
+03-27 20:05:57.379 I/MiuiNetworkPolicy( 1565): isMLEnabled state:20,uid:10262,connect:DISCONNECTED
+03-27 20:05:57.379 I/MiuiNetworkPolicy( 1565): isMLEnabled state:6,uid:10262,connect:DISCONNECTED
+03-27 20:05:57.384 W/SearchServiceCore(26186): Abort, client detached.
+03-27 20:05:57.371 W/adbd    ( 1906): type=1400 audit(0.0:61026): avc: denied { shutdown } for scontext=u:r:adbd:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+03-27 20:05:57.389 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.389 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.389 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.390 I/FireWallService( 4567): mina mPackageReceiver onReceive
+03-27 20:05:57.392 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.399 I/abb     (16287): StartCommandInProcess(7061636b61676500696e7374616c6c00 package.install. [truncated])
+03-27 20:05:57.403 W/PushService( 4861): [Tid:2] onStart() with intent.Action = com.xiaomi.xmsf.push.UNINSTALL, chid = null, pkg = null|null
+03-27 20:05:57.404 W/PushService( 4861): [Tid:365] [Job] Handle intent action = com.xiaomi.xmsf.push.UNINSTALL
+03-27 20:05:57.410 D/PackageManagerServiceInjector( 1565): MIUILOG- permission　denied android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS
+03-27 20:05:57.411 D/Zygote  (  651): Forked child process 19394
+03-27 20:05:57.401 W/Binder:1565_9( 1565): type=1400 audit(0.0:61027): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+03-27 20:05:57.401 I/chatty  ( 1565): uid=1000 system_server identical 1 line
+03-27 20:05:57.401 W/Binder:1565_9( 1565): type=1400 audit(0.0:61029): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+03-27 20:05:57.414 W/ActivityManager( 1565): Sending non-protected broadcast com.miui.gamebooster.UNINSTALLAPP from system 4567:com.miui.securitycenter.remote/1000 pkg com.miui.securitycenter. Callers=
+03-27 20:05:57.414 I/netd    (  650): firewallSetUidRule(2, 10565, 1) <0.02ms>
+03-27 20:05:57.414 D/Boost   ( 1565): hostingType=broadcast, hostingName={com.android.settings/com.android.settings.search.provider.UpdateReceiver}, callerPackage=null, isSystem=true, isBoostNeeded=false.
+03-27 20:05:57.414 D/com.miui.gamebooster.provider.GameBoosterProvider( 4567): delete
+03-27 20:05:57.416 D/OemNetd (  650): setPidForPackage: packageName=com.android.settings, pid=19394, pid=1000
+03-27 20:05:57.416 I/ActivityManager( 1565): Start proc 19394:com.android.settings/1000 for broadcast {com.android.settings/com.android.settings.search.provider.UpdateReceiver} caller=null
+03-27 20:05:57.420 E/OverviewComponentObserver( 2394): updateOverviewTargets: defaultHome=ComponentInfo{com.miui.home/com.miui.home.launcher.Launcher}
+03-27 20:05:57.420 W/RecentsImpl( 2394): setIsUseMiuiHomeAsDefaultHome    isUseMiuiHomeAsDefaultHome=true   mIsUseMiuiHomeAsDefaultHome=true
+03-27 20:05:57.447 I/Finsky  (18160): [2] uxj.g(0): uxj - Received: android.intent.action.PACKAGE_REMOVED, [EP92ZuLDIRsJXwyTBLwx2s9kOsNcmQhQAhyr3wqikZY]
+03-27 20:05:57.448 E/ndroid.setting(19394): Not starting debugger since process cannot load the jdwp agent.
+03-27 20:05:57.450 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.450 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.450 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.450 E/PackageUtils( 4567): package not install, pkg=com.miui.cleaner
+03-27 20:05:57.456 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.462 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.462 I/Finsky  (18160): [2] uyb.s(5): Package no longer installed: com.nfclab.e_leap_project
+03-27 20:05:57.465 D/Zygote  (  651): Forked child process 19417
+03-27 20:05:57.469 D/Boost   ( 1565): hostingType=service, hostingName={com.android.keychain/com.android.keychain.KeyChainService}, callerPackage=android, isSystem=true, isBoostNeeded=false.
+03-27 20:05:57.472 D/NfcService( 4032): updatePermittedPackageCache Entering...
+03-27 20:05:57.476 D/NtpTrustedTime( 1565): currentTimeMillis() cache hit
+03-27 20:05:57.478 I/NotificationService(14945): onStartCommand: com.miui.cleanmaster.GARBAGE_PKG_REMOVED
+03-27 20:05:57.485 I/InputReader( 1565): Reconfiguring input devices.  changes=0x00000010
+03-27 20:05:57.494 E/ndroid.keychai(19417): Not starting debugger since process cannot load the jdwp agent.
+03-27 20:05:57.496 I/NotificationService(14945): checkApk: time interval not enough!!!
+03-27 20:05:57.509 I/Finsky  (18160): [16137] ndw.run(3): Frosting DB delete succeeded: true
+03-27 20:05:57.513 W/ActivityManager( 1565): Slow operation: 112ms so far, now at startProcess: done updating battery stats
+03-27 20:05:57.520 D/NfcService( 4032): updatePermittedPackageCache Exit
+03-27 20:05:57.521 D/RegisteredServicesCache( 4032): Intent action: android.intent.action.PACKAGE_REMOVED
+03-27 20:05:57.521 D/PackageManagerServiceInjector( 1565): MIUILOG- permission　denied android.permission.GRANT_RUNTIME_PERMISSIONS
+03-27 20:05:57.521 D/OemNetd (  650): setPidForPackage: packageName=com.android.keychain, pid=19417, pid=1000
+03-27 20:05:57.522 W/ActivityManager( 1565): Slow operation: 121ms so far, now at startProcess: building log message
+03-27 20:05:57.522 I/ActivityManager( 1565): Start proc 19417:com.android.keychain/1000 for service {com.android.keychain/com.android.keychain.KeyChainService} caller=android
+03-27 20:05:57.522 W/ActivityManager( 1565): Slow operation: 121ms so far, now at startProcess: starting to update pids map
+03-27 20:05:57.522 W/ActivityManager( 1565): Slow operation: 121ms so far, now at startProcess: done updating pids map
+03-27 20:05:57.524 D/RegisteredNxpServicesCache( 4032): uninstall packageName:com.nfclab.e_leap_project
+03-27 20:05:57.525 E/OverviewComponentObserver( 2394): updateOverviewTargets: defaultHome=ComponentInfo{com.miui.home/com.miui.home.launcher.Launcher}
+03-27 20:05:57.525 W/RecentsImpl( 2394): setIsUseMiuiHomeAsDefaultHome    isUseMiuiHomeAsDefaultHome=true   mIsUseMiuiHomeAsDefaultHome=true
+03-27 20:05:57.527 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.527 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.527 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.534 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.534 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.534 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.538 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.538 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.538 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.541 D/RegisteredServicesCache( 4032): Adding service: ComponentInfo{com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService} AIDs: [F00000FE2C]
+03-27 20:05:57.542 D/RegisteredServicesCache( 4032): Adding service: ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService} AIDs: []
+03-27 20:05:57.542 D/RegisteredServicesCache( 4032): Adding service: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService} AIDs: [325041592E5359532E4444463031, A0000000041010, A0000000042203, A0000000043060, A0000000031010, A0000000980840, A0000000032010, A0000000032020, A00000000307010001, A0000003241010, A0000001523010, A0000001524010, A00000002501, A000000025011001, A000000025021001, A0000002771010, A00000038410, A00000038420, A0000004941010, A0000004942010, A0000000049101, A0000007800006, A0000006581010]
+03-27 20:05:57.542 D/RegisteredServicesCache( 4032):  Reading service state data always from file
+03-27 20:05:57.542 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.542 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.542 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.543 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032): ServiceStateFileVersion=1.0
+03-27 20:05:57.544 E/RegisteredServicesCache( 4032): Next Tag=services
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032):  curr component com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032):  curr uid 10066
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032):  curr state 1
+03-27 20:05:57.544 E/RegisteredServicesCache( 4032): installedServices no uidString 
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032):  curr component com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032):  curr uid 10066
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032):  curr state 1
+03-27 20:05:57.544 E/RegisteredServicesCache( 4032): installedServices contains uidString : 10066
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032):  curr component com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032):  curr uid 1110066
+03-27 20:05:57.544 D/RegisteredServicesCache( 4032):  curr state 2
+03-27 20:05:57.544 E/RegisteredServicesCache( 4032): installedServices no uidString 
+03-27 20:05:57.545 E/RegisteredServicesCache( 4032): 1invalidateCache:WriteServiceStateToFile
+03-27 20:05:57.545 E/RegisteredServicesCache( 4032):  Writing service state Data Always
+03-27 20:05:57.547 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.547 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:57.547 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService
+03-27 20:05:57.547 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:57.550 D/CardEmulationManager( 4032): Current default: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}
+03-27 20:05:57.550 D/CardEmulationManager( 4032): Default payment service still ok.
+03-27 20:05:57.550 D/RegisteredAidCache( 4032): onServicesUpdated
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): generateServiceMap component: ComponentInfo{com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService}
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): generateServiceMap component: ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService}
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): generateServiceMap component: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid 325041592E5359532E4444463031
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: routing to payment default default ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}, description: Google Pay, Static AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000041010, A0000000042203, A0000000043060, A0000000031010, A0000000980840, A0000000032010, A0000000032020, A00000000307010001, A0000003241010, A0000001523010, A0000001524010, A00000002501, A000000025011001, A000000025021001, A0000002771010, A00000038410, A00000038420, A0000004941010, A0000004942010, A0000000049101, A0000007800006, A0000006581010, , Dynamic AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000031010, 
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [325041592E5359532E4444463031] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid 4F53452E5641532E3031
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: making single handling service ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService} default.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [4F53452E5641532E3031] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid A0000000031010
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: routing to payment default default ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}, description: Google Pay, Static AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000041010, A0000000042203, A0000000043060, A0000000031010, A0000000980840, A0000000032010, A0000000032020, A00000000307010001, A0000003241010, A0000001523010, A0000001524010, A00000002501, A000000025011001, A000000025021001, A0000002771010, A00000038410, A00000038420, A0000004941010, A0000004942010, A0000000049101, A0000007800006, A0000006581010, , Dynamic AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000031010, 
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [A0000000031010] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid A000000476D0000111
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: making single handling service ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService} default.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [A000000476D0000111] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): generateAidCacheLocked: starting with aid F00000FE2C
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact AID, resolving.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): resolveAidLocked: DECISION: making single handling service ComponentInfo{com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService} default.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [F00000FE2C] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact or Prefix AID.F00000FE2C
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [F00000FE2C] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact or Prefix AID.A000000476D0000111
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [A000000476D0000111] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact or Prefix AID.A0000000031010
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [A0000000031010] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact or Prefix AID.4F53452E5641532E3031
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [4F53452E5641532E3031] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): Exact or Prefix AID.325041592E5359532E4444463031
+03-27 20:05:57.552 D/RegisteredAidCache( 4032): AIDs: [325041592E5359532E4444463031] were resolved.
+03-27 20:05:57.552 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:57.552 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:57.552 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:57.552 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:57.552 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:57.552 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:57.552 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:57.552 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:57.553 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:57.553 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:57.553 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:57.553 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:57.553 D/RegisteredAidCache( 4032):  AID power state before adding screen state1
+03-27 20:05:57.553 D/RegisteredAidCache( 4032):  AID power state after17
+03-27 20:05:57.553 D/RegisteredAidCache( 4032):  AID power state17
+03-27 20:05:57.553 D/BrcmNfcJni( 4032): nfcManager_getDefaultAidRoute: DEFAULT_AID_ROUTE: 2
+03-27 20:05:57.553 D/NxpExtns( 4032): find found DEFAULT_AID_PWR_STATE=(0x19)
+03-27 20:05:57.557 I/Finsky  (18160): [16139] phk.accept(6): IQ: handled package removed
+03-27 20:05:57.563 D/NfcService( 4032): defaultAidRoute : 537
+03-27 20:05:57.563 D/NfcService( 4032): GetDefaultRouteLoc  :2
+03-27 20:05:57.563 D/AidRoutingManager( 4032): mAidMatchingPlatform=0x1
+03-27 20:05:57.563 I/BrcmNfcNfa( 4032): nfa_ee_api_get_max_aid_config_length
+03-27 20:05:57.563 I/BrcmNfcNfa( 4032): nfa_ee_api_get_max_aid_config_length: 800
+03-27 20:05:57.563 D/AidRoutingManager( 4032): mDefaultRoute=0x2
+03-27 20:05:57.563 D/BrcmNfcJni( 4032): nfcManager_getDefaultAidRoute: DEFAULT_AID_ROUTE: 2
+03-27 20:05:57.563 D/NxpExtns( 4032): find found DEFAULT_AID_PWR_STATE=(0x19)
+03-27 20:05:57.563 D/NfcService( 4032): defaultAidRoute : 537
+03-27 20:05:57.563 D/NfcService( 4032): GetDefaultRouteLoc  :2
+03-27 20:05:57.563 D/AidRoutingManager( 4032): #######Routing AID 325041592E5359532E4444463031 to route 0 with power 17
+03-27 20:05:57.563 D/AidRoutingManager( 4032): #######Routing AID F00000FE2C to route 0 with power 17
+03-27 20:05:57.563 D/AidRoutingManager( 4032): #######Routing AID 4F53452E5641532E3031 to route 0 with power 17
+03-27 20:05:57.563 D/AidRoutingManager( 4032): #######Routing AID A0000000031010 to route 0 with power 17
+03-27 20:05:57.563 D/AidRoutingManager( 4032): #######Routing AID A000000476D0000111 to route 0 with power 17
+03-27 20:05:57.563 D/AidRoutingManager( 4032): Routing table unchanged, but commit the routing
+03-27 20:05:57.564 D/NQApduServiceInfo( 4032): updateServiceCommitStatus:Description:Nearby:InternalState:1:commitStatus:true
+03-27 20:05:57.564 D/NQApduServiceInfo( 4032): updateServiceCommitStatus:Description:Google Wallet:InternalState:1:commitStatus:true
+03-27 20:05:57.564 E/RegisteredServicesCache( 4032): 3updateStatusOfServices:WriteServiceStateToFile
+03-27 20:05:57.565 E/RegisteredServicesCache( 4032):  Writing service state Data Always
+03-27 20:05:57.565 I/Finsky  (18160): [2] zee.a(8): Clearing split related stale data.
+03-27 20:05:57.567 I/abb     (16287): StartCommandInProcess(73657474696e67730067657400656e61 settings.get.ena [truncated])
+03-27 20:05:57.568 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:57.568 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService
+03-27 20:05:57.568 E/RegisteredServicesCache( 4032): component namecom.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+03-27 20:05:57.574 D/RegisteredServicesCache( 4032): ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService}, description: Nearby, Static AID Groups: Category: other, AIDs:F00000FE2C, , Dynamic AID Groups: 
+03-27 20:05:57.574 D/RegisteredServicesCache( 4032): ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService}, description: Google Wallet, Static AID Groups: , Dynamic AID Groups: Category: other, AIDs:4F53452E5641532E3031, A000000476D0000111, 
+03-27 20:05:57.574 D/RegisteredServicesCache( 4032): ApduService: ComponentInfo{com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService}, description: Google Pay, Static AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000041010, A0000000042203, A0000000043060, A0000000031010, A0000000980840, A0000000032010, A0000000032020, A00000000307010001, A0000003241010, A0000001523010, A0000001524010, A00000002501, A000000025011001, A000000025021001, A0000002771010, A00000038410, A00000038420, A0000004941010, A0000004942010, A0000000049101, A0000007800006, A0000006581010, , Dynamic AID Groups: Category: payment, AIDs:325041592E5359532E4444463031, A0000000031010, 
+03-27 20:05:57.574 I/abb     (16287): StartCommandInProcess(7061636b61676500696e7374616c6c00 package.install. [truncated])
+03-27 20:05:57.576 D/RegisteredNfcFServicesCache( 4032): Service unchanged, not updating
+03-27 20:05:57.576 E/NfcService( 4032): applyRouting -9
+03-27 20:05:57.576 D/NfcService( 4032): Not committing routing because discovery is disabled.
+03-27 20:05:57.579 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.579 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.579 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.580 D/PackageManagerServiceInjector( 1565): MIUILOG- permission　denied android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS
+03-27 20:05:57.580 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.593 W/Looper  ( 1565): Slow delivery took 211ms android.fg h=android.os.Handler c=<recycled PooledLambda@4d92dc> m=0
+03-27 20:05:57.604 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.605 I/abb     (16287): StartCommandInProcess(73657474696e67730067657400656e61 settings.get.ena [truncated])
+03-27 20:05:57.610 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.610 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.610 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.611 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.613 I/BlockstoreStorage(25204): Setting IsLastInstallationDataPerPackage bit to true for package com.nfclab.e_leap_project [CONTEXT service_id=258 ]
+03-27 20:05:57.613 I/Finsky  (18160): [2] ivs.a(1): AIM: AppInfoCacheUpdater -> invalidating apps: [com.nfclab.e_leap_project]
+03-27 20:05:57.614 I/Finsky  (18160): [2] iwk.a(1): AIM: AppInfoManager-Perf > Creating AppInfoManager ...
+03-27 20:05:57.619 I/abb     (16287): StartCommandInProcess(7061636b61676500696e7374616c6c00 package.install. [truncated])
+03-27 20:05:57.621 I/Perf    (19417): Connecting to perf service.
+03-27 20:05:57.624 D/PackageManagerServiceInjector( 1565): MIUILOG- permission　denied android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS
+03-27 20:05:57.642 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.642 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.642 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.643 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.649 I/Fitness (25371): FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_REMOVED [CONTEXT service_id=17 ]
+03-27 20:05:57.650 I/Fitness (25371): Clearing all cached OAuth tokens for: com.nfclab.e_leap_project [CONTEXT service_id=17 ]
+03-27 20:05:57.650 I/Fitness (25371): Removing all subscriptions for: com.nfclab.e_leap_project [CONTEXT service_id=17 ]
+03-27 20:05:57.651 I/AlarmManager(25371): set [name: SystemMemoryCache type: 2 triggerAtMillis: 315470133133 windowMillis: -1 intervalMillis: 0]
+03-27 20:05:57.657 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.658 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.658 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.659 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.660 I/FeatureParser(19417): can't find grus.xml in assets/device_features/,it may be in /system/etc/device_features
+03-27 20:05:57.663 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.664 I/chatty  ( 1565): uid=1000(system) Binder:1565_14 identical 98 lines
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.android.providers.calendar, tag: *walarm*:com.android.providers.calendar.intent.CalendarProvider2, whenElapsed: 369333146, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.instagram.android, tag: *walarm*:action_batch_upload, whenElapsed: 369333146, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.android.providers.calendar, tag: *walarm*:com.android.providers.calendar.intent.CalendarProvider2, whenElapsed: 369333146, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: android, tag: *walarm*:*job.delay*, whenElapsed: 369333146, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: android, tag: *walarm*:*job.deadline*, whenElapsed: 369921521, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.googlequicksearchbox, tag: *alarm*:com.google.android.libraries.notifications.SYSTEM_TRAY_EVENT, whenElapsed: 376372482, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.apps.maps, tag: *alarm*:com.google.android.apps.gmm.plugins.serverrecovery.SCHEDULED_CHECK, whenElapsed: 382862820, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.calendar, tag: *alarm*:com.google.android.calendar.intent.action.MIDNIGHT, whenElapsed: 383845346, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.lenovo.anyshare.gps, tag: *walarm*:com.ushareit.adcs.action.ADCS_ALARM, whenElapsed: 401516200, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.googlequicksearchbox, tag: *alarm*:com.google.android.libraries.notifications.SYSTEM_TRAY_EVENT, whenElapsed: 444097482, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.orca, tag: *alarm*:com.facebook.intent.action.prod.FOR_DELAYED_WORKER_SERVICE, whenElapsed: 448914602, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.appmanager, tag: *alarm*:com.facebook.oxygen.appmanager.periodicwork.GUARD_BATTERY_CALLBACK, whenElapsed: 608013472, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.appmanager, tag: *alarm*:backupJobSchedulerCheck, whenElapsed: 627866517, now: 110133146
+03-27 20:05:57.664 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.667 E/libc    (19417): Access denied finding property "ro.vendor.df.effect.conflict"
+03-27 20:05:57.671 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.676 I/ContentMaintenance(25204): Internal cache bytes used: 0; limit: 100000000; download size: 0
+03-27 20:05:57.677 I/hwservicemanager(  536): getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device manifest.
+03-27 20:05:57.677 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.678 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.678 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.681 I/Finsky  (18160): [2] iwj.k(1): AIM: AppInfoManager-Perf > getApps > called for 1 apps
+03-27 20:05:57.682 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.687 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.689 I/Perf    (19394): Connecting to perf service.
+03-27 20:05:57.692 E/Perf    (19417): Fail to get file list com.android.keychain
+03-27 20:05:57.692 E/Perf    (19417): getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+03-27 20:05:57.693 E/Perf    (19417): Fail to get file list com.android.keychain
+03-27 20:05:57.693 E/Perf    (19417): getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+03-27 20:05:57.694 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.694 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.694 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.694 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.696 I/Icing   (25204): doRemovePackageData com.nfclab.e_leap_project
+03-27 20:05:57.697 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.698 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.698 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.699 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.706 I/chatty  (  536): uid=1000(system) hwservicemanage identical 1 line
+03-27 20:05:57.709 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.715 I/Finsky  (18160): [16071] ixr.a(5): AIM: AppInfoManager-Perf > OnDeviceAppInfo > cacheHitCount=0, cacheMissCount=1. Missed  in cache (limit 10) : [com.nfclab.e_leap_project]
+03-27 20:05:57.716 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.716 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.716 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.717 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.723 E/libc    (19394): Access denied finding property "ro.vendor.display.type"
+03-27 20:05:57.724 I/Finsky  (18160): [16071] ivf.apply(81): AIM: Got app ownership map. App counts: . Unique apps: 0
+03-27 20:05:57.734 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.739 W/ChimeraUtils(25204): Module com.google.android.gms.games_full has empty metadata display_name_string_id
+03-27 20:05:57.741 D/miuisdk (19394): current sdk level is 24
+03-27 20:05:57.742 I/RealtimeCacheCleanup(25204): Beginning Realtime garbage collection.
+03-27 20:05:57.742 I/miuisdk (19394): initialize without hook
+03-27 20:05:57.748 I/RealtimeCacheCleanup(25204): Finished Realtime garbage collection.
+03-27 20:05:57.759 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.665 I/chatty  ( 1565): uid=1000(system) Binder:1565_14 identical 74 lines
+03-27 20:05:57.665 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.767 W/Looper  ( 1565): Drained
+03-27 20:05:57.764 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.767 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10066, uidState = 5
+03-27 20:05:57.767 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10066,old:6,new:5
+03-27 20:05:57.767 I/MiuiNetworkPolicy( 1565): isMLEnabled state:6,uid:10066,connect:DISCONNECTED
+03-27 20:05:57.767 I/MiuiNetworkPolicy( 1565): isMLEnabled state:5,uid:10066,connect:DISCONNECTED
+03-27 20:05:57.767 I/BtGatt.ScanManager( 9935): msg.what = 6
+03-27 20:05:57.768 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.774 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.779 I/Finsky  (18160): [2] afns.c(5): Do not start WearSupportService due to Wear service optimization
+03-27 20:05:57.779 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.779 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.779 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.780 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.792 I/Finsky  (18160): [2] uyb.s(5): Package no longer installed: com.nfclab.e_leap_project
+03-27 20:05:57.808 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.810 I/Finsky  (18160): [16137] ndw.run(3): Frosting DB delete succeeded: false
+03-27 20:05:57.814 I/Finsky  (18160): [16145] as.a(9): Asset module storage cleared for package com.nfclab.e_leap_project.
+03-27 20:05:57.817 W/ActivityManager( 1565): Unable to start service Intent { cmp=androidx.test.tools.crawler/.controller.CrawlDriver (has extras) } U=0: not found
+03-27 20:05:57.817 E/Finsky  (18160): [16075] trm.accept(31): Failed to update MultiAppNotificationValueStore
+03-27 20:05:57.817 E/Finsky  (18160): java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+03-27 20:05:57.817 E/Finsky  (18160): 	at anaf.e(PG:3)
+03-27 20:05:57.817 E/Finsky  (18160): 	at anah.run(PG:9)
+03-27 20:05:57.817 E/Finsky  (18160): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+03-27 20:05:57.817 E/Finsky  (18160): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+03-27 20:05:57.817 E/Finsky  (18160): 	at kkg.run(PG:11)
+03-27 20:05:57.817 E/Finsky  (18160): 	at java.lang.Thread.run(Thread.java:919)
+03-27 20:05:57.847 E/OverviewComponentObserver( 2394): updateOverviewTargets: defaultHome=ComponentInfo{com.miui.home/com.miui.home.launcher.Launcher}
+03-27 20:05:57.847 W/RecentsImpl( 2394): setIsUseMiuiHomeAsDefaultHome    isUseMiuiHomeAsDefaultHome=true   mIsUseMiuiHomeAsDefaultHome=true
+03-27 20:05:57.850 E/OverviewComponentObserver( 2394): updateOverviewTargets: defaultHome=ComponentInfo{com.miui.home/com.miui.home.launcher.Launcher}
+03-27 20:05:57.850 W/RecentsImpl( 2394): setIsUseMiuiHomeAsDefaultHome    isUseMiuiHomeAsDefaultHome=true   mIsUseMiuiHomeAsDefaultHome=true
+03-27 20:05:57.856 I/Icing   (25204): IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=AppsCorpus serviceId=36
+03-27 20:05:57.861 W/Linkify.v16(19394): reflect applyLink failed: 
+03-27 20:05:57.861 W/Linkify.v16(19394): miui.reflect.NoSuchMethodException: Couldn't find method android/text/util/Linkify.applyLink(Ljava/lang/String;IILandroid/text/Spannable;)V
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.miui.internal.os.Native.getMethod(Native Method)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at miui.reflect.Method.of(Method.java:35)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.miui.internal.variable.v16.Android_Text_Util_Linkify_class.<clinit>(Android_Text_Util_Linkify_class.java:70)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at java.lang.Class.classForName(Native Method)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at java.lang.Class.forName(Class.java:454)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at java.lang.Class.forName(Class.java:379)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.miui.internal.variable.AbsClassFactory.create(AbsClassFactory.java:24)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory.<init>(Android_Text_Util_Linkify_class.java:40)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory.<init>(Android_Text_Util_Linkify_class.java:26)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory$1.createInstance(Android_Text_Util_Linkify_class.java:32)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory$1.createInstance(Android_Text_Util_Linkify_class.java:29)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at miui.util.SoftReferenceSingleton.get(SoftReferenceSingleton.java:25)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory.getInstance(Android_Text_Util_Linkify_class.java:44)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.miui.internal.initialization.OverrideHelper.doInitialize(OverrideHelper.java:37)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at miui.core.SdkManager.initialize(SdkManager.java:99)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at java.lang.reflect.Method.invoke(Native Method)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at miui.external.Application.initializeSdk(Application.java:4)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at miui.external.Application.<init>(Application.java:3)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.android.settings.Application.<init>(Application.java:1)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at java.lang.Class.newInstance(Native Method)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at android.app.AppComponentFactory.instantiateApplication(AppComponentFactory.java:76)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at androidx.core.app.CoreComponentFactory.instantiateApplication(CoreComponentFactory.java:1)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at android.app.Instrumentation.newApplication(Instrumentation.java:1156)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at android.app.LoadedApk.makeApplication(LoadedApk.java:1222)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6553)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at android.app.ActivityThread.access$1400(ActivityThread.java:224)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1887)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at android.os.Looper.loop(Looper.java:224)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at android.app.ActivityThread.main(ActivityThread.java:7562)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at java.lang.reflect.Method.invoke(Native Method)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:539)
+03-27 20:05:57.861 W/Linkify.v16(19394): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:950)
+03-27 20:05:57.874 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.874 W/Finsky  (18160): [2] zgx.b(7): STU: Failed to get storage stats for package 'com.nfclab.e_leap_project' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+03-27 20:05:57.877 I/chatty  ( 1565): uid=1000(system) miui.fg identical 98 lines
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.android.providers.calendar, tag: *walarm*:com.android.providers.calendar.intent.CalendarProvider2, whenElapsed: 369333358, now: 110133358
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.instagram.android, tag: *walarm*:action_batch_upload, whenElapsed: 369333359, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.android.providers.calendar, tag: *walarm*:com.android.providers.calendar.intent.CalendarProvider2, whenElapsed: 369333359, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: android, tag: *walarm*:*job.deadline*, whenElapsed: 369921521, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.googlequicksearchbox, tag: *alarm*:com.google.android.libraries.notifications.SYSTEM_TRAY_EVENT, whenElapsed: 376372482, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.apps.maps, tag: *alarm*:com.google.android.apps.gmm.plugins.serverrecovery.SCHEDULED_CHECK, whenElapsed: 382862820, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.calendar, tag: *alarm*:com.google.android.calendar.intent.action.MIDNIGHT, whenElapsed: 383845346, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.lenovo.anyshare.gps, tag: *walarm*:com.ushareit.adcs.action.ADCS_ALARM, whenElapsed: 401516200, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.googlequicksearchbox, tag: *alarm*:com.google.android.libraries.notifications.SYSTEM_TRAY_EVENT, whenElapsed: 444097482, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.orca, tag: *alarm*:com.facebook.intent.action.prod.FOR_DELAYED_WORKER_SERVICE, whenElapsed: 448914602, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.appmanager, tag: *alarm*:com.facebook.oxygen.appmanager.periodicwork.GUARD_BATTERY_CALLBACK, whenElapsed: 608013472, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.appmanager, tag: *alarm*:backupJobSchedulerCheck, whenElapsed: 627866517, now: 110133359
+03-27 20:05:57.877 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.886 I/chatty  ( 1565): uid=1000(system) miui.fg identical 74 lines
+03-27 20:05:57.886 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:57.886 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: android, tag: *walarm*:*job.delay*, whenElapsed: 369493123, now: 110133368
+03-27 20:05:57.887 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.890 I/GetServiceValidatorImpl(25204): onGetService() from Client SDK version [231015000], Module version [231015030], PGA version [404700040], Account [Account {name=<<default account>>, type=com.google}], Calling package [com.google.android.gms], Game package [com.google.android.gms] [CONTEXT service_id=1 ]
+03-27 20:05:57.891 W/GetGamesServiceReqFacto(25204): Parsing request with ignored arguments. signInOptionsBundle [Bundle[{com.google.android.gms.signin.internal.serverClientId=null, com.google.android.gms.signin.internal.usePromptModeForAuthCode=true, com.google.android.gms.signin.internal.logSessionId=null, com.google.android.gms.signin.internal.hostedDomain=null, com.google.android.gms.signin.internal.offlineAccessRequested=false, com.google.android.gms.signin.internal.waitForAccessTokenRefresh=false, com.google.android.gms.signin.internal.clientRequestedAccount=Account {name=<<default account>>, type=com.google}, com.google.android.gms.signin.internal.idTokenRequested=false, com.google.android.gms.signin.internal.forceCodeForRefreshToken=false}]], isRetryingSignIn [false], skipWelcomePopup [false], requireGooglePlus [false]
+03-27 20:05:57.891 I/Finsky  (18160): [16065] ixm.a(11): AIM: AppInfoManager-Perf > ItemModel > CacheSize=82, cacheHitCount=0, cacheMissCount=0, total appsWithNoServerDataCount=1. Missed  in cache (limit 10) : []
+03-27 20:05:57.893 I/GetGamesServiceReqFacto(25204): Replacing request for `games` scope with `games_lite`
+03-27 20:05:57.905 I/Finsky  (18160): [16065] igs.accept(28): AIM: AppInfoManager-Perf > getApps > data collection finished
+03-27 20:05:57.910 I/Finsky  (18160): [16065] ibl.run(13): AIM: AppInfoManager-Perf > maybeDestroyAppInfoManager is called. actives = 0
+03-27 20:05:57.917 I/SignInPerformer-5(25204): Handling request [GetGamesServiceRequest{gamePackageName=com.google.android.gms, gameUid=10066, gamePlayServicesClientLibraryVersion=231015000, sdkVariation=1052947, requestedScopes=[https://www.googleapis.com/auth/games_lite], callingIdentity=CallingIdentity{uid=10066, pid=25204, packageName=com.google.android.gms, playServicesClientLibraryVersion=231015000}, requestedAccount=Optional.absent(), forceResolveAccountKey=null, requestedServiceMode=2}], isFirstPartyCaller [true] [CONTEXT service_id=1 ]
+03-27 20:05:57.920 I/SignInPerformer-5(25204): Successfully brokered first-party unauthenticated GamesService [CONTEXT service_id=1 ]
+03-27 20:05:57.921 I/GetGamesServiceV2Op(25204): Successfully brokered GamesService for request eiu{gamePackageName=com.google.android.gms, gameUid=10066, gamePlayServicesClientLibraryVersion=231015000, sdkVariation=1052947, requestedScopes=[https://www.googleapis.com/auth/games_lite], callingIdentity=CallingIdentity{uid=10066, pid=25204, packageName=com.google.android.gms, playServicesClientLibraryVersion=231015000}, requestedAccount=Optional.absent(), forceResolveAccountKey=null, requestedServiceMode=2} [CONTEXT service_id=1 ]
+03-27 20:05:57.936 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.946 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:57.946 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:57.946 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:57.961 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:57.969 I/chatty  (  536): uid=1000(system) hwservicemanage identical 1 line
+03-27 20:05:57.976 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.002 I/FeatureParser(19394): can't find grus.xml in assets/device_features/,it may be in /system/etc/device_features
+03-27 20:05:58.003 I/system_server( 1565): Background young concurrent copying GC freed 155884(19MB) AllocSpace objects, 27(3536KB) LOS objects, 6% free, 69MB/74MB, paused 815us total 266.080ms
+03-27 20:05:58.006 E/libc    (19394): Access denied finding property "ro.vendor.df.effect.conflict"
+03-27 20:05:58.019 I/hwservicemanager(  536): getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device manifest.
+03-27 20:05:58.021 I/GmsCoreXrpcWrapper(25204): Returning a channel provider with trafficStatsTag=12803 trafficStatsUid=-1
+03-27 20:05:58.022 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.023 W/system_server( 1565): Long monitor contention with owner NetworkStats (2047) at void com.android.server.net.NetworkStatsService$4.onReceive(android.content.Context, android.content.Intent)(NetworkStatsService.java:1080) waiters=0 in void com.android.server.net.NetworkStatsService.setUidForeground(int, boolean) for 566ms
+03-27 20:05:58.027 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.android.vending/com.google.android.finsky.packagemonitor.impl.PackageMonitorReceiverImpl$RegisteredReceiver
+03-27 20:05:58.030 E/Perf    (19394): Fail to get file list com.android.settings
+03-27 20:05:58.030 E/Perf    (19394): getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+03-27 20:05:58.030 E/Perf    (19394): Fail to get file list com.android.settings
+03-27 20:05:58.031 E/Perf    (19394): getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+03-27 20:05:58.031 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.android.vending/com.google.android.finsky.packagemonitor.backgroundimpl.BackgroundPackageMonitorReceiverImpl$RegisteredReceiver
+03-27 20:05:58.032 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.android.vending/com.google.android.finsky.instantapps.appmanagement.InstantAppRemoveMonitor
+03-27 20:05:58.032 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.facebook.services/com.facebook.oxygen.services.fbns.RegisteredMqttSystemBroadcastReceiver
+03-27 20:05:58.032 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.google.android.apps.maps/com.google.android.libraries.social.peoplekit.thirdparty.viewcontrollers.ThirdPartyReceiver
+03-27 20:05:58.032 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.google.android.gms/.games.chimera.GamesSystemBroadcastReceiverProxy
+03-27 20:05:58.033 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+03-27 20:05:58.033 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.google.android.googlequicksearchbox/com.google.android.apps.gsa.googlequicksearchbox.GelStubAppWatcher
+03-27 20:05:58.033 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.miui.audioeffect/com.android.musicfx.Compatibility$Receiver
+03-27 20:05:58.033 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.xiaomi.discover/com.xiaomi.market.data.MyPackageMonitor
+03-27 20:05:58.056 D/Zygote  (  652): Forked child process 19513
+03-27 20:05:58.056 I/Finsky  (18160): [16075] vfn.accept(41): SCH: Scheduling phonesky job Id: 12-1, CT: 1679943957811, Constraints: [{ L: 15000, D: 86400000, C: 1, I: 1, N: 1 }]
+03-27 20:05:58.058 D/Boost   ( 1565): hostingType=broadcast, hostingName={com.xiaomi.misettings/com.xiaomi.misettings.usagestats.AppTimerReceiver}, callerPackage=null, isSystem=true, isBoostNeeded=false.
+03-27 20:05:58.063 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.064 I/Finsky  (18160): [16065] xir.apply(9): SCH: Scheduling 1 system job(s)
+03-27 20:05:58.065 I/Finsky  (18160): [16065] xwb.d(4): SCH: Scheduling system job Id: 9441, L: 14747, D: 71911445, C: false, I: false, N: 1
+03-27 20:05:58.069 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:58.069 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:58.069 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:58.071 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.073 W/aomi.misetting(19513): Using default instruction set features for ARM CPU variant (cortex-a9) using conservative defaults
+03-27 20:05:58.076 D/BoundBrokerSvc(25371): onBind: Intent { act=com.google.android.gms.icing.LIGHTWEIGHT_INDEX_SERVICE dat=chimera-action: cmp=com.google.android.gms/.chimera.PersistentApiService }
+03-27 20:05:58.076 D/BoundBrokerSvc(25371): Loading bound service for intent: Intent { act=com.google.android.gms.icing.LIGHTWEIGHT_INDEX_SERVICE dat=chimera-action: cmp=com.google.android.gms/.chimera.PersistentApiService }
+03-27 20:05:58.085 E/aomi.misetting(19513): Not starting debugger since process cannot load the jdwp agent.
+03-27 20:05:58.087 D/InternationalCompat(19394): in international, to init onetrack sdk, isOpenExperience:true
+03-27 20:05:58.094 D/OemNetd (  650): setPidForPackage: packageName=com.xiaomi.misettings, pid=19513, pid=1000
+03-27 20:05:58.094 I/ActivityManager( 1565): Start proc 19513:com.xiaomi.misettings/1000 for broadcast {com.xiaomi.misettings/com.xiaomi.misettings.usagestats.AppTimerReceiver} caller=null
+03-27 20:05:58.097 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10066, uidState = 6
+03-27 20:05:58.098 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10066,old:5,new:6
+03-27 20:05:58.098 I/MiuiNetworkPolicy( 1565): isMLEnabled state:5,uid:10066,connect:DISCONNECTED
+03-27 20:05:58.098 I/MiuiNetworkPolicy( 1565): isMLEnabled state:6,uid:10066,connect:DISCONNECTED
+03-27 20:05:58.098 I/BtGatt.ScanManager( 9935): msg.what = 6
+03-27 20:05:58.100 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.103 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.104 D/OneTrackSdk(19394): log on: false, quick upload on: false
+03-27 20:05:58.108 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.114 I/chatty  (  536): uid=1000(system) hwservicemanage identical 1 line
+03-27 20:05:58.121 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.123 I/Icing   (25204): Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+03-27 20:05:58.131 D/OneTrackImp(19394): OneTrackImp init : Configuration{appId='31*******48', pluginId='null', channel='xiaomi', international=false, region='null', overrideMiuiRegionSetting=false, mode=APP, GAIDEnable=true, IMSIEnable=true, IMEIEnable=true, ExceptionCatcherEnable=false}
+03-27 20:05:58.131 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:58.131 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:58.131 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:58.141 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:58.141 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:58.141 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:58.147 D/Settings:international:cloud:Utils(19394): network changed type:1
+03-27 20:05:58.152 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.152 D/Settings:international:cloud:Utils(19394): network changed type:1
+03-27 20:05:58.173 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.182 D/NetworkSecurityConfig(19394): No Network Security Config specified, using platform default
+03-27 20:05:58.187 I/Icing   (25204): IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=null serviceId=30
+03-27 20:05:58.199 E/ResolverController(  650): No valid NAT64 prefix (109, <unspecified>/0)
+03-27 20:05:58.241 D/RecommendHelper(19394): Load end, total time78ms
+03-27 20:05:58.261 I/GmsCoreXrpcWrapper(25204): Returning a channel provider with trafficStatsTag=12803 trafficStatsUid=-1
+03-27 20:05:58.277 I/Icing   (25204): Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+03-27 20:05:58.279 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:58.281 I/chatty  ( 1565): uid=1000(system) Binder:1565_9 identical 98 lines
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.android.providers.calendar, tag: *walarm*:com.android.providers.calendar.intent.CalendarProvider2, whenElapsed: 369333763, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.android.providers.calendar, tag: *walarm*:com.android.providers.calendar.intent.CalendarProvider2, whenElapsed: 369333763, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.instagram.android, tag: *walarm*:action_batch_upload, whenElapsed: 369333763, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: android, tag: *walarm*:*job.deadline*, whenElapsed: 369921521, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.googlequicksearchbox, tag: *alarm*:com.google.android.libraries.notifications.SYSTEM_TRAY_EVENT, whenElapsed: 376372482, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.apps.maps, tag: *alarm*:com.google.android.apps.gmm.plugins.serverrecovery.SCHEDULED_CHECK, whenElapsed: 382862820, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.calendar, tag: *alarm*:com.google.android.calendar.intent.action.MIDNIGHT, whenElapsed: 383845346, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.lenovo.anyshare.gps, tag: *walarm*:com.ushareit.adcs.action.ADCS_ALARM, whenElapsed: 401516200, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.googlequicksearchbox, tag: *alarm*:com.google.android.libraries.notifications.SYSTEM_TRAY_EVENT, whenElapsed: 444097482, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.orca, tag: *alarm*:com.facebook.intent.action.prod.FOR_DELAYED_WORKER_SERVICE, whenElapsed: 448914602, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.appmanager, tag: *alarm*:com.facebook.oxygen.appmanager.periodicwork.GUARD_BATTERY_CALLBACK, whenElapsed: 608013472, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.appmanager, tag: *alarm*:backupJobSchedulerCheck, whenElapsed: 627866517, now: 110133763
+03-27 20:05:58.281 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:58.282 I/chatty  ( 1565): uid=1000(system) Binder:1565_9 identical 74 lines
+03-27 20:05:58.282 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:58.282 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: android, tag: *walarm*:*job.delay*, whenElapsed: 369348323, now: 110133764
+03-27 20:05:58.284 I/Icing   (25204): Indexing com.google.android.gms-apps from com.google.android.gms
+03-27 20:05:58.287 W/BpBinder(18160): Slow Binder: BpBinder transact took 220 ms, interface=android.app.job.IJobScheduler, code=1 oneway=false
+03-27 20:05:58.291 I/Perf    (19513): Connecting to perf service.
+03-27 20:05:58.299 I/Finsky  (18160): [16059] jrb.acg(13): [ContentSync] finished, scheduled=true
+03-27 20:05:58.305 I/Icing   (25204): Indexing done com.google.android.gms-apps
+03-27 20:05:58.321 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.324 W/SuperWallpaperReceiver( 2941): task run 
+03-27 20:05:58.330 I/DozeHost( 2941): updateWallpaperSupportsAmbientModeState: wallpaperInfo == null
+03-27 20:05:58.330 I/MiuiAod.Utils( 2941): setUsingSuperWallpaperStyleState: false
+03-27 20:05:58.346 E/libc    (19513): Access denied finding property "ro.vendor.display.type"
+03-27 20:05:58.348 I/A       (26186): (REDACTED) soft deleting data for %s
+03-27 20:05:58.350 W/Looper  ( 1565): Slow dispatch took 948ms main h=android.app.ActivityThread$H c=android.app.-$$Lambda$LoadedApk$ReceiverDispatcher$Args$_BumDX2UKsnxLVrE6UJsJZkotuA@92d2593 m=0
+03-27 20:05:58.350 W/Looper  ( 1565): Slow delivery took 1033ms main h=android.app.ActivityThread$H c=android.app.-$$Lambda$LoadedApk$ReceiverDispatcher$Args$_BumDX2UKsnxLVrE6UJsJZkotuA@c5df9d0 m=0
+03-27 20:05:58.357 D/miuisdk (19513): current sdk level is 24
+03-27 20:05:58.358 I/miuisdk (19513): initialize without hook
+03-27 20:05:58.373 I/A       (26186): Scheduling deletion propagation for Geller data.
+03-27 20:05:58.373 I/DeviceAppInfoWork(26186): refreshDeviceAppInfoForAccount done.
+03-27 20:05:58.373 I/DeviceAppInfoWork(26186): refreshDeviceAppInfoForAccount done.
+03-27 20:05:58.374 I/A       (26186): Scheduling deletion propagation for Geller data.
+03-27 20:05:58.374 I/A       (26186): Scheduling deletion propagation for Geller data.
+03-27 20:05:58.374 I/DeviceAppInfoWork(26186): refreshDeviceAppInfoForAccount done.
+03-27 20:05:58.376 I/A       (26186): Performing deletion propagation for Geller data.
+03-27 20:05:58.377 I/A       (26186): Performing deletion propagation for Geller data.
+03-27 20:05:58.379 I/A       (26186): Performing deletion propagation for Geller data.
+03-27 20:05:58.386 E/RequestUtils(19394): parseContent exception
+03-27 20:05:58.386 E/RequestUtils(19394): org.json.JSONException: No value for sample_ratio
+03-27 20:05:58.386 E/RequestUtils(19394): 	at org.json.JSONObject.get(JSONObject.java:399)
+03-27 20:05:58.386 E/RequestUtils(19394): 	at org.json.JSONObject.getInt(JSONObject.java:488)
+03-27 20:05:58.386 E/RequestUtils(19394): 	at com.android.settings.cloud.q.jb(RequestUtils.java:7)
+03-27 20:05:58.386 E/RequestUtils(19394): 	at com.android.settings.cloud.p.run(RequestThread.java:3)
+03-27 20:05:58.386 E/Settings::RequestThread(19394): request error, operation: 100 , thread: Thread[Thread-3,5,main]
+03-27 20:05:58.386 I/RequestUtils(19394): RequestUtils setValidRatioAnalytics: true
+03-27 20:05:58.386 I/RequestUtils(19394): RequestUtils isValidRatioAnalytics: true
+03-27 20:05:58.401 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.424 W/Linkify.v16(19513): reflect applyLink failed: 
+03-27 20:05:58.424 W/Linkify.v16(19513): miui.reflect.NoSuchMethodException: Couldn't find method android/text/util/Linkify.applyLink(Ljava/lang/String;IILandroid/text/Spannable;)V
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.miui.internal.os.Native.getMethod(Native Method)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at miui.reflect.Method.of(Method.java:35)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.miui.internal.variable.v16.Android_Text_Util_Linkify_class.<clinit>(Android_Text_Util_Linkify_class.java:70)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at java.lang.Class.classForName(Native Method)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at java.lang.Class.forName(Class.java:454)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at java.lang.Class.forName(Class.java:379)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.miui.internal.variable.AbsClassFactory.create(AbsClassFactory.java:24)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory.<init>(Android_Text_Util_Linkify_class.java:40)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory.<init>(Android_Text_Util_Linkify_class.java:26)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory$1.createInstance(Android_Text_Util_Linkify_class.java:32)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory$1.createInstance(Android_Text_Util_Linkify_class.java:29)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at miui.util.SoftReferenceSingleton.get(SoftReferenceSingleton.java:25)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.miui.internal.variable.Android_Text_Util_Linkify_class$Factory.getInstance(Android_Text_Util_Linkify_class.java:44)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.miui.internal.initialization.OverrideHelper.doInitialize(OverrideHelper.java:37)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at miui.core.SdkManager.initialize(SdkManager.java:99)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at java.lang.reflect.Method.invoke(Native Method)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at miui.external.Application.e(Application.java:4)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at miui.external.Application.<init>(Application.java:3)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.xiaomi.misettings.Application.<init>(Application.java:1)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at java.lang.Class.newInstance(Native Method)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at android.app.AppComponentFactory.instantiateApplication(AppComponentFactory.java:76)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at androidx.core.app.CoreComponentFactory.instantiateApplication(CoreComponentFactory.java:1)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at android.app.Instrumentation.newApplication(Instrumentation.java:1156)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at android.app.LoadedApk.makeApplication(LoadedApk.java:1222)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6553)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at android.app.ActivityThread.access$1400(ActivityThread.java:224)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1887)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at android.os.Looper.loop(Looper.java:224)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at android.app.ActivityThread.main(ActivityThread.java:7562)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at java.lang.reflect.Method.invoke(Native Method)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:539)
+03-27 20:05:58.424 W/Linkify.v16(19513): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:950)
+03-27 20:05:58.421 W/health@2.0-serv(  775): type=1400 audit(0.0:61051): avc: denied { read } for name="type" dev="sysfs" ino=58539 scontext=u:r:hal_health_default:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
+03-27 20:05:58.500 I/FeatureParser(19513): can't find grus.xml in assets/device_features/,it may be in /system/etc/device_features
+03-27 20:05:58.511 W/aomi.misettings(19513): type=1400 audit(0.0:61052): avc: denied { read } for name="u:object_r:vendor_displayfeature_prop:s0" dev="tmpfs" ino=20246 scontext=u:r:system_app:s0 tcontext=u:object_r:vendor_displayfeature_prop:s0 tclass=file permissive=0
+03-27 20:05:58.526 E/libc    (19513): Access denied finding property "ro.vendor.df.effect.conflict"
+03-27 20:05:58.530 W/LR-CommonUtils(19513): ensureRegisterPreLoadYesterdayAlarm: start register
+03-27 20:05:58.535 W/LR-CommonUtils(19513): ensureRegisterPreLoadYesterdayAlarm: today has register
+03-27 20:05:58.536 D/Niel-LQuickAppDelegate(19513): --- init() .... START
+03-27 20:05:58.538 D/Niel-LQuickAppDelegate(19513): --- init() .... END
+03-27 20:05:58.539 D/MiStatInterfaceUtils(19513): ensureHasFinishProvisioned: hasFinishProvisioned=true
+03-27 20:05:58.549 D/MiStatInterfaceUtils(19513): ensureHasFinishProvisioned: hasFinishProvisioned=true
+03-27 20:05:58.560 D/AndroidRuntime(19500): >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+03-27 20:05:58.585 E/libc    (19500): Access denied finding property "persist.device_config.runtime_native_boot.enable_apex_image"
+03-27 20:05:58.585 I/AndroidRuntime(19500): Using default boot image
+03-27 20:05:58.585 E/libc    (19500): Access denied finding property "persist.device_config.runtime_native_boot.disable_lock_profiling"
+03-27 20:05:58.585 I/AndroidRuntime(19500): Leaving lock profiling enabled
+03-27 20:05:58.585 E/libc    (19500): Access denied finding property "persist.device_config.runtime_native_boot.enable_generational_cc"
+03-27 20:05:58.571 W/app_process(19500): type=1400 audit(0.0:61053): avc: denied { read } for name="u:object_r:device_config_runtime_native_boot_prop:s0" dev="tmpfs" ino=20130 scontext=u:r:shell:s0 tcontext=u:object_r:device_config_runtime_native_boot_prop:s0 tclass=file permissive=0
+03-27 20:05:58.590 I/hwservicemanager(  536): getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device manifest.
+03-27 20:05:58.592 I/AppTimerReceiver(19513): onReceive: action=android.intent.action.PACKAGE_REMOVED
+03-27 20:05:58.593 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to de.telekom.tsc/com.communology.dte.enabler.receiver.PackageChangedReceiver
+03-27 20:05:58.593 E/Perf    (19513): Fail to get file list lib
+03-27 20:05:58.595 E/Perf    (19513): getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+03-27 20:05:58.598 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.facebook.katana/com.facebook.feed.platformads.AppInstallReceiver
+03-27 20:05:58.598 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.google.android.apps.photos/com.google.android.libraries.social.peoplekit.thirdparty.viewcontrollers.ThirdPartyReceiver
+03-27 20:05:58.598 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.microsoft.office.excel/com.microsoft.android.crosssell.PackageStateReceiver
+03-27 20:05:58.598 W/BroadcastQueue( 1565): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project flg=0x4000010 (has extras) } to com.p1.mobile.putong/cn.jpush.android.service.PushReceiver
+03-27 20:05:58.599 E/Perf    (19513): Fail to get file list com.xiaomi.misettings
+03-27 20:05:58.600 E/Perf    (19513): getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+03-27 20:05:58.601 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:58.601 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:58.601 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): updateUidState uid = 90002, uidState = 12
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): updateMLUid uid:90002,old:18,new:12
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10135, uidState = 12
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10135,old:18,new:12
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): isMLEnabled state:18,uid:10135,connect:DISCONNECTED
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10135,connect:DISCONNECTED
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10090, uidState = 12
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10090,old:17,new:12
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): isMLEnabled state:17,uid:10090,connect:DISCONNECTED
+03-27 20:05:58.601 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10090,connect:DISCONNECTED
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): updateUidState uid = 90002, uidState = 18
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): updateMLUid uid:90002,old:12,new:18
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10135, uidState = 18
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10135,old:12,new:18
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10135,connect:DISCONNECTED
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): isMLEnabled state:18,uid:10135,connect:DISCONNECTED
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10090, uidState = 17
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10090,old:12,new:17
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10090,connect:DISCONNECTED
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): isMLEnabled state:17,uid:10090,connect:DISCONNECTED
+03-27 20:05:58.634 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10059, uidState = 20
+03-27 20:05:58.647 D/Zygote  (  651): Forked child process 19568
+03-27 20:05:58.649 D/Boost   ( 1565): hostingType=broadcast, hostingName={com.android.providers.media/com.android.providers.media.MediaReceiver}, callerPackage=null, isSystem=true, isBoostNeeded=false.
+03-27 20:05:58.649 D/OemNetd (  650): setPidForPackage: packageName=com.android.providers.media, pid=19568, pid=10059
+03-27 20:05:58.649 I/ActivityManager( 1565): Start proc 19568:android.process.media/u0a59 for broadcast {com.android.providers.media/com.android.providers.media.MediaReceiver} caller=null
+03-27 20:05:58.663 E/d.process.medi(19568): Not starting debugger since process cannot load the jdwp agent.
+03-27 20:05:58.676 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:58.676 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:58.676 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:58.682 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:58.682 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:58.682 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:58.683 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10059, uidState = 12
+03-27 20:05:58.683 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10059,old:20,new:12
+03-27 20:05:58.683 I/MiuiNetworkPolicy( 1565): isMLEnabled state:20,uid:10059,connect:DISCONNECTED
+03-27 20:05:58.683 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10059,connect:DISCONNECTED
+03-27 20:05:58.734 I/Perf    (19568): Connecting to perf service.
+03-27 20:05:58.743 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.perf::IPerf sid=u:r:mediaprovider:s0:c512,c768 pid=19568 scontext=u:r:mediaprovider:s0:c512,c768 tcontext=u:object_r:hal_perf_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.745 E/libc    (19568): Access denied finding property "vendor.debug.trace.perf"
+03-27 20:05:58.745 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.perf::IPerf sid=u:r:mediaprovider:s0:c512,c768 pid=19568 scontext=u:r:mediaprovider:s0:c512,c768 tcontext=u:object_r:hal_perf_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:58.746 E/libc    (19568): Access denied finding property "vendor.debug.trace.perf"
+03-27 20:05:58.772 I/FeatureParser(19568): can't find grus.xml in assets/device_features/,it may be in /system/etc/device_features
+03-27 20:05:58.775 E/libc    (19568): Access denied finding property "ro.vendor.df.effect.conflict"
+03-27 20:05:58.898 W/Looper  ( 1565): Slow dispatch took 548ms main h=android.app.ActivityThread$H c=android.app.-$$Lambda$LoadedApk$ReceiverDispatcher$Args$_BumDX2UKsnxLVrE6UJsJZkotuA@caea6f2 m=0
+03-27 20:05:58.901 D/WifiConfigManager( 1565): Remove all networks for app ApplicationInfo{e670143 com.nfclab.e_leap_project}
+03-27 20:05:58.907 W/ZenModeHelper( 1565): No component found for automatic rule: condition://com.android.systemui/forever
+03-27 20:05:58.907 I/ConditionProviders( 1565): Disallowing condition provider com.nfclab.e_leap_project
+03-27 20:05:58.919 W/Looper  ( 1565): Drained
+03-27 20:05:58.919 W/ZenModeHelper( 1565): No component found for automatic rule: condition://com.android.systemui/forever
+03-27 20:05:58.924 D/KeyguardUpdateMonitor( 2147): received broadcast android.intent.action.BATTERY_CHANGED
+03-27 20:05:58.925 D/NfcService( 4032): Received android.intent.action.BATTERY_CHANGED
+03-27 20:05:58.925 I/BatteryInfoReceiver( 4567): ACTION_BATTERY_CHANGED
+03-27 20:05:58.927 D/PowerCheckerService( 6431): onBatteryChanged, mBatteryLevel = 99, status = 2, level = 99, plug = 2, scale = 100
+03-27 20:05:58.928 I/PowerNoticeUI( 4567): handleBatteryChanged oldPlugType 2 mPlugType 2 oldBatteryLevel 99 mBatteryLevel 99 temperature 300
+03-27 20:05:58.932 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.932 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.932 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.932 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.932 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.933 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.933 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.933 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.940 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.941 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.942 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.942 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.943 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.943 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.943 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.944 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.944 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.944 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.944 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.944 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.945 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.945 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.945 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.945 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.945 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.946 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.946 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.946 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.946 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.947 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.947 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.947 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.947 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.947 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.947 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.947 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.947 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.948 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.948 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.948 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.948 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.948 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.948 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.948 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.949 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.949 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.949 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.949 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.949 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.949 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.949 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.949 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.949 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.950 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.950 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.950 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.950 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.950 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.950 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.951 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.951 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.951 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.951 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.951 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.951 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.952 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.952 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.952 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.952 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.952 D/AF::TrackHandle(  876): OpPlayAudio: track:100 usage:13 not muted
+03-27 20:05:58.952 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.952 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.953 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.953 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.953 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.953 D/AF::TrackHandle(  876): OpPlayAudio: track:1196 usage:1 not muted
+03-27 20:05:58.953 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.954 D/AF::TrackHandle(  876): OpPlayAudio: track:1184 usage:1 not muted
+03-27 20:05:58.956 D/AF::TrackHandle(  876): OpPlayAudio: track:1201 usage:13 not muted
+03-27 20:05:58.956 D/AF::TrackHandle(  876): OpPlayAudio: track:1180 usage:1 not muted
+03-27 20:05:58.958 D/ICU     (19500): Time zone APEX file found: /apex/com.android.tzdata/etc/icu/icu_tzdata.dat
+03-27 20:05:58.979 D/Launcher.Model( 2394): LauncherAppsCallback onPackageRemoved|com.nfclab.e_leap_project|UserHandle{0}
+03-27 20:05:58.979 W/XSpaceManagerService( 1565): update XSpace App: packageName:com.nfclab.e_leap_project, user:UserHandle{0}, action:android.intent.action.PACKAGE_REMOVED
+03-27 20:05:58.980 D/Launcher.Model( 2394): Got broadcast:Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:com.nfclab.e_leap_project (has extras) }
+03-27 20:05:58.996 I/RoleUserState( 1565): Wrote roles.xml successfully
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): isPackageDisableAsUser
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): android.content.pm.PackageManager$NameNotFoundException: com.nfclab.e_leap_project
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:194)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at com.miui.launcher.utils.LauncherUtils.isPackageDisableAsUser(LauncherUtils.java:243)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at com.miui.launcher.utils.LauncherUtils.isAppBackupRunning(LauncherUtils.java:315)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.AllAppsList.removePackage(AllAppsList.java:404)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel.onReceiveBackground(LauncherModel.java:969)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel$LauncherAppsCallback$2.run(LauncherModel.java:336)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel$8.run(LauncherModel.java:882)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at android.os.Handler.handleCallback(Handler.java:883)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at android.os.Handler.dispatchMessage(Handler.java:100)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at android.os.Looper.loop(Looper.java:224)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): 	at android.os.HandlerThread.run(HandlerThread.java:67)
+03-27 20:05:58.999 D/Launcher.LauncherUtils( 2394): app(com.nfclab.e_leap_project|UserHandle{0}) isDisable=false, backupProcessingPkg=null
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): isPackageDisableAsUser
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): android.content.pm.PackageManager$NameNotFoundException: com.nfclab.e_leap_project
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:194)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at com.miui.launcher.utils.LauncherUtils.isPackageDisableAsUser(LauncherUtils.java:243)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.AllAppsList.onAppRemoved(AllAppsList.java:513)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.AllAppsList.removePackage(AllAppsList.java:405)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel.onReceiveBackground(LauncherModel.java:969)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel$LauncherAppsCallback$2.run(LauncherModel.java:336)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel$8.run(LauncherModel.java:882)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at android.os.Handler.handleCallback(Handler.java:883)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at android.os.Handler.dispatchMessage(Handler.java:100)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at android.os.Looper.loop(Looper.java:224)
+03-27 20:05:59.001 D/Launcher.LauncherUtils( 2394): 	at android.os.HandlerThread.run(HandlerThread.java:67)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): isPackageDisableAsUser
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): android.content.pm.PackageManager$NameNotFoundException: com.nfclab.e_leap_project
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:194)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at com.miui.launcher.utils.LauncherUtils.isPackageDisableAsUser(LauncherUtils.java:243)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at com.miui.launcher.utils.LauncherUtils.isAppBackupRunning(LauncherUtils.java:315)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.AllAppsList.removePackage(AllAppsList.java:404)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel.onReceiveBackground(LauncherModel.java:969)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel$LauncherAppsCallback$2.run(LauncherModel.java:336)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel$8.run(LauncherModel.java:882)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at android.os.Handler.handleCallback(Handler.java:883)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at android.os.Handler.dispatchMessage(Handler.java:100)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at android.os.Looper.loop(Looper.java:224)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): 	at android.os.HandlerThread.run(HandlerThread.java:67)
+03-27 20:05:59.006 D/Launcher.LauncherUtils( 2394): app(com.nfclab.e_leap_project|UserHandle{0}) isDisable=false, backupProcessingPkg=null
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): isPackageDisableAsUser
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): android.content.pm.PackageManager$NameNotFoundException: com.nfclab.e_leap_project
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:194)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at com.miui.launcher.utils.LauncherUtils.isPackageDisableAsUser(LauncherUtils.java:243)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.AllAppsList.onAppRemoved(AllAppsList.java:513)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.AllAppsList.removePackage(AllAppsList.java:405)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel.onReceiveBackground(LauncherModel.java:969)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel$LauncherAppsCallback$2.run(LauncherModel.java:336)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at com.miui.home.launcher.LauncherModel$8.run(LauncherModel.java:882)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at android.os.Handler.handleCallback(Handler.java:883)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at android.os.Handler.dispatchMessage(Handler.java:100)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at android.os.Looper.loop(Looper.java:224)
+03-27 20:05:59.007 D/Launcher.LauncherUtils( 2394): 	at android.os.HandlerThread.run(HandlerThread.java:67)
+03-27 20:05:59.007 D/AutoInstallsParser( 2394): isPAIPackageName: com.nfclab.e_leap_project
+03-27 20:05:59.014 D/WifiConfigStore( 1565): Writing to stores completed in 90 ms.
+03-27 20:05:59.014 E/PasspointManager( 1565): No app ops listener found for com.nfclab.e_leap_project
+03-27 20:05:59.020 E/AutoInstallsParser( 2394): Layout definition not found in package: android.autoinstalls.config.Xiaomi.grus
+03-27 20:05:59.020 D/StatusBar( 2147): onNotificationPosted key=0|com.google.android.gms|2131362205|null|10066 isUpdate=false
+03-27 20:05:59.023 I/NotificationController( 2941): onNotificationPosted: mSmartTravelNotificationMap 0
+03-27 20:05:59.026 D/Launcher.Model( 2394): onReceiveBackground, mAllAppsList=add=[], remove=[(0, AppInfo, id=-1, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.MainActivity, screenId=-1, container=-1, cellX=-1, cellY=-1, spanX=1, spanY=1, isLandscapePos=false)(1, AppInfo, id=-1, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.Register, screenId=-1, container=-1, cellX=-1, cellY=-1, spanX=1, spanY=1, isLandscapePos=false)], modified=[]
+03-27 20:05:59.027 D/Launcher( 2394): remove icon when bind apps removed:ShortcutInfo, id=490, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.MainActivity, screenId=4, container=-100, cellX=2, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.027 D/Launcher( 2394): removeShortcutIcon, remove icon from CellLayout, info=ShortcutInfo, id=490, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.MainActivity, screenId=4, container=-100, cellX=2, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.027 D/Launcher.CellLayout( 2394): remove icon for ShortcutInfo, id=490, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.MainActivity, screenId=4, container=-100, cellX=2, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.027 D/Launcher.CellLayout( 2394): updateCellOccupiedMarks, remove, ShortcutInfo, id=490, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.MainActivity, screenId=4, container=-100, cellX=2, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.027 D/EventBus( 2394): No subscribers registered for event class com.miui.home.launcher.common.messages.CellLayoutMessage
+03-27 20:05:59.028 D/EventBus( 2394): No subscribers registered for event class org.greenrobot.eventbus.NoSubscriberEvent
+03-27 20:05:59.029 D/Launcher( 2394): removeShortcutIcon, info=(ShortcutInfo, id=490, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.MainActivity, screenId=4, container=-100, cellX=2, cellY=5, spanX=1, spanY=1, isLandscapePos=false), addedLater=false, removeFromDB=true
+03-27 20:05:59.030 D/Launcher.Model( 2394): Deleting item from database (2, 5) of screen 4
+03-27 20:05:59.030 D/Launcher.Model( 2394): deleteItemFromDatabase, item=ShortcutInfo, id=490, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.MainActivity, screenId=4, container=-100, cellX=2, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.030 D/Launcher( 2394): Start filling empty cell
+03-27 20:05:59.030 D/Launcher( 2394): remove icon when bind apps removed:ShortcutInfo, id=489, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.Register, screenId=4, container=-100, cellX=1, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.030 W/PushService( 6636): [Tid:2] this sbn is not at my space
+03-27 20:05:59.030 D/Launcher( 2394): removeShortcutIcon, remove icon from CellLayout, info=ShortcutInfo, id=489, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.Register, screenId=4, container=-100, cellX=1, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.030 D/Launcher.CellLayout( 2394): remove icon for ShortcutInfo, id=489, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.Register, screenId=4, container=-100, cellX=1, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.030 D/Launcher.CellLayout( 2394): updateCellOccupiedMarks, remove, ShortcutInfo, id=489, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.Register, screenId=4, container=-100, cellX=1, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.030 D/EventBus( 2394): No subscribers registered for event class com.miui.home.launcher.common.messages.CellLayoutMessage
+03-27 20:05:59.030 D/EventBus( 2394): No subscribers registered for event class org.greenrobot.eventbus.NoSubscriberEvent
+03-27 20:05:59.031 D/Launcher( 2394): removeShortcutIcon, info=(ShortcutInfo, id=489, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.Register, screenId=4, container=-100, cellX=1, cellY=5, spanX=1, spanY=1, isLandscapePos=false), addedLater=false, removeFromDB=true
+03-27 20:05:59.031 D/Launcher.Model( 2394): Deleting item from database (1, 5) of screen 4
+03-27 20:05:59.031 D/Launcher.Model( 2394): deleteItemFromDatabase, item=ShortcutInfo, id=489, itemType=0, user=UserHandle{0}, mIconType=0, pkgName=com.nfclab.e_leap_project, className=com.nfclab.e_leap_project.Register, screenId=4, container=-100, cellX=1, cellY=5, spanX=1, spanY=1, isLandscapePos=false
+03-27 20:05:59.031 D/Launcher( 2394): Start filling empty cell
+03-27 20:05:59.032 W/PushService( 6636): [Tid:2] this sbn is not at my space
+03-27 20:05:59.035 I/DropBoxManagerService( 1565): add tag=system_server_wtf isTagEnabled=true flags=0x2
+03-27 20:05:59.045 D/Launcher.Workspace( 2394): Start filling empty cell auto.
+03-27 20:05:59.045 D/Launcher.CellLayout( 2394): Start filling empty cell auto on cellX=2,cellY=5 with mHCells=4,mVCells=6
+03-27 20:05:59.046 D/Launcher.Workspace( 2394): Start filling empty cell auto.
+03-27 20:05:59.046 D/Launcher.CellLayout( 2394): Start filling empty cell auto on cellX=1,cellY=5 with mHCells=4,mVCells=6
+03-27 20:05:59.047 D/Launcher.CellLayout( 2394): requestLayout after has recalculated item position
+03-27 20:05:59.047 D/Launcher.CellLayout( 2394): requestLayout after has recalculated item position
+03-27 20:05:59.049 D/StatusBar( 2147): No peeking: unimportant notification: 0|com.google.android.gms|2131362205|null|10066
+03-27 20:05:59.050 D/StatusBar( 2147): onNotificationRemoved key=0|com.google.android.gms|2131362205|null|10066 reason=8
+03-27 20:05:59.050 W/StatusBar( 2147): removeNotification for unknown key: 0|com.google.android.gms|2131362205|null|10066
+03-27 20:05:59.050 D/StatusBar( 2147): removeNotification null
+03-27 20:05:59.062 W/app_process(19500): JNI RegisterNativeMethods: attempt to register 0 native methods for android.media.AudioAttributes
+03-27 20:05:59.065 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.069 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.069 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.069 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.070 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.074 E/libc    (19500): Access denied finding property "persist.vendor.qti.debug.atlogs_enable"
+03-27 20:05:59.077 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.078 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.079 I/hwservicemanager(  536): getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device manifest.
+03-27 20:05:59.084 E/Perf    (19568): Fail to get file list com.android.providers.media
+03-27 20:05:59.085 E/Perf    (19568): getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+03-27 20:05:59.085 E/Perf    (19568): Fail to get file list com.android.providers.media
+03-27 20:05:59.085 E/Perf    (19568): getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+03-27 20:05:59.086 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.087 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.087 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.087 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.088 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10059, uidState = 11
+03-27 20:05:59.089 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10059,old:12,new:11
+03-27 20:05:59.089 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10059,connect:DISCONNECTED
+03-27 20:05:59.089 I/MiuiNetworkPolicy( 1565): isMLEnabled state:11,uid:10059,connect:DISCONNECTED
+03-27 20:05:59.089 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.089 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.089 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.089 D/AndroidRuntime(19500): Calling main entry com.android.commands.am.Am
+03-27 20:05:59.093 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.093 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.093 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.093 I/MediaProvider(19568): Begin android.intent.action.PACKAGE_FULLY_REMOVED
+03-27 20:05:59.095 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10074, uidState = 12
+03-27 20:05:59.095 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10074,old:20,new:12
+03-27 20:05:59.095 I/MiuiNetworkPolicy( 1565): isMLEnabled state:20,uid:10074,connect:DISCONNECTED
+03-27 20:05:59.095 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10074,connect:DISCONNECTED
+03-27 20:05:59.098 I/Finsky  (18160): [2] uxj.g(0): uxj - Received: android.intent.action.PACKAGE_FULLY_REMOVED, [EP92ZuLDIRsJXwyTBLwx2s9kOsNcmQhQAhyr3wqikZY]
+03-27 20:05:59.100 I/Finsky  (18160): [2] uyb.s(5): Package no longer installed: com.nfclab.e_leap_project
+03-27 20:05:59.107 I/Finsky  (18160): [16137] ndw.run(3): Frosting DB delete succeeded: false
+03-27 20:05:59.157 W/ActivityManager( 1565): Unable to find instrumentation info for: ComponentInfo{androidx.test.tools.crawler/androidx.test.runner.AndroidJUnitRunner}
+03-27 20:05:59.161 V/SettingsProvider( 1565): Notifying for 0: content://settings/global/window_animation_scale
+03-27 20:05:59.161 V/SettingsProvider( 1565): Notifying for 11: content://settings/global/window_animation_scale
+03-27 20:05:59.163 V/SettingsProvider( 1565): Notifying for 0: content://settings/global/transition_animation_scale
+03-27 20:05:59.163 V/SettingsProvider( 1565): Notifying for 11: content://settings/global/transition_animation_scale
+03-27 20:05:59.165 V/SettingsProvider( 1565): Notifying for 0: content://settings/global/animator_duration_scale
+03-27 20:05:59.166 V/SettingsProvider( 1565): Notifying for 11: content://settings/global/animator_duration_scale
+03-27 20:05:59.166 W/Binder  ( 1565): Outgoing transactions from this process must be FLAG_ONEWAY
+03-27 20:05:59.166 W/Binder  ( 1565): java.lang.Throwable
+03-27 20:05:59.166 W/Binder  ( 1565): 	at android.os.BinderProxy.transact(BinderProxy.java:481)
+03-27 20:05:59.166 W/Binder  ( 1565): 	at android.app.IInstrumentationWatcher$Stub$Proxy.instrumentationStatus(IInstrumentationWatcher.java:172)
+03-27 20:05:59.166 W/Binder  ( 1565): 	at com.android.server.am.InstrumentationReporter$MyThread.run(InstrumentationReporter.java:80)
+03-27 20:05:59.167 I/app_process(19500): System.exit called, status: 1
+03-27 20:05:59.167 I/AndroidRuntime(19500): VM exiting with result code 1.
+03-27 20:05:59.169 V/SettingsProvider( 1565): Notifying for 0: content://settings/global/window_animation_scale
+03-27 20:05:59.169 V/SettingsProvider( 1565): Notifying for 11: content://settings/global/window_animation_scale
+03-27 20:05:59.170 V/SettingsProvider( 1565): Notifying for 0: content://settings/global/transition_animation_scale
+03-27 20:05:59.171 V/SettingsProvider( 1565): Notifying for 11: content://settings/global/transition_animation_scale
+03-27 20:05:59.172 V/SettingsProvider( 1565): Notifying for 0: content://settings/global/animator_duration_scale
+03-27 20:05:59.172 V/SettingsProvider( 1565): Notifying for 11: content://settings/global/animator_duration_scale
+03-27 20:05:59.173 I/Finsky  (18160): [2] uxj.g(0): uxj - Deduping intent android.intent.action.PACKAGE_FULLY_REMOVED
+03-27 20:05:59.175 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.175 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.175 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.200 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.200 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.200 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.223 I/system_server( 1565): Background concurrent copying GC freed 277437(26MB) AllocSpace objects, 18(1124KB) LOS objects, 31% free, 52MB/76MB, paused 229us total 312.219ms
+03-27 20:05:59.241 W/ding:backgroun(18282): Accessing hidden field Ljava/util/Collections$SynchronizedCollection;->mutex:Ljava/lang/Object; (greylist-max-o, reflection, denied)
+03-27 20:05:59.242 W/ding:backgroun(18282): Accessing hidden method Ljava/util/Collections$SynchronizedSet;-><init>(Ljava/util/Set;Ljava/lang/Object;)V (greylist-max-o, reflection, denied)
+03-27 20:05:59.242 W/ding:backgroun(18282): Accessing hidden method Ljava/util/Collections$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V (greylist-max-o, reflection, denied)
+03-27 20:05:59.286 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.299 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.300 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.300 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.303 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10156, uidState = 20
+03-27 20:05:59.303 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10074, uidState = 20
+03-27 20:05:59.303 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10074,old:12,new:20
+03-27 20:05:59.303 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10074,connect:DISCONNECTED
+03-27 20:05:59.303 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.303 I/MiuiNetworkPolicy( 1565): isMLEnabled state:20,uid:10074,connect:DISCONNECTED
+03-27 20:05:59.313 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.314 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.321 D/Zygote  (  651): Forked child process 19632
+03-27 20:05:59.322 D/Boost   ( 1565): hostingType=broadcast, hostingName={com.facebook.appmanager/com.facebook.oxygen.common.packages.event.manifest.ManifestPackageEventReceiver}, callerPackage=null, isSystem=true, isBoostNeeded=false.
+03-27 20:05:59.323 D/OemNetd (  650): setPidForPackage: packageName=com.facebook.appmanager, pid=19632, pid=10156
+03-27 20:05:59.323 I/ActivityManager( 1565): Start proc 19632:com.facebook.appmanager/u0a156 for broadcast {com.facebook.appmanager/com.facebook.oxygen.common.packages.event.manifest.ManifestPackageEventReceiver} caller=null
+03-27 20:05:59.338 E/book.appmanage(19632): Not starting debugger since process cannot load the jdwp agent.
+03-27 20:05:59.352 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.352 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.352 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.359 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.359 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.359 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.362 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.366 D/CompatibilityInfo( 1565): mCompatibilityFlags - 0
+03-27 20:05:59.366 D/CompatibilityInfo( 1565): applicationDensity - 480
+03-27 20:05:59.366 D/CompatibilityInfo( 1565): applicationScale - 1.0
+03-27 20:05:59.367 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.371 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10156, uidState = 12
+03-27 20:05:59.371 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10156,old:20,new:12
+03-27 20:05:59.371 I/MiuiNetworkPolicy( 1565): isMLEnabled state:20,uid:10156,connect:DISCONNECTED
+03-27 20:05:59.371 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10156,connect:DISCONNECTED
+03-27 20:05:59.375 I/MediaProvider(19568): End android.intent.action.PACKAGE_FULLY_REMOVED
+03-27 20:05:59.378 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.383 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10059, uidState = 20
+03-27 20:05:59.383 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10059,old:11,new:20
+03-27 20:05:59.383 I/MiuiNetworkPolicy( 1565): isMLEnabled state:11,uid:10059,connect:DISCONNECTED
+03-27 20:05:59.383 I/MiuiNetworkPolicy( 1565): isMLEnabled state:20,uid:10059,connect:DISCONNECTED
+03-27 20:05:59.440 I/Perf    (19632): Connecting to perf service.
+03-27 20:05:59.468 D/AndroidRuntime(19629): >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+03-27 20:05:59.471 E/libc    (19629): Access denied finding property "persist.device_config.runtime_native_boot.enable_apex_image"
+03-27 20:05:59.461 W/app_process(19629): type=1400 audit(0.0:61060): avc: denied { read } for name="u:object_r:device_config_runtime_native_boot_prop:s0" dev="tmpfs" ino=20130 scontext=u:r:shell:s0 tcontext=u:object_r:device_config_runtime_native_boot_prop:s0 tclass=file permissive=0
+03-27 20:05:59.471 I/AndroidRuntime(19629): Using default boot image
+03-27 20:05:59.471 E/libc    (19629): Access denied finding property "persist.device_config.runtime_native_boot.disable_lock_profiling"
+03-27 20:05:59.471 I/AndroidRuntime(19629): Leaving lock profiling enabled
+03-27 20:05:59.472 E/libc    (19629): Access denied finding property "persist.device_config.runtime_native_boot.enable_generational_cc"
+03-27 20:05:59.461 W/app_process(19629): type=1400 audit(0.0:61062): avc: denied { read } for name="u:object_r:device_config_runtime_native_boot_prop:s0" dev="tmpfs" ino=20130 scontext=u:r:shell:s0 tcontext=u:object_r:device_config_runtime_native_boot_prop:s0 tclass=file permissive=0
+03-27 20:05:59.504 D/b       (19632): ExceptionHandlerManager not explicitly initialized, using default mode
+03-27 20:05:59.504 D/b       (19632): initializing exception handler manager, prioritized=true
+03-27 20:05:59.519 W/SoLoader(19632): context.getApplicationContext returned null, holding reference to original context.ApplicationSoSource fallbacks to: /data/app/com.facebook.appmanager-5-c1yT-_7joH24mSwfj-tQ==/lib/arm64
+03-27 20:05:59.550 I/FeatureParser(19632): can't find grus.xml in assets/device_features/,it may be in /system/etc/device_features
+03-27 20:05:59.552 D/ICU     (19629): Time zone APEX file found: /apex/com.android.tzdata/etc/icu/icu_tzdata.dat
+03-27 20:05:59.541 W/book.appmanager(19632): type=1400 audit(0.0:61063): avc: denied { read } for name="u:object_r:vendor_displayfeature_prop:s0" dev="tmpfs" ino=20246 scontext=u:r:untrusted_app:s0:c156,c256,c512,c768 tcontext=u:object_r:vendor_displayfeature_prop:s0 tclass=file permissive=0
+03-27 20:05:59.554 E/libc    (19632): Access denied finding property "ro.vendor.df.effect.conflict"
+03-27 20:05:59.577 E/SQLiteLog(19632): (14) cannot open file at line 36683 of [68b898381a]
+03-27 20:05:59.577 E/SQLiteLog(19632): (14) os_unix.c:36683: (2) open(/data/user/0/com.facebook.appmanager/databases/androidx.work.workdb) - 
+03-27 20:05:59.579 W/app_process(19629): JNI RegisterNativeMethods: attempt to register 0 native methods for android.media.AudioAttributes
+03-27 20:05:59.580 E/SQLiteDatabase(19632): Failed to open database '/data/user/0/com.facebook.appmanager/databases/androidx.work.workdb'.
+03-27 20:05:59.580 E/SQLiteDatabase(19632): android.database.sqlite.SQLiteCantOpenDatabaseException: unknown error (code 14 SQLITE_CANTOPEN): Could not open database
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteConnection.nativeOpen(Native Method)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:215)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:197)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:505)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:206)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:198)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:915)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:895)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:786)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:733)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at com.facebook.oxygen.common.androidx.workmanager.initializer.b.a(WorkManagerDatabase.java:20)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at com.facebook.oxygen.appmanager.app.c.a(AppManagerApplicationImpl.java:19)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at com.facebook.oxygen.common.d.b.d.onCreate(OxpDelegatingApplication.java:75)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1190)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6582)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.app.ActivityThread.access$1400(ActivityThread.java:224)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1887)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.os.Handler.dispatchMessage(Handler.java:107)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.os.Looper.loop(Looper.java:224)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at android.app.ActivityThread.main(ActivityThread.java:7562)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at java.lang.reflect.Method.invoke(Native Method)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:539)
+03-27 20:05:59.580 E/SQLiteDatabase(19632): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:950)
+03-27 20:05:59.582 I/hwservicemanager(  536): getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device manifest.
+03-27 20:05:59.571 W/main    (19629): type=1400 audit(0.0:61064): avc: denied { read } for name="u:object_r:vendor_mpctl_prop:s0" dev="tmpfs" ino=20260 scontext=u:r:shell:s0 tcontext=u:object_r:vendor_mpctl_prop:s0 tclass=file permissive=0
+03-27 20:05:59.582 E/libc    (19629): Access denied finding property "persist.vendor.qti.debug.atlogs_enable"
+03-27 20:05:59.587 E/Perf    (19632): Fail to get file list lib
+03-27 20:05:59.587 D/AndroidRuntime(19629): Calling main entry com.android.commands.am.Am
+03-27 20:05:59.587 E/Perf    (19632): getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+03-27 20:05:59.595 W/ActivityManager( 1565): Unable to find instrumentation info for: ComponentInfo{androidx.test.tools.crawler/androidx.test.tools.crawler.CrawlMonitor}
+03-27 20:05:59.596 W/Binder  ( 1565): Outgoing transactions from this process must be FLAG_ONEWAY
+03-27 20:05:59.596 W/Binder  ( 1565): java.lang.Throwable
+03-27 20:05:59.596 W/Binder  ( 1565): 	at android.os.BinderProxy.transact(BinderProxy.java:481)
+03-27 20:05:59.596 W/Binder  ( 1565): 	at android.app.IInstrumentationWatcher$Stub$Proxy.instrumentationStatus(IInstrumentationWatcher.java:172)
+03-27 20:05:59.596 W/Binder  ( 1565): 	at com.android.server.am.InstrumentationReporter$MyThread.run(InstrumentationReporter.java:80)
+03-27 20:05:59.597 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10156, uidState = 20
+03-27 20:05:59.597 I/MiuiNetworkPolicy( 1565): updateMLUid uid:10156,old:12,new:20
+03-27 20:05:59.597 I/MiuiNetworkPolicy( 1565): isMLEnabled state:12,uid:10156,connect:DISCONNECTED
+03-27 20:05:59.597 I/MiuiNetworkPolicy( 1565): isMLEnabled state:20,uid:10156,connect:DISCONNECTED
+03-27 20:05:59.597 I/app_process(19629): System.exit called, status: 1
+03-27 20:05:59.597 I/MiuiNetworkPolicy( 1565): updateUidState uid = 10127, uidState = 20
+03-27 20:05:59.597 I/AndroidRuntime(19629): VM exiting with result code 1.
+03-27 20:05:59.601 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:59.609 I/chatty  ( 1565): uid=1000(system) Binder:1565_C identical 98 lines
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.instagram.android, tag: *walarm*:action_batch_upload, whenElapsed: 369335091, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.android.providers.calendar, tag: *walarm*:com.android.providers.calendar.intent.CalendarProvider2, whenElapsed: 369335091, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.android.providers.calendar, tag: *walarm*:com.android.providers.calendar.intent.CalendarProvider2, whenElapsed: 369335091, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: android, tag: *walarm*:*job.delay*, whenElapsed: 369348323, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: android, tag: *walarm*:*job.deadline*, whenElapsed: 369921521, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.googlequicksearchbox, tag: *alarm*:com.google.android.libraries.notifications.SYSTEM_TRAY_EVENT, whenElapsed: 376372482, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.apps.maps, tag: *alarm*:com.google.android.apps.gmm.plugins.serverrecovery.SCHEDULED_CHECK, whenElapsed: 382862820, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.calendar, tag: *alarm*:com.google.android.calendar.intent.action.MIDNIGHT, whenElapsed: 383845346, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.lenovo.anyshare.gps, tag: *walarm*:com.ushareit.adcs.action.ADCS_ALARM, whenElapsed: 401516200, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.google.android.googlequicksearchbox, tag: *alarm*:com.google.android.libraries.notifications.SYSTEM_TRAY_EVENT, whenElapsed: 444097482, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.orca, tag: *alarm*:com.facebook.intent.action.prod.FOR_DELAYED_WORKER_SERVICE, whenElapsed: 448914602, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.appmanager, tag: *alarm*:com.facebook.oxygen.appmanager.periodicwork.GUARD_BATTERY_CALLBACK, whenElapsed: 608013472, now: 110135091
+03-27 20:05:59.609 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:59.611 I/chatty  ( 1565): uid=1000(system) Binder:1565_C identical 74 lines
+03-27 20:05:59.611 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, alarm is not restricted!
+03-27 20:05:59.611 D/AlarmManagerServiceInjector( 1565): adjustAlarmLocked, is pending alarm: com.facebook.appmanager, tag: *alarm*:backupJobSchedulerCheck, whenElapsed: 628535071, now: 110135093
+03-27 20:05:59.616 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.619 D/Zygote  (  651): Forked child process 19671
+03-27 20:05:59.620 D/Boost   ( 1565): hostingType=broadcast, hostingName={com.google.android.apps.maps/com.google.android.libraries.social.peoplekit.thirdparty.viewcontrollers.ThirdPartyReceiver}, callerPackage=null, isSystem=true, isBoostNeeded=false.
+03-27 20:05:59.621 D/OemNetd (  650): setPidForPackage: packageName=com.google.android.apps.maps, pid=19671, pid=10127
+03-27 20:05:59.621 I/ActivityManager( 1565): Start proc 19671:com.google.android.apps.maps/u0a127 for broadcast {com.google.android.apps.maps/com.google.android.libraries.social.peoplekit.thirdparty.viewcontrollers.ThirdPartyReceiver} caller=null
+03-27 20:05:59.624 E/SELinux (  536): avc:  denied  { find } for interface=vendor.qti.hardware.servicetracker::IServicetracker sid=u:r:system_server:s0 pid=1565 scontext=u:r:system_server:s0 tcontext=u:object_r:default_android_hwservice:s0 tclass=hwservice_manager permissive=0
+03-27 20:05:59.625 E/droid.apps.map(19671): Unknown bits set in runtime_flags: 0x8000
