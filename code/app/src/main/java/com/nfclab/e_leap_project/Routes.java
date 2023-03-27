@@ -2,24 +2,23 @@ package com.nfclab.e_leap_project;
 
 import static com.nfclab.e_leap_project.Register.TAG;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -34,20 +33,17 @@ import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.stripe.android.PaymentConfiguration;
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Routes extends Fragment {
 
@@ -114,11 +110,11 @@ public class Routes extends Fragment {
             }
         });
         routes_button.setOnClickListener(v -> {
+
+            googleMap.clear();
             polylineOptions1 = new PolylineOptions();
             polylineOptions2 = new PolylineOptions();
-
             options = new MarkerOptions();
-            googleMap.clear();
             Origin = Original_View.getText().toString();
             Destination = Destination_View.getText().toString();
 
@@ -185,8 +181,15 @@ public class Routes extends Fragment {
 
                 JSONObject section = sections.getJSONObject(i);
                 JSONObject arrival_place = sections.getJSONObject(i).getJSONObject("arrival");
-                JSONObject depature_place = section.getJSONObject("departure");
+                JSONObject departure_place = section.getJSONObject("departure");
                 JSONObject transport = section.getJSONObject("transport");
+                String mode = transport.getString("mode");
+                //assigning to get the departure time
+                String departureTime = null;
+
+                if (mode.equalsIgnoreCase("Bus")) {
+                     departureTime = departure_place.getString("time");
+                   }
 
                 String flexiblePolyline = section.getString("polyline");
                 LatLng firstpositions = null;
@@ -211,18 +214,19 @@ public class Routes extends Fragment {
                                 .geodesic(true);
                         // Toast.makeText(mContext, "bus ", Toast.LENGTH_LONG).show();
                         try {
-                            options = new MarkerOptions()
-                                    .title(arrival_place.getJSONObject("place").getString("name"))
-                                    .position(positions)
-                                    .snippet("Bus Station " );
+
+                                options = new MarkerOptions()
+                                        .title(arrival_place.getJSONObject("place").getString("name"))
+                                        .position(positions)
+                                        .snippet("Bus Station Take the bus no - " + transport.getString("shortName") + "-- which leaves in -- " + departureTime);
 
                         }catch (JSONException e)
                         {
                             options = new MarkerOptions()
-                                    .title(depature_place.getJSONObject("place").getString("name"))
+                                    .title(arrival_place.getJSONObject("place").getString("name"))
                                     .position(positions)
-                                    .snippet("Bus Station "+ transport.getString("shortName") );
-                        }
+                                    .snippet("Bus Station");
+                           }
 
                     }
                     else if (transport.getString("mode").equalsIgnoreCase("PEDESTRIAN")) {
@@ -233,40 +237,63 @@ public class Routes extends Fragment {
                                 .geodesic(true);
                         try {
                             options = new MarkerOptions()
-                                    .position(positions)
-                                    .snippet(" Walk towards"+depature_place.getJSONObject("place").getString("name")+ "Bus Station");
+                                    .title(arrival_place.getJSONObject("place").getString("name"))
+                                    .position(positions);
 
-                        }catch (JSONException e)
-                        {
+                        } catch (JSONException e) {
 
                             options = new MarkerOptions()
-                                    .title(arrival_place.getJSONObject("place").getString("name"))
-                                    .position(positions)
-                                    .snippet("Bus Station Take the Bus" );
+                                    .title("")
+                                    .position(positions);
+
+
                         }
 
                     }
+                    lines.add(googleMap.addPolyline(polylineOptions2));
+                    lines.add(googleMap.addPolyline(polylineOptions1));
 
                 }
-                lines.add(googleMap.addPolyline(polylineOptions2));
-                lines.add(googleMap.addPolyline(polylineOptions1));
-                assert firstpositions != null;
 
+                assert firstpositions != null;
+                //this will ignore the intermediate point and only add in the first and the last points of the polylines
                 googleMap.addMarker(new MarkerOptions().position(firstpositions));
-                googleMap.addMarker(new MarkerOptions().position(points.get(points.size()-1)));
                 googleMap.addMarker(options);
+                googleMap.addMarker(new MarkerOptions().position(points.get(points.size()-1)));
+
 
 
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(points.get(0)).zoom(12).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                polylineOptions2 = new PolylineOptions();
-                polylineOptions1 = new PolylineOptions();
 
+
+                googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                    @Override
+                    public void onInfoWindowClick(@NonNull Marker marker) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                        builder.setMessage(marker.getSnippet());
+                        builder.setTitle(marker.getTitle());
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.create().show();
+                    }
+
+
+
+
+                });
+                //to clear the polylines
+                polylineOptions1 = new PolylineOptions();
+                polylineOptions2 = new PolylineOptions();
+                options = new MarkerOptions();
                 lines.clear();
-                options=null;
 
             }
         }
+
     }
     private void getLongLat(String address) {
 
@@ -313,8 +340,6 @@ public class Routes extends Fragment {
                             });
                             // add it to the queue
                             queue.add(stateReq);
-
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

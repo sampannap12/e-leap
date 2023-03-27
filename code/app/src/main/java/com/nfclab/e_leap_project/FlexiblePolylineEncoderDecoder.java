@@ -13,10 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class FlexiblePolylineEncoderDecoder {
 
-    /**
-     * Header version
-     * A change in the version may affect the logic to encode and decode the rest of the header and data
-     */
+
     public static final byte FORMAT_VERSION = 1;
 
     //Base64 URL-safe characters
@@ -50,85 +47,13 @@ public class FlexiblePolylineEncoderDecoder {
         return result;
     }
 
-    /**
-     * ThirdDimension type from the encoded input {@link String}
-     * @param encoded URL-safe encoded coordinate triples {@link String}
-     * @return type of {@link ThirdDimension}
-     */
-    public static ThirdDimension getThirdDimension(String encoded) {
-        AtomicInteger index = new AtomicInteger(0);
-        AtomicLong header = new AtomicLong(0);
-        Decoder.decodeHeaderFromString(encoded.toCharArray(), index, header);
-        return ThirdDimension.fromNum((header.get() >> 4) & 7);
-    }
+
 
     public byte getVersion() {
         return FORMAT_VERSION;
     }
 
-    /*
-     * Single instance for configuration, validation and encoding for an input request.
-     */
-    private static class Encoder {
 
-        private final StringBuilder result;
-        private final Converter latConveter;
-        private final Converter lngConveter;
-        private final Converter zConveter;
-        private final ThirdDimension thirdDimension;
-
-        public Encoder(int precision, ThirdDimension thirdDimension, int thirdDimPrecision) {
-            this.latConveter = new Converter(precision);
-            this.lngConveter = new Converter(precision);
-            this.zConveter = new Converter(thirdDimPrecision);
-            this.thirdDimension = thirdDimension;
-            this.result = new StringBuilder();
-            encodeHeader(precision, this.thirdDimension.getNum(), thirdDimPrecision);
-        }
-
-        private void encodeHeader(int precision, int thirdDimensionValue, int thirdDimPrecision) {
-            /*
-             * Encode the `precision`, `third_dim` and `third_dim_precision` into one encoded char
-             */
-            if (precision < 0 || precision > 15) {
-                throw new IllegalArgumentException("precision out of range");
-            }
-
-            if (thirdDimPrecision < 0 || thirdDimPrecision > 15) {
-                throw new IllegalArgumentException("thirdDimPrecision out of range");
-            }
-
-            if (thirdDimensionValue < 0 || thirdDimensionValue > 7) {
-                throw new IllegalArgumentException("thirdDimensionValue out of range");
-            }
-            long res = (thirdDimPrecision << 7) | (thirdDimensionValue << 4) | precision;
-            Converter.encodeUnsignedVarint(FlexiblePolylineEncoderDecoder.FORMAT_VERSION, result);
-            Converter.encodeUnsignedVarint(res, result);
-        }
-
-        private void add(double lat, double lng) {
-            latConveter.encodeValue(lat, result);
-            lngConveter.encodeValue(lng, result);
-        }
-
-        private void add(double lat, double lng, double z) {
-            add(lat, lng);
-            if (this.thirdDimension != ThirdDimension.ABSENT) {
-                zConveter.encodeValue(z, result);
-            }
-        }
-
-        private void add(LatLngZ tuple) {
-            if(tuple == null) {
-                throw new IllegalArgumentException("Invalid LatLngZ tuple");
-            }
-            add(tuple.lat, tuple.lng, tuple.z);
-        }
-
-        private String getEncoded() {
-            return this.result.toString();
-        }
-    }
 
     /*
      * Single instance for decoding an input request.
