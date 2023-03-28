@@ -115,6 +115,7 @@ public class Routes extends Fragment {
             polylineOptions1 = new PolylineOptions();
             polylineOptions2 = new PolylineOptions();
             options = new MarkerOptions();
+
             Origin = Original_View.getText().toString();
             Destination = Destination_View.getText().toString();
 
@@ -178,7 +179,6 @@ public class Routes extends Fragment {
             Log.d(TAG, String.valueOf(sections));
 
             for (int i = 0; i < sections.length(); i++) {
-
                 JSONObject section = sections.getJSONObject(i);
                 JSONObject arrival_place = sections.getJSONObject(i).getJSONObject("arrival");
                 JSONObject departure_place = section.getJSONObject("departure");
@@ -186,15 +186,16 @@ public class Routes extends Fragment {
                 String mode = transport.getString("mode");
                 //assigning to get the departure time
                 String departureTime = null;
+                String flexiblePolyline = section.getString("polyline");
+                LatLng firstpositions = null;
 
                 if (mode.equalsIgnoreCase("Bus")) {
                      departureTime = departure_place.getString("time");
                    }
 
-                String flexiblePolyline = section.getString("polyline");
-                LatLng firstpositions = null;
                 //calling the flexiblePolylineEncoderDecoder class to Decode the polyline into a series of Longitude and Latitude List
                 List<FlexiblePolylineEncoderDecoder.LatLngZ> flexibleCoordinates = m_flexiblePolylineEncoderDecoder.decode((flexiblePolyline));
+
                 for (int ii = 0; ii < flexibleCoordinates.size(); ii++) {
                     points = new ArrayList<>();
                     double lat = Double.parseDouble(String.valueOf(flexibleCoordinates.get(ii).lat));
@@ -259,10 +260,7 @@ public class Routes extends Fragment {
                 //this will ignore the intermediate point and only add in the first and the last points of the polylines
                 googleMap.addMarker(new MarkerOptions().position(firstpositions));
                 googleMap.addMarker(options);
-                googleMap.addMarker(new MarkerOptions().position(points.get(points.size()-1)));
-
-
-
+                googleMap.addMarker(new MarkerOptions().position(points.get(points.size()-1)).title(arrival_place.getJSONObject("place").getString("name")));
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(points.get(0)).zoom(12).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
@@ -288,11 +286,11 @@ public class Routes extends Fragment {
                 //to clear the polylines
                 polylineOptions1 = new PolylineOptions();
                 polylineOptions2 = new PolylineOptions();
-                options = new MarkerOptions();
                 lines.clear();
 
             }
         }
+
 
     }
     private void getLongLat(String address) {

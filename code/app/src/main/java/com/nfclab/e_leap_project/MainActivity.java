@@ -278,6 +278,8 @@ public class MainActivity extends AppCompatActivity {
         disableForegroundDispatchSystem();
     }
 
+
+
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
