@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        if (text.trim().equals("DublinBus_101")) {
+        if (text.trim().equals("DublinBus101")) {
             Toast.makeText(context, "Valid Dublin Bus NFC tag detected", Toast.LENGTH_LONG).show();
             user = FirebaseAuth.getInstance().getCurrentUser();
             String userID;
@@ -297,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
     private void enableForegroundDispatchSystem() {
         Intent intent = new Intent(this, MainActivity.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, FLAG_IMMUTABLE);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE);
 
         IntentFilter[] intentFilter = new IntentFilter[]{};
 
