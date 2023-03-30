@@ -1,5 +1,7 @@
 package com.nfclab.e_leap_project;
-
+// The purpose of this application is to  give a demo of how we can use our android device to pay for the bus fares.
+//Sampanna Pathak
+//D18124115
 
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
 
