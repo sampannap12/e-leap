@@ -77,12 +77,7 @@ public class Routes extends Fragment {
         mContext = context;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

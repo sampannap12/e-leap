@@ -52,11 +52,6 @@ public class Profile extends Fragment {
         mContext = context;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @SuppressLint("CutPasteId")
     @Override
