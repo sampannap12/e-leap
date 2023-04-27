@@ -44,6 +44,18 @@ The same data flow will happen when a user tries to create a new account but whe
 Firebase is used for User Authentication. When user opens the application for the first time, they are required to register. They need to fill in their details,then user profile is created in Firebase.
 Also Email verfication, Profile Update and Password change has been implemented in a similar manner.
 
+UI over view
+![image](https://user-images.githubusercontent.com/56804514/234862578-fc850512-66dd-488a-ad9b-46567dcd9dfa.png)
+![image](https://user-images.githubusercontent.com/56804514/234862647-788b9b22-4abc-4382-80f6-398b9c2d2c9d.png)
+![image](https://user-images.githubusercontent.com/56804514/234862720-5397560e-dcdc-471e-a303-81c0111b46e0.png)
+![image](https://user-images.githubusercontent.com/56804514/234862788-fc187c2a-916f-4372-b3f5-df7612e2e664.png)
+![image](https://user-images.githubusercontent.com/56804514/234862855-b67c45d3-33d7-48a3-8e80-2746a00df793.png)
+
+
+
+
+
+
 Future Plans
 Secure NFC payload. 
 Secure Backend Connection.
