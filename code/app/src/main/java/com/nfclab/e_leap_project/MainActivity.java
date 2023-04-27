@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private double new_balance;
     private final double Student_fare = 1.0;
     private final double Dublin_Bus_fare = 2.0;
-    private final double bus_Eireann_fare = 1.55;
+    private final double bus_Eireann_fare = 5.5;
     String AccountResult;
 
 
@@ -268,7 +268,9 @@ public class MainActivity extends AppCompatActivity {
                                         });
                             }
                             else {
-                                Toast.makeText(context, "Please Top Up. Your Balance is  " + balanceResult, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "Please Top Up. Your Balance is Low :- " + balanceResult, Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility (View.INVISIBLE);
+                                frame.setVisibility(View.VISIBLE);
                             }
                         }
 

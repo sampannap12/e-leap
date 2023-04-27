@@ -78,7 +78,7 @@ public class Topup extends Fragment {
         payButton = view.findViewById(R.id.top);
         progressBar = view.findViewById(R.id.progress_bar);
 
-        request = new StringRequest(Request.Method.GET, "http://www.sampannapathak.com/",
+        request = new StringRequest(Request.Method.GET, "",//Please Enter your Back- End domain here
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

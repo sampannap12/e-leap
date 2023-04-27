@@ -148,7 +148,7 @@ public class Routes extends Fragment {
             }
         }
         //calling the backend server with origin and destination as parameter
-        String url = "http://www.sampannapathak.com/routes?";
+        String url = "";//Please Enter your backend domain here
         String fullUrl = url + "origin=" + origin + "&" + "destination=" + destination;
         RequestQueue queue = Volley.newRequestQueue(mContext);
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, fullUrl, null,
@@ -233,7 +233,7 @@ public class Routes extends Fragment {
     }
     private void getLongLat(String address) {
 
-        request = new StringRequest(Request.Method.GET, "http://www.sampannapathak.com/",
+        request = new StringRequest(Request.Method.GET, "",//Please Enter your Back- End domain here
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -254,7 +254,7 @@ public class Routes extends Fragment {
                                         if (location.getDouble("lat") != 0 && location.getDouble("lng") != 0) {
                                             latLng = new LatLng(location.getDouble("lat"), location.getDouble("lng"));
                                             geo = latLng.latitude +","+latLng.longitude;
-                                            geoList.add(geo); // adding the longitude and litutude in a list show that in can be accessed by the other method
+                                            geoList.add(geo); // adding the longitude and latitude in a list show that in can be accessed by the other method
                                             flag = flag + 1;
                                             if (flag== 2) {
                                                 //Calls after getting th Long and Lat of both Origin and destination
