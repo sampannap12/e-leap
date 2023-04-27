@@ -2,6 +2,7 @@ package com.nfclab.e_leap_project;
 
 import static com.nfclab.e_leap_project.Register.TAG;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -164,33 +166,25 @@ public class Routes extends Fragment {
 
     }
 
-    private void sendresults(JSONObject resultList) throws JSONException{
+    @SuppressLint("PotentialBehaviorOverride")
+    private void sendresults(JSONObject resultList) throws JSONException {
         JSONArray routes = resultList.getJSONArray("routes");
-        //Log.d(TAG, String.valueOf(routes));
-        //iterating through the resultlist
-        for (int j = 0; j <resultList.length(); j++) {
+        for (int j = 0; j < resultList.length(); j++) {
             JSONObject route = routes.getJSONObject(j);
             JSONArray sections = route.getJSONArray("sections");
-            Log.d(TAG, String.valueOf(sections));
-
             for (int i = 0; i < sections.length(); i++) {
                 JSONObject section = sections.getJSONObject(i);
                 JSONObject arrival_place = sections.getJSONObject(i).getJSONObject("arrival");
                 JSONObject departure_place = section.getJSONObject("departure");
                 JSONObject transport = section.getJSONObject("transport");
                 String mode = transport.getString("mode");
-                //assigning to get the departure time
                 String departureTime = null;
                 String flexiblePolyline = section.getString("polyline");
                 LatLng firstpositions = null;
-
                 if (mode.equalsIgnoreCase("Bus")) {
-                     departureTime = departure_place.getString("time");
-                   }
-
-                //calling the flexiblePolylineEncoderDecoder class to Decode the polyline into a series of Longitude and Latitude List
+                    departureTime = departure_place.getString("time");
+                }
                 List<FlexiblePolylineEncoderDecoder.LatLngZ> flexibleCoordinates = m_flexiblePolylineEncoderDecoder.decode((flexiblePolyline));
-
                 for (int ii = 0; ii < flexibleCoordinates.size(); ii++) {
                     points = new ArrayList<>();
                     double lat = Double.parseDouble(String.valueOf(flexibleCoordinates.get(ii).lat));
@@ -200,8 +194,6 @@ public class Routes extends Fragment {
                     if (ii == 0) {
                         firstpositions = new LatLng(lat, lng);
                     }
-
-
                     if (transport.getString("mode").equalsIgnoreCase("Bus")) {
                         polylineOptions1.add(positions);
                         polylineOptions1
@@ -209,80 +201,31 @@ public class Routes extends Fragment {
                                 .color(-65536)
                                 .geodesic(true);
                         // Toast.makeText(mContext, "bus ", Toast.LENGTH_LONG).show();
-                        try {
-
-                                options = new MarkerOptions()
-                                        .title(arrival_place.getJSONObject("place").getString("name"))
-                                        .position(positions)
-                                        .snippet("Bus Station Take the bus no - " + transport.getString("shortName") + "-- which leaves in -- " + departureTime);
-
-                        }catch (JSONException e)
-                        {
-                            options = new MarkerOptions()
-                                    .title(arrival_place.getJSONObject("place").getString("name"))
-                                    .position(positions)
-                                    .snippet("Bus Station");
-                           }
-
-                    }
-                    else if (transport.getString("mode").equalsIgnoreCase("PEDESTRIAN")) {
+                        options = new MarkerOptions()
+                                .position(positions);
+                    } else if (transport.getString("mode").equalsIgnoreCase("PEDESTRIAN")) {
                         polylineOptions2.add(positions);
                         polylineOptions2
                                 .width(10)
                                 .color(-16711936)
                                 .geodesic(true);
-                        try {
-                            options = new MarkerOptions()
-                                    .title(arrival_place.getJSONObject("place").getString("name"))
-                                    .position(positions);
-
-                        } catch (JSONException e) {
-
-                            options = new MarkerOptions()
-                                    .title("")
-                                    .position(positions);
-
-
-                        }
-
+                        options = new MarkerOptions()
+                                .position(positions);
                     }
                     lines.add(googleMap.addPolyline(polylineOptions2));
                     lines.add(googleMap.addPolyline(polylineOptions1));
-
                 }
-
                 assert firstpositions != null;
-                //this will ignore the intermediate point and only add in the first and the last points of the polylines
                 googleMap.addMarker(new MarkerOptions().position(firstpositions));
-                googleMap.addMarker(options);
-                googleMap.addMarker(new MarkerOptions().position(points.get(points.size()-1)).title(arrival_place.getJSONObject("place").getString("name")));
+                googleMap.addMarker(options).setTag(section); // set the section as the marker tag
+
+
+                googleMap.addMarker(new MarkerOptions().position(points.get(points.size() - 1)).title(arrival_place.getJSONObject("place").getString("name")).snippet(transport.getString("mode")));
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(points.get(0)).zoom(12).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-
-
-                googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                    @Override
-                    public void onInfoWindowClick(@NonNull Marker marker) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                        builder.setMessage(marker.getSnippet());
-                        builder.setTitle(marker.getTitle());
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.dismiss();
-                            }
-                        });
-                        builder.create().show();
-                    }
-
-
-
-
-                });
-                //to clear the polylines
                 polylineOptions1 = new PolylineOptions();
                 polylineOptions2 = new PolylineOptions();
                 lines.clear();
-
             }
         }
 

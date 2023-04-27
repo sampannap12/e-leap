@@ -241,8 +241,9 @@ public class MainActivity extends AppCompatActivity {
                             double balanceResult = task.getResult().getDouble("Balance");
                             double old_balance = Double.parseDouble(String.valueOf(balanceResult));
                             if (old_balance>2) {
-                                Toast.makeText(context, "Old Balance" + balanceResult, Toast.LENGTH_SHORT).show();
+
                                 new_balance = old_balance - v;
+                                new_balance = Math.round(new_balance*100.0)/100.0;
                                 final DocumentReference sDoc = fstore.collection("users").document(userID);
                                 fstore.runTransaction(new Transaction.Function<Void>() {
                                             @Override
