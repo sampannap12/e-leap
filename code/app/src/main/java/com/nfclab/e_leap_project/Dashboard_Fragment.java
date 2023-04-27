@@ -71,6 +71,7 @@ public class Dashboard_Fragment extends Fragment{
                 if (snapshot != null && snapshot.exists()) {
                     // Get updated balance from snapshot
                    double balanceResult = snapshot.getDouble("Balance");
+                    balanceResult = Math.round(balanceResult*100.0)/100.0;
                     balance.setText(String.valueOf(balanceResult));
                 }
             }

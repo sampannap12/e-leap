@@ -41,6 +41,7 @@ import com.stripe.android.paymentsheet.PaymentSheetResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -309,7 +310,7 @@ public class Topup extends Fragment {
                             if(task.getResult().exists()){
 
                                 balanceResult = task.getResult().getDouble("Balance");
-                                new_balance = balanceResult+ Double.valueOf(amount);
+                                new_balance = (Math.round(balanceResult*100.0)/100.0) + (Double.valueOf(amount));
                             }
 
 
@@ -317,7 +318,7 @@ public class Topup extends Fragment {
                             fstore.runTransaction(new Transaction.Function<Void>() {
                                         @Override
                                         public Void apply(Transaction transaction) throws FirebaseFirestoreException {
-
+                                            new_balance = Math.round(new_balance*100.0)/100.0;
                                             transaction.update(sDoc, "Balance", new_balance);
 
                                             // Success
