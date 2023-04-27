@@ -45,6 +45,8 @@ Firebase is used for User Authentication. When user opens the application for th
 Also Email verfication, Profile Update and Password change has been implemented in a similar manner.
 
 UI over view
+
+
 ![image](https://user-images.githubusercontent.com/56804514/234862578-fc850512-66dd-488a-ad9b-46567dcd9dfa.png)
 ![image](https://user-images.githubusercontent.com/56804514/234862647-788b9b22-4abc-4382-80f6-398b9c2d2c9d.png)
 ![image](https://user-images.githubusercontent.com/56804514/234862720-5397560e-dcdc-471e-a303-81c0111b46e0.png)
